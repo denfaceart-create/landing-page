@@ -1,0 +1,24 @@
+{
+  "name": "Artistry & Henna - Face Painting & Henna Tattoos",
+  "short_name": "Artistry & Henna",
+  "description": "Transform your celebrations with stunning face painting and intricate henna tattoo artistry",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf4ff",
+  "theme_color": "#d946ef",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
