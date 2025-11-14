@@ -12,29 +12,9 @@ export const translations = {
     heroTitle2: "Obwalden",
     heroSubtitle: "Gsichtsschminke für Kindergeburtstäg, Fäscht und Verastaltige",
     ctaBook: "Buche jetzt",
-    ctaServices: "Services",
-
-    // Services
-    servicesTitle: "Was mir mached",
-    facePainting: "Face Painting",
-    facePaintingDesc: "Professionells Face Painting für alli Altersgruppe",
-    henna: "",
-    hennaDesc: "Traditionelli und moderni Henna Designs",
-    bookService: "Buche",
 
     // Gallery
-    gallery: "Üsi Arbet",
-    
-
-    // Pricing
-    pricingTitle: "Preis",
-    party: "Party",
-    partyDesc: "2 Stund",
-    event: "Event",
-    eventDesc: "4 Stund",
-    premium: "Premium",
-    premiumDesc: "Ganze Tag",
-    bookPackage: "Buche",
+    gallery: "Mini Arbet",
 
     // Contact
     contactTitle: "Kontakt",
@@ -52,33 +32,13 @@ export const translations = {
   de: {
     // Hero
     badge: "Face Painting",
-    heroTitle1: "Deine",
-    heroTitle2: "Kreativität",
-    heroSubtitle: "Face Painting für Events, Partys und Feste",
+    heroTitle1: "Face Art",
+    heroTitle2: "Obwalden",
+    heroSubtitle: "Gesichtsschminke für Kindergeburtstage, Feste und Veranstaltungen",
     ctaBook: "Jetzt buchen",
-    ctaServices: "Services",
-
-    // Services
-    servicesTitle: "Was wir machen",
-    facePainting: "Face Painting",
-    facePaintingDesc: "Professionelles Face Painting für alle Altersgruppen",
-    henna: "Henna Tattoos",
-    hennaDesc: "Traditionelle und moderne Henna Designs",
-    bookService: "Buchen",
 
     // Gallery
-    gallery: "Unsere Arbeit",
-    
-
-    // Pricing
-    pricingTitle: "Preise",
-    party: "Party",
-    partyDesc: "2 Stunden",
-    event: "Event",
-    eventDesc: "4 Stunden",
-    premium: "Premium",
-    premiumDesc: "Ganzer Tag",
-    bookPackage: "Buchen",
+    gallery: "Meine Arbeit",
 
     // Contact
     contactTitle: "Kontakt",
@@ -96,32 +56,13 @@ export const translations = {
   en: {
     // Hero
     badge: "Face Painting",
-    heroTitle1: "Your",
-    heroTitle2: "Creativity",
-    heroSubtitle: "Face painting and henna for events, parties and celebrations",
+    heroTitle1: "Face Art",
+    heroTitle2: "Obwalden",
+    heroSubtitle: "Face painting for birthday parties, festivals and events",
     ctaBook: "Book now",
-    ctaServices: "Services",
-
-    // Services
-    servicesTitle: "What we do",
-    facePainting: "Face Painting",
-    facePaintingDesc: "Professional face painting for all ages",
-    henna: "Henna Tattoos",
-    hennaDesc: "Traditional and modern henna designs",
-    bookService: "Book",
 
     // Gallery
-    gallery: "Our Work",
-
-    // Pricing
-    pricingTitle: "Pricing",
-    party: "Party",
-    partyDesc: "2 hours",
-    event: "Event",
-    eventDesc: "4 hours",
-    premium: "Premium",
-    premiumDesc: "Full day",
-    bookPackage: "Book",
+    gallery: "My Work",
 
     // Contact
     contactTitle: "Contact",
