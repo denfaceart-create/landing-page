@@ -6,37 +6,18 @@ import { useLanguage } from "@/lib/i18n"
 
 const galleryImages = [
   {
-    url: "/colorful-butterfly-face-painting-on-child.jpg",
-    alt: "Butterfly face painting",
+    url: "/assets/den_1.jpeg",
+    alt: "Floral patterns",
   },
   {
-    url: "/intricate-henna-tattoo-on-hands.jpg",
-    alt: "Henna tattoo design",
+    url: "/assets/den_2.jpeg",
+    alt: "Butterfly",
   },
   {
-    url: "/superhero-face-painting-on-boy.jpg",
-    alt: "Superhero face paint",
+    url: "/assets/den_3.jpeg",
+    alt: "Space Queen",
   },
-  {
-    url: "/floral-henna-design-on-arm.jpg",
-    alt: "Floral henna",
-  },
-  {
-    url: "/rainbow-unicorn-face-painting.jpg",
-    alt: "Unicorn face paint",
-  },
-  {
-    url: "/bridal-henna-mehndi-design.jpg",
-    alt: "Bridal henna",
-  },
-  {
-    url: "/tiger-face-painting-design.jpg",
-    alt: "Tiger face paint",
-  },
-  {
-    url: "/mandala-henna-back-design.jpg",
-    alt: "Mandala henna",
-  },
+
 ]
 
 export function Gallery() {
@@ -88,11 +69,11 @@ export function Gallery() {
 
   return (
     <>
-      <section ref={sectionRef} className="py-24 md:py-32 bg-background">
+      <section id="gallery" ref={sectionRef} className="py-24 md:py-32 bg-background">
         <div className="container px-4">
           <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
-              {t.gallery.title}
+              {t.gallery}
             </h2>
           </div>
 

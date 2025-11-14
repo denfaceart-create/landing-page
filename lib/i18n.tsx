@@ -7,10 +7,10 @@ export type Language = "de-CH" | "de" | "en"
 export const translations = {
   "de-CH": {
     // Hero
-    badge: "Face Painting & Henna",
-    heroTitle1: "Dini",
-    heroTitle2: "Kreativität",
-    heroSubtitle: "Face Painting und Henna für Events, Partys und Feste",
+    badge: "Face Painting",
+    heroTitle1: "Face Art",
+    heroTitle2: "Obwalden",
+    heroSubtitle: "Gsichtsschminke für Kindergeburtstäg, Fäscht und Verastaltige",
     ctaBook: "Buche jetzt",
     ctaServices: "Services",
 
@@ -18,14 +18,13 @@ export const translations = {
     servicesTitle: "Was mir mached",
     facePainting: "Face Painting",
     facePaintingDesc: "Professionells Face Painting für alli Altersgruppe",
-    henna: "Henna Tattoos",
+    henna: "",
     hennaDesc: "Traditionelli und moderni Henna Designs",
     bookService: "Buche",
 
     // Gallery
-    gallery: {
-      title: "Üsi Arbet",
-    },
+    gallery: "Üsi Arbet",
+    
 
     // Pricing
     pricingTitle: "Preis",
@@ -52,10 +51,10 @@ export const translations = {
   },
   de: {
     // Hero
-    badge: "Face Painting & Henna",
+    badge: "Face Painting",
     heroTitle1: "Deine",
     heroTitle2: "Kreativität",
-    heroSubtitle: "Face Painting und Henna für Events, Partys und Feste",
+    heroSubtitle: "Face Painting für Events, Partys und Feste",
     ctaBook: "Jetzt buchen",
     ctaServices: "Services",
 
@@ -68,9 +67,8 @@ export const translations = {
     bookService: "Buchen",
 
     // Gallery
-    gallery: {
-      title: "Unsere Arbeit",
-    },
+    gallery: "Unsere Arbeit",
+    
 
     // Pricing
     pricingTitle: "Preise",
@@ -97,7 +95,7 @@ export const translations = {
   },
   en: {
     // Hero
-    badge: "Face Painting & Henna",
+    badge: "Face Painting",
     heroTitle1: "Your",
     heroTitle2: "Creativity",
     heroSubtitle: "Face painting and henna for events, parties and celebrations",
@@ -113,9 +111,7 @@ export const translations = {
     bookService: "Book",
 
     // Gallery
-    gallery: {
-      title: "Our Work",
-    },
+    gallery: "Our Work",
 
     // Pricing
     pricingTitle: "Pricing",

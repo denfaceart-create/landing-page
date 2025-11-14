@@ -1,6 +1,7 @@
 "use client"
+import Link from "next/link"
 
-import { Instagram, Facebook } from "lucide-react"
+import { Sparkles, Instagram } from "lucide-react"
 import type { Language } from "@/lib/i18n"
 import { getTranslation } from "@/lib/i18n"
 
@@ -12,42 +13,55 @@ export function Footer({ lang }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-foreground text-background py-12">
-      <div className="container px-4">
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Brand */}
+      <footer className="bg-muted/50 border-t border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Face Painting & Henna</h3>
+            <Link href="/" className="flex items-center gap-2">
+              <Sparkles className="h-6 w-6 text-primary" />
+              <span className="font-semibold text-lg">Face Art Obwalden</span>
+            </Link>
+              <ul className="space-y-2 text-sm">
+              {/* <li>
+                <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                  About Us
+                </Link>
+              </li> */}
+              <li>
+                <Link href="#gallery" className="text-muted-foreground hover:text-primary transition-colors">
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Contact
+                </Link>
+              </li>
+              {/* <li>
+                <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li> */}
+            </ul>
           </div>
 
-          {/* Social */}
-          <div className="space-y-4 md:text-right">
-            <div className="flex gap-4 md:justify-end">
+          <div>
+            <h3 className="font-semibold mb-4">Follow Us</h3>
+            <div className="flex gap-3">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/faceartow"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
+                className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
               >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
-              >
-                <Facebook className="w-5 h-5" />
+                <Instagram className="h-5 w-5 text-primary" />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-background/10 text-center text-sm text-background/70">
-          <p>
-            © {currentYear} · {getTranslation(lang, "rights")}
-          </p>
+        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-muted-foreground">
+          <p>© {currentYear} · {getTranslation(lang, "rights")}</p>
         </div>
       </div>
     </footer>

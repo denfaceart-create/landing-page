@@ -78,14 +78,6 @@ export function Hero({ lang }: HeroProps) {
               {getTranslation(lang, "ctaBook")}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8 py-6 text-lg rounded-xl border-2 hover:bg-card/50 backdrop-blur-sm bg-transparent"
-              onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              {getTranslation(lang, "ctaServices")}
-            </Button>
           </div>
         </div>
       </div>

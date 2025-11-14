@@ -11,17 +11,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Artistry & Henna - Face Painting & Henna Tattoos",
+  title: "Face Art Obwaldä - Face Painting",
   description:
-    "Transform your celebrations with stunning face painting and intricate henna tattoo artistry. Professional, creative, and unforgettable.",
-  generator: "v0.app",
+    "Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
   manifest: "/manifest.json",
   themeColor: "#d946ef",
   viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Artistry & Henna",
+    title: "Face Art Obwaldä",
   },
 }
 
