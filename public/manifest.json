@@ -1,7 +1,8 @@
 {
-  "name": "Artistry & Henna - Face Painting & Henna Tattoos",
-  "short_name": "Artistry & Henna",
-  "description": "Transform your celebrations with stunning face painting and intricate henna tattoo artistry",
+  "name": "Face Art Obwalden",
+  "short_name": "face-art",
+  "description": "Face painting services in Obwalden",
+  "lang": "en",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fdf4ff",
