@@ -1,0 +1,27 @@
+{
+	"homePage": {
+		"hero": {
+			"badge": "Face Painting",
+			"heroTitle1": "Face Art",
+			"heroTitle2": "Obwalden",
+			"heroSubtitle": "Face painting for birthday parties, festivals and events",
+			"ctaBook": "Book now"
+		},
+		"gallery": {
+			"title": "My Work"
+		},
+		"contact": {
+			"contactTitle": "Contact",
+			"contactSubtitle": "Get in touch",
+			"name": "Name",
+			"email": "Email",
+			"phone": "Phone",
+			"eventDate": "Event Date",
+			"message": "Message",
+			"send": "Send"
+		},
+		"footer": {
+			"rights": "All rights reserved"
+		}
+	}
+}

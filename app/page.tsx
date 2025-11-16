@@ -9,15 +9,15 @@ import { useState } from "react"
 import type { Language } from "@/lib/i18n"
 
 export default function Home() {
-  const [language, setLanguage] = useState<Language>("de-CH")
+	const [language, setLanguage] = useState<Language>("de-CH")
 
-  return (
-    <main className="min-h-screen">
-      <LanguageSwitcher currentLang={language} onLanguageChange={setLanguage} />
-      <Hero lang={language} />
-      <Gallery />
-      <Contact lang={language} />
-      <Footer lang={language} />
-    </main>
-  )
+	return (
+		<main className="min-h-screen">
+			<LanguageSwitcher currentLang={language} onLanguageChange={setLanguage} />
+			<Hero lang={language} />
+			<Gallery />
+			<Contact lang={language} />
+			<Footer lang={language} />
+		</main>
+	)
 }
