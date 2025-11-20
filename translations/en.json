@@ -24,10 +24,10 @@
 			"phone": "Phone",
 			"message": "Message",
 			"send": "Send"
-		},
-		"footer": {
-			"rights": "All rights reserved"
 		}
+	},
+	"Footer": {
+		"rights": "All rights reserved"
 	},
 	"LocaleLayout": {
 		"title": "Face Art Obwalden - Professional Face Painting Services"
@@ -48,18 +48,90 @@
 	},
 	"Navigation": {
 		"home": "Home",
-		"about": "About me"
+		"about": "About me",
+		"faq": "FAQ"
 	},
 	"NotFoundPage": {
 		"description": "Please double-check the browser address bar or use the navigation to go to a known page.",
 		"title": "Page not found"
 	},
 	"AboutPage": {
-		"description": "Learn more about me and my face painting services in Obwalden.",
-		"title": "About me"
+		"title": "About Me",
+		"subtitle": "Bringing joy and creativity to children's faces",
+		"introduction": "Welcome to Face Art Obwalden! I'm passionate about creating magical moments for children through the art of face painting.",
+		"story": {
+			"title": "My Story",
+			"content": "What started as a hobby has blossomed into a passion for bringing smiles to children's faces. With years of experience in face painting, I've had the joy of transforming little ones into their favorite characters, animals, and magical creatures. Every child is unique, and I love creating personalized designs that spark their imagination and make them feel special."
+		},
+		"experience": {
+			"title": "Experience & Expertise",
+			"content": "Based in beautiful Obwalden, I specialize in creating safe, fun, and memorable face painting experiences for children of all ages. I use only high-quality, non-toxic, and hypoallergenic paints that are safe for sensitive skin. My designs range from simple and quick for large groups to elaborate masterpieces for special occasions."
+		},
+		"services": {
+			"title": "What I Offer",
+			"items": [
+				"Birthday parties and celebrations",
+				"School events and festivals",
+				"Corporate family days",
+				"Community events and fairs",
+				"Private parties and gatherings",
+				"Custom designs and themes"
+			]
+		},
+		"commitment": {
+			"title": "My Commitment",
+			"content": "I'm committed to providing a safe, hygienic, and enjoyable experience for every child. I maintain the highest standards of cleanliness, use fresh brushes and sponges for each child, and ensure that every design is created with care and attention to detail."
+		}
 	},
 	"FaqPage": {
-		"description": "Find answers to common questions about my face painting services.",
-		"title": "Frequently Asked Questions"
+		"title": "Frequently Asked Questions",
+		"subtitle": "Everything you need to know about my face painting services",
+		"questions": [
+			{
+				"question": "What type of paints do you use?",
+				"answer": "I exclusively use high-quality, non-toxic, water-based face paints that are specifically designed for skin application. All paints are hypoallergenic and safe for children with sensitive skin. They wash off easily with soap and water."
+			},
+			{
+				"question": "How long does each face painting take?",
+				"answer": "Simple designs typically take 3-5 minutes, while more elaborate designs can take 8-15 minutes. For parties, I recommend planning for about 5-7 minutes per child to ensure everyone gets a beautiful design."
+			},
+			{
+				"question": "What age groups do you cater to?",
+				"answer": "I paint faces for children of all ages, typically from 3 years old and up. For very young children (under 3), I recommend simple designs on hands or arms if they're not comfortable with face painting."
+			},
+			{
+				"question": "How far in advance should I book?",
+				"answer": "I recommend booking at least 2-3 weeks in advance, especially for weekend events and during busy seasons like summer and holidays. However, I'll do my best to accommodate last-minute requests when possible."
+			},
+			{
+				"question": "What do you need from me as the host?",
+				"answer": "I just need a small table and two chairs in a well-lit area, preferably near a water source. I'll bring all my supplies, including paints, brushes, mirrors, and wet wipes. A shaded area is preferred for outdoor events."
+			},
+			{
+				"question": "Do you have insurance?",
+				"answer": "Yes, I carry comprehensive liability insurance for all my face painting activities. Safety and professionalism are my top priorities."
+			},
+			{
+				"question": "What happens if it rains at an outdoor event?",
+				"answer": "For outdoor events, I need a covered area to set up in case of rain. If the event is canceled due to weather, we can reschedule for another date at no extra charge."
+			},
+			{
+				"question": "Can you do custom designs or themes?",
+				"answer": "Absolutely! I love creating custom designs to match your party theme or your child's favorite characters. Just let me know what you have in mind when you book, and I'll prepare accordingly."
+			},
+			{
+				"question": "How do I care for the face paint after the event?",
+				"answer": "The face paint will typically last 4-6 hours depending on activity level. To remove, simply use soap and warm water. Avoid rubbing harshly - gentle washing will remove the paint easily."
+			},
+			{
+				"question": "What are your rates?",
+				"answer": "My rates vary depending on the duration, number of children, and type of event. Please contact me for a personalized quote. I offer competitive pricing and packages for different occasions."
+			}
+		],
+		"contact": {
+			"title": "Still have questions?",
+			"description": "Don't hesitate to get in touch! I'm happy to discuss your specific needs and help make your event magical.",
+			"button": "Contact Me"
+		}
 	}
 }

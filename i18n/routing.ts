@@ -13,6 +13,7 @@ export const routing = defineRouting({
 			de: "/über",
 			ch: "/über",
 		},
+		"/faq": "/faq",
 	},
 	localePrefix: "as-needed",
 })

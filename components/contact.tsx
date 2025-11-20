@@ -42,7 +42,10 @@ export function Contact() {
 	}
 
 	return (
-		<section id="contact" className="bg-muted/30 py-24 md:py-32">
+		<section
+			id="contact"
+			className="flex items-center justify-center bg-muted/30 py-24 md:py-32"
+		>
 			<div className="container px-4">
 				<div className="mx-auto mb-16 max-w-3xl text-center">
 					<h2 className="font-bold text-4xl tracking-tight md:text-5xl lg:text-6xl">

@@ -17,8 +17,8 @@ export async function generateMetadata(
 		description:
 			"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
 		manifest: "/manifest.json",
-		themeColor: "#d946ef",
-		viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+		// themeColor: "#d946ef",
+		// viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 		appleWebApp: {
 			capable: true,
 			statusBarStyle: "default",

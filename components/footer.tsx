@@ -1,17 +1,17 @@
 "use client"
 
 import { Instagram, Sparkles } from "lucide-react"
-import Link from "next/link"
 import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 
 export function Footer() {
-	const t = useTranslations("HomePage")
+	const t = useTranslations()
 	const currentYear = new Date().getFullYear()
 
 	return (
 		<footer className="border-border border-t bg-muted/50">
 			<div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-				<div className="mb-8 grid gap-8 md:grid-cols-4">
+				<div className="mb-8 grid gap-8 md:grid-cols-6">
 					<div className="space-y-4">
 						<Link href="/" className="flex items-center gap-2">
 							<Sparkles className="h-6 w-6 text-primary" />
@@ -20,26 +20,18 @@ export function Footer() {
 						<ul className="space-y-2 text-sm">
 							<li>
 								<Link
+									href="/"
+									className="text-muted-foreground transition-colors hover:text-primary"
+								>
+									{t("Navigation.home")}
+								</Link>
+							</li>
+							<li>
+								<Link
 									href="/about"
 									className="text-muted-foreground transition-colors hover:text-primary"
 								>
-									About Me
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#gallery"
-									className="text-muted-foreground transition-colors hover:text-primary"
-								>
-									Gallery
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="#contact"
-									className="text-muted-foreground transition-colors hover:text-primary"
-								>
-									Contact
+									{t("Navigation.about")}
 								</Link>
 							</li>
 							<li>
@@ -47,7 +39,7 @@ export function Footer() {
 									href="/faq"
 									className="text-muted-foreground transition-colors hover:text-primary"
 								>
-									FAQ
+									{t("Navigation.faq")}
 								</Link>
 							</li>
 						</ul>
@@ -70,7 +62,7 @@ export function Footer() {
 
 				<div className="flex flex-col items-center justify-center gap-4 border-border border-t pt-8 text-muted-foreground text-sm sm:flex-row">
 					<p>
-						© {currentYear} · {t("footer.rights")}
+						© {currentYear} · {t("Footer.rights")}
 					</p>
 				</div>
 			</div>

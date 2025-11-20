@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
+import { scrollToSection } from "@/lib/utils"
 
 export function Hero() {
 	const t = useTranslations("HomePage.hero")
@@ -33,7 +34,7 @@ export function Hero() {
 	}, [])
 
 	return (
-		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5">
 			{/* Animated background elements */}
 			<div className="absolute inset-0 overflow-hidden">
 				<div className="absolute top-20 left-10 h-72 w-72 animate-float rounded-full bg-primary/20 blur-3xl" />
@@ -60,7 +61,7 @@ export function Hero() {
 					</div>
 
 					<h1 className="fade-in-element translate-y-4 text-balance font-bold text-5xl tracking-tight opacity-0 transition-all delay-100 duration-700 md:text-7xl lg:text-8xl">
-						<span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+						<span className="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
 							{t("heroTitle1")}
 						</span>
 						<br />
@@ -75,11 +76,7 @@ export function Hero() {
 						<Button
 							size="lg"
 							className="group rounded-xl bg-primary px-8 py-6 text-lg text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
-							onClick={() =>
-								document
-									.getElementById("contact")
-									?.scrollIntoView({ behavior: "smooth" })
-							}
+							onClick={() => scrollToSection("contact", 80)}
 						>
 							{t("ctaBook")}
 							<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

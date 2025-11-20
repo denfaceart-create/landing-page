@@ -1,19 +1,18 @@
 "use client"
 
 import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
 import { Gallery } from "@/components/gallery"
 import { Hero } from "@/components/hero"
-import { LanguageSwitcher } from "@/components/language-switcher"
+import PageLayout from "@/components/page-layout"
+import { useScrollHandler } from "@/components/scroll-handler"
 
 export default function Home() {
+	useScrollHandler()
 	return (
-		<main className="min-h-screen">
-			<LanguageSwitcher />
+		<PageLayout>
 			<Hero />
 			<Gallery />
 			<Contact />
-			<Footer />
-		</main>
+		</PageLayout>
 	)
 }

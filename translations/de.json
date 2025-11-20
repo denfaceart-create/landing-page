@@ -24,10 +24,10 @@
 			"phone": "Telefon",
 			"message": "Nachricht",
 			"send": "Senden"
-		},
-		"footer": {
-			"rights": "Alle Rechte vorbehalten"
 		}
+	},
+	"Footer": {
+		"rights": "Alle Rechte vorbehalten"
 	},
 	"LocaleLayout": {
 		"title": "Gesichtsbemalung Obwalden - Professionelle Gesichtsbemalungsdienste"
@@ -48,18 +48,90 @@
 	},
 	"Navigation": {
 		"home": "Startseite",
-		"about": "Über mich"
+		"about": "Über mich",
+		"faq": "FAQ"
 	},
 	"NotFoundPage": {
 		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen.",
 		"title": "Seite nicht gefunden"
 	},
 	"AboutPage": {
-		"description": "Erfahren Sie mehr über mich und meine Leidenschaft für Gesichtsbemalung.",
-		"title": "Über mich"
+		"title": "Über Mich",
+		"subtitle": "Freude und Kreativität in Kindergesichter bringen",
+		"introduction": "Willkommen bei Face Art Obwalden! Ich bringe Leidenschaft in die Kunst der Gesichtsbemalung und schaffe magische Momente für Kinder.",
+		"story": {
+			"title": "Meine Geschichte",
+			"content": "Was als Hobby begann, ist zu einer Leidenschaft geworden, Kindern ein Lächeln ins Gesicht zu zaubern. Mit jahrelanger Erfahrung in der Gesichtsbemalung hatte ich die Freude, kleine Kinder in ihre Lieblingsfiguren, Tiere und magische Kreaturen zu verwandeln. Jedes Kind ist einzigartig, und ich liebe es, personalisierte Designs zu erstellen, die ihre Fantasie anregen und sie sich besonders fühlen lassen."
+		},
+		"experience": {
+			"title": "Erfahrung & Expertise",
+			"content": "Ich bin im wunderschönen Obwalden ansässig und spezialisiert darauf, sichere, lustige und unvergessliche Gesichtsbemalungserlebnisse für Kinder jeden Alters zu schaffen. Ich verwende nur hochwertige, ungiftige und hypoallergene Farben, die für empfindliche Haut sicher sind. Meine Designs reichen von einfachen und schnellen für große Gruppen bis hin zu aufwendigen Meisterwerken für besondere Anlässe."
+		},
+		"services": {
+			"title": "Was Ich Anbiete",
+			"items": [
+				"Geburtstagsfeiern und Feste",
+				"Schulveranstaltungen und Festivals",
+				"Firmenfamilienfeiern",
+				"Gemeinschaftsveranstaltungen und Märkte",
+				"Private Feiern und Zusammenkünfte",
+				"Maßgeschneiderte Designs und Themen"
+			]
+		},
+		"commitment": {
+			"title": "Mein Engagement",
+			"content": "Ich verpflichte mich, jedem Kind eine sichere, hygienische und angenehme Erfahrung zu bieten. Ich halte höchste Sauberkeitsstandards ein, verwende frische Pinsel und Schwämme für jedes Kind und stelle sicher, dass jedes Design mit Sorgfalt und Aufmerksamkeit für Details erstellt wird."
+		}
 	},
 	"FaqPage": {
-		"description": "Häufig gestellte Fragen und Antworten rund um meine Gesichtsbemalungsdienste.",
-		"title": "Häufig gestellte Fragen"
+		"title": "Häufig Gestellte Fragen",
+		"subtitle": "Alles was Sie über meine Gesichtsbemalungsdienste wissen müssen",
+		"questions": [
+			{
+				"question": "Welche Art von Farben verwenden Sie?",
+				"answer": "Ich verwende ausschließlich hochwertige, ungiftige, wasserbasierte Gesichtsfarben, die speziell für die Anwendung auf der Haut entwickelt wurden. Alle Farben sind hypoallergen und sicher für Kinder mit empfindlicher Haut. Sie lassen sich leicht mit Seife und Wasser abwaschen."
+			},
+			{
+				"question": "Wie lange dauert jede Gesichtsbemalung?",
+				"answer": "Einfache Designs dauern normalerweise 3-5 Minuten, während aufwendigere Designs 8-15 Minuten dauern können. Für Partys empfehle ich etwa 5-7 Minuten pro Kind einzuplanen, um sicherzustellen, dass jeder ein schönes Design bekommt."
+			},
+			{
+				"question": "Für welche Altersgruppen malen Sie?",
+				"answer": "Ich bemale Gesichter für Kinder jeden Alters, normalerweise ab 3 Jahren. Für sehr kleine Kinder (unter 3) empfehle ich einfache Designs auf Händen oder Armen, wenn sie sich bei der Gesichtsbemalung nicht wohl fühlen."
+			},
+			{
+				"question": "Wie weit im Voraus sollte ich buchen?",
+				"answer": "Ich empfehle, mindestens 2-3 Wochen im Voraus zu buchen, besonders für Wochenendveranstaltungen und während der Hochsaison wie Sommer und Feiertagen. Ich tue jedoch mein Bestes, um auch kurzfristige Anfragen zu berücksichtigen, wenn möglich."
+			},
+			{
+				"question": "Was benötigen Sie von mir als Gastgeber?",
+				"answer": "Ich benötige nur einen kleinen Tisch und zwei Stühle in einem gut beleuchteten Bereich, vorzugsweise in der Nähe einer Wasserquelle. Ich bringe alle meine Materialien mit, einschließlich Farben, Pinsel, Spiegel und Feuchttücher. Ein schattiger Bereich wird für Outdoor-Veranstaltungen bevorzugt."
+			},
+			{
+				"question": "Haben Sie eine Versicherung?",
+				"answer": "Ja, ich habe eine umfassende Haftpflichtversicherung für alle meine Gesichtsbemalungsaktivitäten. Sicherheit und Professionalität sind meine obersten Prioritäten."
+			},
+			{
+				"question": "Was passiert, wenn es bei einer Outdoor-Veranstaltung regnet?",
+				"answer": "Für Outdoor-Veranstaltungen benötige ich einen überdachten Bereich zum Aufbauen für den Fall von Regen. Wenn die Veranstaltung wetterbedingt abgesagt wird, können wir ohne zusätzliche Kosten einen neuen Termin vereinbaren."
+			},
+			{
+				"question": "Können Sie maßgeschneiderte Designs oder Themen erstellen?",
+				"answer": "Absolut! Ich liebe es, maßgeschneiderte Designs zu erstellen, die zu Ihrem Partythema oder den Lieblingsfiguren Ihres Kindes passen. Lassen Sie mich einfach wissen, was Sie sich vorstellen, wenn Sie buchen, und ich bereite mich entsprechend vor."
+			},
+			{
+				"question": "Wie pflege ich die Gesichtsbemalung nach der Veranstaltung?",
+				"answer": "Die Gesichtsbemalung hält normalerweise 4-6 Stunden, abhängig vom Aktivitätslevel. Zum Entfernen verwenden Sie einfach Seife und warmes Wasser. Vermeiden Sie starkes Reiben - sanftes Waschen entfernt die Farbe leicht."
+			},
+			{
+				"question": "Wie sind Ihre Preise?",
+				"answer": "Meine Preise variieren je nach Dauer, Anzahl der Kinder und Art der Veranstaltung. Bitte kontaktieren Sie mich für ein personalisiertes Angebot. Ich biete wettbewerbsfähige Preise und Pakete für verschiedene Anlässe."
+			}
+		],
+		"contact": {
+			"title": "Haben Sie noch Fragen?",
+			"description": "Zögern Sie nicht, sich zu melden! Ich bespreche gerne Ihre spezifischen Bedürfnisse und helfe dabei, Ihre Veranstaltung magisch zu gestalten.",
+			"button": "Kontaktieren Sie mich"
+		}
 	}
 }

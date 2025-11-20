@@ -24,10 +24,10 @@
 			"phone": "Telefon",
 			"message": "Nachricht",
 			"send": "Sende"
-		},
-		"footer": {
-			"rights": "Alli Rächt vorbehalte"
 		}
+	},
+	"Footer": {
+		"rights": "Alli Rächt vorbehalte"
 	},
 	"LocaleLayout": {
 		"title": "Face Art Obwaldä - Professionelli Gsichtsschminki-Dienstleistige"
@@ -49,18 +49,90 @@
 	},
 	"Navigation": {
 		"home": "Startsyte",
-		"about": "Über mich"
+		"about": "Über mich",
+		"faq": "FAQ"
 	},
 	"NotFoundPage": {
 		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä.",
 		"title": "Seite nöd gfunde"
 	},
 	"AboutPage": {
-		"description": "Erfahre meh über mich und mini Leidenschaft für Gsichtsschminki.",
-		"title": "Über mich"
+		"title": "Über Mich",
+		"subtitle": "Freud und Kreativität i Kindergsichter bringe",
+		"introduction": "Willkomme bi Face Art Obwaldä! Ich bringe Leidenschaft i d'Kunst vo dr Gsichtsschminki und schaffe magischi Momänt für Chinder.",
+		"story": {
+			"title": "Mini Gschicht",
+			"content": "Was als Hobby agfange het, isch zu enere Leidenschaft worde, Chindere es Schmunzle is Gsicht z'zauber. Mit jahrelanger Erfahrig i dr Gsichtsschminki han ich d'Freud gha, chlyni Chinder i ihri Lieblingsfigure, Tier und magischi Kreature z'verwandle. Jedes Chind isch einzigartig, und ich liebe es, personalisierti Designs z'erstelle, wo ihri Fantasie arege und sie sich bsonders füele löh."
+		},
+		"experience": {
+			"title": "Erfahrig & Expertise",
+			"content": "Ich bi im wunderschöne Obwaldä deheim und spezialisiert druf, sicheri, luschtigi und unvergässlichi Gsichtsschminki-Erlebniss für Chinder vo allne Alter z'schaffe. Ich verwänd nur hochwärtigi, ungiftigi und hypoallergeni Farbe, wo für empfindlichi Hut sicher sind. Mini Designs gönd vo eifache und schnelle für grossi Gruppe bis hi zu ufwändige Meischterwerch für bsonderi Aläss."
+		},
+		"services": {
+			"title": "Was Ich Abiet",
+			"items": [
+				"Geburtstagsfiirete und Fäscht",
+				"Schuelverastaltigen und Festival",
+				"Firmefamiliefiirete",
+				"Gmeinschaftsverastaltigen und Märt",
+				"Privati Fiirete und Zämmekunft",
+				"Massgeschnidereti Designs und Theme"
+			]
+		},
+		"commitment": {
+			"title": "Mini Verpflichtig",
+			"content": "Ich verpflichte mich, jedem Chind e sicheri, hygienischi und agneemi Erfahrig z'biete. Ich halte höchsti Sauberkeitsstandards y, verwänd frischi Pinsel und Schwämm für jedes Chind und stelle sicher, dass jedes Design mit Sorgfalt und Ufmerksamkeit für Details erstellt wird."
+		}
 	},
 	"FaqPage": {
-		"description": "Häufig gstellte Froge und Antwort rund um mini Gsichtsschminki-Dienstleistige.",
-		"title": "Häufig gstellte Froge"
+		"title": "Häufig Gstellti Froge",
+		"subtitle": "Alles was Sie über mini Gsichtsschminki-Dienstleistige wüsse müend",
+		"questions": [
+			{
+				"question": "Welchi Art vo Farbe verwändisch?",
+				"answer": "Ich verwänd usschliesslich hochwärtigi, ungiftigi, wasserbasierti Gsichtsfarbe, wo speziell für d'Awändig uf dr Hut entwicklet worde sind. Alli Farbe sind hypoallergen und sicher für Chinder mit empfindlicher Hut. Sie lönd sich liecht mit Seife und Wasser abwasche."
+			},
+			{
+				"question": "Wie lang duret jedi Gsichtsschminki?",
+				"answer": "Eifachi Designs dured normalerwys 3-5 Minute, während ufwändigeri Designs 8-15 Minute chönd dure. Für Partys empfehle ich öppe 5-7 Minute pro Chind yzplane, um sicherzstelle, dass jede es schöns Design überchunnt."
+			},
+			{
+				"question": "Für welchi Altersgruppe schminke Sie?",
+				"answer": "Ich schmink Gsichter für Chinder vo allne Alter, normalerwys ab 3 Jahr. Für sehr chlyni Chinder (under 3) empfehle ich eifachi Designs uf Händ oder Ärm, wenn sie sich bi dr Gsichtsschminki nöd wohl füeled."
+			},
+			{
+				"question": "Wie wyt im Vorus sött ich buche?",
+				"answer": "Ich empfehle, mindeschtens 2-3 Wuche im Vorus z'buche, bsonders für Wuchenänd-Verastaltigen und während dr Hochsaison wie Summer und Fiirtäg. Ich tue jedoch mis Beschts, um au churzfrischtigeri Afrage z'berücksichtige, wenn möglich."
+			},
+			{
+				"question": "Was bruchisch vo mir als Gaschgeber?",
+				"answer": "Ich bruche nur en chlyni Tisch und zwei Stuel i nem guet belüchtete Berich, am beschte i dr Nöchi vonere Wasserquelle. Ich bringe alli mini Materiale mit, yschliesslich Farbe, Pinsel, Spiegel und Füchttüecher. En schattige Berich wird für Outdoor-Verastaltigen bevorzugt."
+			},
+			{
+				"question": "Händ Sie e Versicherig?",
+				"answer": "Ja, ich han e umfassendi Haftpflichtversicherig für alli mini Gsichtsschminki-Aktivitäte. Sicherheit und Professionalität sind mini oberste Prioritäte."
+			},
+			{
+				"question": "Was passiert, wenn's bi nere Outdoor-Verastaltig rägnet?",
+				"answer": "Für Outdoor-Verastaltigen bruche ich en überdachte Berich zum Ufbaue für dr Fall vo Räge. Wenn d'Verastaltig wetterbedingt abgsait wird, chömer ohni zusätzlichi Choschte en neue Termin vereinbare."
+			},
+			{
+				"question": "Chönd Sie massgeschniderti Designs oder Theme erstelle?",
+				"answer": "Absolut! Ich liebe es, massgeschniderti Designs z'erstelle, wo zu Ihrem Partythema oder de Lieblingsfigure vo Ihrem Chind passed. Lönd Sie mich eifach wüsse, was Sie sich vorschtelled, wenn Sie buched, und ich bereite mich entsprechend vor."
+			},
+			{
+				"question": "Wie pflege ich d'Gsichtsschminki nach dr Verastaltig?",
+				"answer": "D'Gsichtsschminki hält normalerwys 4-6 Stunde, abhängig vom Aktivitätslevel. Zum Entferne verwänded Sie eifach Seife und warmes Wasser. Vermyded starches Ribe - sanfts Wasche entfernt d'Farb liecht."
+			},
+			{
+				"question": "Wie sind Ihri Prys?",
+				"answer": "Mini Prys variiere je nach Duer, Azahl vo de Chinder und Art vo dr Verastaltig. Bitte kontaktiere Sie mich für es personalisiert Abot. Ich biete konkurränzfähigi Prys und Paket für verschiedeni Aläss."
+			}
+		],
+		"contact": {
+			"title": "Händ Sie no Froge?",
+			"description": "Zögered Sie nöd, sich z'melde! Ich besprich gärn Ihri spezifische Bedürfniss und hilf debii, Ihri Verastaltig magisch z'gstalte.",
+			"button": "Kontaktiere Sie mich"
+		}
 	}
 }
