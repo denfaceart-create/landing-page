@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 		<html lang="de-CH">
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
-				<link rel="apple-touch-icon" href="/icon-192.jpg" />
+				<link rel="apple-touch-icon" href="/apple-icon.png" />
 			</head>
 			<body className={`${plusJakartaSans.variable} font-sans antialiased`}>
 				{children}
