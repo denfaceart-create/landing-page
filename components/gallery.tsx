@@ -70,13 +70,13 @@ export function Gallery() {
 								<CarouselContent>
 									{galleryImages.map((image, index) => (
 										<CarouselItem key={index}>
-											<Card>
-												<CardContent className="flex aspect-video items-center justify-center p-6">
-													{/* biome-ignore lint/performance/noImgElement:  is fine here */}
+											<Card className="bg-primary/10">
+												<CardContent className="flex aspect-video items-center justify-center p-3">
+													{/* biome-ignore lint/performance/noImgElement: is fine here */}
 													<img
 														src={image.url}
 														alt={image.alt}
-														className="aspect-square h-full w-full max-w-160 object-cover"
+														className="aspect-square h-full w-full max-w-150 object-cover"
 													/>
 												</CardContent>
 											</Card>
