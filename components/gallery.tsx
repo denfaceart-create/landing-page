@@ -70,7 +70,7 @@ export function Gallery() {
 								<CarouselContent>
 									{galleryImages.map((image, index) => (
 										<CarouselItem key={index}>
-											<Card className="bg-primary/10">
+											<Card className="bg-primary/10" tabIndex={0}>
 												<CardContent className="flex aspect-video items-center justify-center p-3">
 													{/* biome-ignore lint/performance/noImgElement: is fine here */}
 													<img
@@ -97,9 +97,8 @@ export function Gallery() {
 												"basis-1/5 cursor-pointer",
 												current === index + 1 ? "opacity-100" : "opacity-50",
 											)}
-											onClick={() => handleThumbClick(index)}
 										>
-											<Card>
+											<Card onClick={() => handleThumbClick(index)}>
 												<CardContent className="flex aspect-square items-center justify-center p-0">
 													{/* biome-ignore lint/performance/noImgElement:  is fine here */}
 													<img
@@ -114,8 +113,8 @@ export function Gallery() {
 								</CarouselContent>
 								{galleryImages.length > 5 && (
 									<>
-										<CarouselPrevious />
-										<CarouselNext />
+										<CarouselPrevious tabIndex={0} />
+										<CarouselNext tabIndex={0} />
 									</>
 								)}
 							</Carousel>
