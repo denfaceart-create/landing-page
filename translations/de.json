@@ -1,1 +1,65 @@
-{}
+{
+	"Error": {
+		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>",
+		"title": "Something went wrong!"
+	},
+	"HomePage": {
+		"title": "Gesichtsbemalung Obwalden",
+		"description": "Verwandle deine Feier mit wunderschöner Gesichtsbemalung. Professionell, kreativ und unvergesslich.",
+		"hero": {
+			"badge": "Gesichtsbemalung",
+			"heroTitle1": "Face Art",
+			"heroTitle2": "Obwalden",
+			"heroSubtitle": "Gesichtsbemalung für Kindergeburtstage, Feste und Veranstaltungen",
+			"ctaBook": "Jetzt buchen"
+		},
+		"gallery": {
+			"title": "Meine Arbeit"
+		},
+		"contact": {
+			"contactTitle": "Kontakt",
+			"contactSubtitle": "Schreiben Sie uns an",
+			"name": "Name",
+			"email": "E-Mail",
+			"phone": "Telefon",
+			"message": "Nachricht",
+			"send": "Senden"
+		},
+		"footer": {
+			"rights": "Alle Rechte vorbehalten"
+		}
+	},
+	"LocaleLayout": {
+		"title": "Gesichtsbemalung Obwalden - Professionelle Gesichtsbemalungsdienste"
+	},
+	"LocaleSwitcher": {
+		"label": "Sprache wechseln"
+	},
+	"Manifest": {
+		"name": "Gesichtsbemalung Obwalden",
+		"short_name": "Gesichtsbemalung",
+		"description": "Professionelle und kreative Gesichtsbemalung für unvergessliche Feiern in Obwalden.",
+		"keywords": "Gesichtsbemalung, Obwalden, Kindergeburtstag, Veranstaltungen, kreative Kunst",
+		"theme_color": "#d946ef",
+		"lang": "de",
+		"dir": "ltr",
+		"orientation": "portrait",
+		"display": "standalone"
+	},
+	"Navigation": {
+		"home": "Startseite",
+		"about": "Über mich"
+	},
+	"NotFoundPage": {
+		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen.",
+		"title": "Seite nicht gefunden"
+	},
+	"AboutPage": {
+		"description": "Erfahren Sie mehr über mich und meine Leidenschaft für Gesichtsbemalung.",
+		"title": "Über mich"
+	},
+	"FaqPage": {
+		"description": "Häufig gestellte Fragen und Antworten rund um meine Gesichtsbemalungsdienste.",
+		"title": "Häufig gestellte Fragen"
+	}
+}

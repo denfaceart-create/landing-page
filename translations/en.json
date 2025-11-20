@@ -1,10 +1,16 @@
 {
-	"homePage": {
+	"Error": {
+		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>",
+		"title": "Something went wrong!"
+	},
+	"HomePage": {
+		"title": "Face Painting Obwalden",
+		"description": "Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
 		"hero": {
 			"badge": "Face Painting",
 			"heroTitle1": "Face Art",
 			"heroTitle2": "Obwalden",
-			"heroSubtitle": "Face painting for birthday parties, festivals and events",
+			"heroSubtitle": "Face painting for children's birthdays, parties and events",
 			"ctaBook": "Book now"
 		},
 		"gallery": {
@@ -16,12 +22,44 @@
 			"name": "Name",
 			"email": "Email",
 			"phone": "Phone",
-			"eventDate": "Event Date",
 			"message": "Message",
 			"send": "Send"
 		},
 		"footer": {
 			"rights": "All rights reserved"
 		}
+	},
+	"LocaleLayout": {
+		"title": "Face Art Obwalden - Professional Face Painting Services"
+	},
+	"LocaleSwitcher": {
+		"label": "Change language"
+	},
+	"Manifest": {
+		"name": "Face Art Obwalden",
+		"short_name": "Face Art",
+		"description": "Professional face painting services for children's birthdays, parties, and events in Obwalden.",
+		"keywords": "face painting, children's parties, events, Obwalden, face art, professional face painter",
+		"theme_color": "#d946ef",
+		"lang": "en",
+		"dir": "ltr",
+		"orientation": "portrait",
+		"display": "standalone"
+	},
+	"Navigation": {
+		"home": "Home",
+		"about": "About me"
+	},
+	"NotFoundPage": {
+		"description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+		"title": "Page not found"
+	},
+	"AboutPage": {
+		"description": "Learn more about me and my face painting services in Obwalden.",
+		"title": "About me"
+	},
+	"FaqPage": {
+		"description": "Find answers to common questions about my face painting services.",
+		"title": "Frequently Asked Questions"
 	}
 }

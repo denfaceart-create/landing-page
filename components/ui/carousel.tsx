@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/a11y/useSemanticElements:  it is a div for flexibility */
 "use client"
 
 import useEmblaCarousel, {
@@ -118,6 +117,7 @@ function Carousel({
 				canScrollNext,
 			}}
 		>
+			{/** biome-ignore lint/a11y/useSemanticElements: role="region" is sufficient here */}
 			<div
 				onKeyDownCapture={handleKeyDown}
 				className={cn("relative", className)}
@@ -157,6 +157,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 	const { orientation } = useCarousel()
 
 	return (
+		// biome-ignore lint/a11y/useSemanticElements: div is fine here
 		<div
 			role="group"
 			aria-roledescription="slide"
@@ -187,8 +188,8 @@ function CarouselPrevious({
 			className={cn(
 				"absolute size-8 rounded-full",
 				orientation === "horizontal"
-					? "top-1/2 -left-12 -translate-y-1/2"
-					: "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+					? "-left-12 -translate-y-1/2 top-1/2"
+					: "-top-12 -translate-x-1/2 left-1/2 rotate-90",
 				className,
 			)}
 			disabled={!canScrollPrev}
@@ -217,8 +218,8 @@ function CarouselNext({
 			className={cn(
 				"absolute size-8 rounded-full",
 				orientation === "horizontal"
-					? "top-1/2 -right-12 -translate-y-1/2"
-					: "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+					? "-right-12 -translate-y-1/2 top-1/2"
+					: "-bottom-12 -translate-x-1/2 left-1/2 rotate-90",
 				className,
 			)}
 			disabled={!canScrollNext}

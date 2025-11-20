@@ -6,7 +6,8 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["**", "!next-env.d.ts"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -23,7 +24,12 @@
 				"noStaticElementInteractions": "warn",
 				"useSemanticElements": "warn"
 			},
-			"suspicious": { "noArrayIndexKey": "info" }
+			"suspicious": {
+				"noArrayIndexKey": "off"
+			},
+			"nursery": {
+				"useSortedClasses": "on"
+			}
 		}
 	},
 	"javascript": {

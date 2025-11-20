@@ -1,42 +1,56 @@
 "use client"
 
 import { Languages } from "lucide-react"
+import { useParams } from "next/navigation"
+import { type Locale, useLocale, useTranslations } from "next-intl"
+import { useTransition } from "react"
 import { Button } from "@/components/ui/button"
-import type { Language } from "@/lib/i18n"
+import { usePathname, useRouter } from "@/i18n/navigation"
+import { routing } from "@/i18n/routing"
 
-interface LanguageSwitcherProps {
-	currentLang: Language
-	onLanguageChange: (lang: Language) => void
-}
+export function LanguageSwitcher() {
+	const router = useRouter()
+	const [isPending, startTransition] = useTransition()
+	const pathname = usePathname()
+	const params = useParams()
+	const t = useTranslations("LocaleSwitcher")
+	const currentLang = useLocale()
 
-export function LanguageSwitcher({
-	currentLang,
-	onLanguageChange,
-}: LanguageSwitcherProps) {
-	const languages: { code: Language; label: string }[] = [
-		{ code: "de-CH", label: "CH" },
-		{ code: "de", label: "DE" },
-		{ code: "en", label: "EN" },
-	]
+	function onSelectChange(nextLocale: Locale) {
+		startTransition(() => {
+			router.replace(
+				// @ts-expect-error -- TypeScript will validate that only known `params`
+				// are used in combination with a given `pathname`. Since the two will
+				// always match for the current route, we can skip runtime checks.
+				{ pathname, params },
+				{ locale: nextLocale },
+			)
+		})
+	}
 
 	return (
-		<div className="fixed top-6 right-6 z-50 flex items-center gap-2 bg-card/80 backdrop-blur-sm border border-border rounded-full p-2 shadow-lg">
-			<Languages className="w-4 h-4 text-muted-foreground ml-2" />
-			{languages.map((lang) => (
-				<Button
-					key={lang.code}
-					variant={currentLang === lang.code ? "default" : "ghost"}
-					size="sm"
-					onClick={() => onLanguageChange(lang.code)}
-					className={`rounded-full h-8 px-3 text-xs font-medium ${
-						currentLang === lang.code
-							? "bg-primary text-primary-foreground"
-							: "hover:bg-muted"
-					}`}
-				>
-					{lang.label}
-				</Button>
-			))}
+		<div
+			title={t("label")}
+			className="fixed top-6 right-6 z-50 flex items-center gap-2 rounded-full border border-border bg-card/80 p-2 shadow-lg backdrop-blur-sm"
+		>
+			<Languages className="ml-2 h-4 w-4 text-muted-foreground" />
+			{routing.locales.map((lang) => {
+				const selected = currentLang === lang
+				return (
+					<Button
+						key={lang}
+						variant={selected ? "default" : "ghost"}
+						size="sm"
+						onClick={() => onSelectChange(lang)}
+						className={`h-8 rounded-full px-3 font-medium text-xs ${
+							selected ? "bg-primary text-primary-foreground" : "hover:bg-muted"
+						}`}
+						disabled={isPending}
+					>
+						{t("locale", { locale: lang })}
+					</Button>
+				)
+			})}
 		</div>
 	)
 }

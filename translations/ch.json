@@ -1,0 +1,66 @@
+{
+	"Error": {
+		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>",
+		"title": "Something went wrong!"
+	},
+	"HomePage": {
+		"title": "Gsichtsschminki Obwaldä",
+		"description": "Verwandle dini Fiire mit wunderschönä Gsichtsschminki. Professionell, kreativ und unvergässlich.",
+		"hero": {
+			"badge": "Gsichtsschminki",
+			"heroTitle1": "Face Art",
+			"heroTitle2": "Obwaldä",
+			"heroSubtitle": "Gsichtsschminke für Kindergeburtstäg, Fäscht und Verastaltige",
+			"ctaBook": "Buche jetzt"
+		},
+		"gallery": {
+			"title": "Mini Arbet"
+		},
+		"contact": {
+			"contactTitle": "Kontakt",
+			"contactSubtitle": "Schriib üs ah",
+			"name": "Name",
+			"email": "E-mail",
+			"phone": "Telefon",
+			"message": "Nachricht",
+			"send": "Sende"
+		},
+		"footer": {
+			"rights": "Alli Rächt vorbehalte"
+		}
+	},
+	"LocaleLayout": {
+		"title": "Face Art Obwaldä - Professionelli Gsichtsschminki-Dienstleistige"
+	},
+	"LocaleSwitcher": {
+		"label": "Sprace wechselä",
+		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English} other {Unknown}}"
+	},
+	"Manifest": {
+		"name": "Face Art Obwaldä",
+		"short_name": "Face Art",
+		"description": "Professionelli Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä.",
+		"keywords": "Gsichtsschminki, Kindergeburtstag, Verastaltige, Obwaldä, Face Art, professioneller Gsichtsschminker",
+		"theme_color": "#d946ef",
+		"lang": "de-CH",
+		"dir": "ltr",
+		"orientation": "portrait",
+		"display": "standalone"
+	},
+	"Navigation": {
+		"home": "Startsyte",
+		"about": "Über mich"
+	},
+	"NotFoundPage": {
+		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä.",
+		"title": "Seite nöd gfunde"
+	},
+	"AboutPage": {
+		"description": "Erfahre meh über mich und mini Leidenschaft für Gsichtsschminki.",
+		"title": "Über mich"
+	},
+	"FaqPage": {
+		"description": "Häufig gstellte Froge und Antwort rund um mini Gsichtsschminki-Dienstleistige.",
+		"title": "Häufig gstellte Froge"
+	}
+}

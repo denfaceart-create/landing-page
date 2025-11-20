@@ -1,6 +1,8 @@
 "use client"
 
 import { Mail, MapPin, Phone } from "lucide-react"
+import { useTranslations } from "next-intl"
+
 import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -13,15 +15,11 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import type { Language } from "@/lib/i18n"
-import { getTranslation } from "@/lib/i18n"
+
 import { Label } from "./ui/label"
 
-interface ContactProps {
-	lang: Language
-}
-
-export function Contact({ lang }: ContactProps) {
+export function Contact() {
+	const t = useTranslations("HomePage.contact")
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [formData, setFormData] = useState({
 		name: "",
@@ -44,34 +42,30 @@ export function Contact({ lang }: ContactProps) {
 	}
 
 	return (
-		<section id="contact" className="py-24 md:py-32 bg-muted/30">
+		<section id="contact" className="bg-muted/30 py-24 md:py-32">
 			<div className="container px-4">
-				<div className="max-w-3xl mx-auto text-center mb-16">
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-						{getTranslation(lang, "contactTitle")}
+				<div className="mx-auto mb-16 max-w-3xl text-center">
+					<h2 className="font-bold text-4xl tracking-tight md:text-5xl lg:text-6xl">
+						{t("contactTitle")}
 					</h2>
-					<p className="text-lg text-muted-foreground mt-4">
-						{getTranslation(lang, "contactSubtitle")}
+					<p className="mt-4 text-lg text-muted-foreground">
+						{t("contactSubtitle")}
 					</p>
 				</div>
-				<div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
-					<Card className=" p-8">
+				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+					<Card className="p-8">
 						<CardHeader>
-							<CardTitle className="text-2xl">
-								{getTranslation(lang, "contactTitle")}
-							</CardTitle>
-							<CardDescription>
-								{getTranslation(lang, "contactSubtitle")}
-							</CardDescription>
+							<CardTitle className="text-2xl">{t("contactTitle")}</CardTitle>
+							<CardDescription>{t("contactSubtitle")}</CardDescription>
 						</CardHeader>
 						<CardContent>
 							<form onSubmit={handleSubmit} className="space-y-6">
-								<div className="grid sm:grid-cols-2 gap-4">
+								<div className="grid gap-4 sm:grid-cols-2">
 									<div className="space-y-2">
-										<Label htmlFor="name">{getTranslation(lang, "name")}</Label>
+										<Label htmlFor="name">{t("name")}</Label>
 										<Input
 											id="name"
-											placeholder={getTranslation(lang, "name")}
+											placeholder={t("name")}
 											value={formData.name}
 											onChange={(e) =>
 												setFormData({ ...formData, name: e.target.value })
@@ -81,13 +75,11 @@ export function Contact({ lang }: ContactProps) {
 										/>
 									</div>
 									<div className="space-y-2">
-										<Label htmlFor="email">
-											{getTranslation(lang, "email")}
-										</Label>
+										<Label htmlFor="email">{t("email")}</Label>
 										<Input
 											id="email"
 											type="email"
-											placeholder={getTranslation(lang, "email")}
+											placeholder={t("email")}
 											value={formData.email}
 											onChange={(e) =>
 												setFormData({ ...formData, email: e.target.value })
@@ -98,12 +90,12 @@ export function Contact({ lang }: ContactProps) {
 									</div>
 								</div>
 								<div className="space-y-2">
-									<Label htmlFor="phone">{getTranslation(lang, "phone")}</Label>
+									<Label htmlFor="phone">{t("phone")}</Label>
 
 									<Input
 										id="phone"
 										type="tel"
-										placeholder={getTranslation(lang, "phone")}
+										placeholder={t("phone")}
 										value={formData.phone}
 										onChange={(e) =>
 											setFormData({ ...formData, phone: e.target.value })
@@ -112,9 +104,7 @@ export function Contact({ lang }: ContactProps) {
 									/>
 								</div>
 								<div className="space-y-2">
-									<Label htmlFor="message">
-										{getTranslation(lang, "message")}
-									</Label>
+									<Label htmlFor="message">{t("message")}</Label>
 
 									<Textarea
 										id="message"
@@ -133,7 +123,7 @@ export function Contact({ lang }: ContactProps) {
 									className="w-full"
 									disabled={isSubmitting}
 								>
-									{isSubmitting ? "Sending..." : getTranslation(lang, "send")}
+									{isSubmitting ? "Sending..." : t("send")}
 								</Button>
 							</form>
 						</CardContent>
@@ -141,19 +131,17 @@ export function Contact({ lang }: ContactProps) {
 
 					<div className="space-y-8">
 						<div>
-							<h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+							<h3 className="mb-6 font-bold text-2xl">Contact Information</h3>
 							<div className="space-y-6">
 								<div className="flex items-start gap-4">
-									<div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
 										<Mail className="h-6 w-6 text-primary" />
 									</div>
 									<div>
-										<div className="font-semibold mb-1">
-											{getTranslation(lang, "email")}
-										</div>
+										<div className="mb-1 font-semibold">{t("email")}</div>
 										<a
 											href="mailto:faceartow@gmail.com"
-											className="text-muted-foreground hover:text-primary transition-colors"
+											className="text-muted-foreground transition-colors hover:text-primary"
 										>
 											faceartow@gmail.com
 										</a>
@@ -161,14 +149,14 @@ export function Contact({ lang }: ContactProps) {
 								</div>
 
 								<div className="flex items-start gap-4">
-									<div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10">
 										<Phone className="h-6 w-6 text-accent" />
 									</div>
 									<div>
-										<div className="font-semibold mb-1">Phone</div>
+										<div className="mb-1 font-semibold">Phone</div>
 										<a
 											href="tel:+41796736445"
-											className="text-muted-foreground hover:text-accent transition-colors"
+											className="text-muted-foreground transition-colors hover:text-accent"
 										>
 											079 673 64 45
 										</a>
@@ -176,11 +164,11 @@ export function Contact({ lang }: ContactProps) {
 								</div>
 
 								<div className="flex items-start gap-4">
-									<div className="w-12 h-12 rounded-xl bg-secondary/50 flex items-center justify-center shrink-0">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary/50">
 										<MapPin className="h-6 w-6 text-secondary-foreground" />
 									</div>
 									<div>
-										<div className="font-semibold mb-1">Location</div>
+										<div className="mb-1 font-semibold">Location</div>
 										<p className="text-muted-foreground">
 											Sarnen, Obwalden, Switzerland
 										</p>
