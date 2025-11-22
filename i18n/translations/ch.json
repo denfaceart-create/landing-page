@@ -26,6 +26,42 @@
 		"rights": "Alli Rächt vorbehalte"
 	},
 	"HomePage": {
+		"metadata": {
+			"title": "Kinderschminke Zentralschwiiz | Professionelli Kinderschminkerin",
+			"description": "Professionells Kinderschminke i de Zentralschwiiz für Geburtstäg, Events und Feste. Kreative Designs wo Chind und Erwachseni begeistered. Jetzt buche!",
+			"keywords": [
+				"kinderschminke",
+				"kinderschminkerin",
+				"zentralschwiiz",
+				"face painting",
+				"chindergeburtstag",
+				"events",
+				"kinderanimation"
+			],
+			"openGraph": {
+				"title": "Kinderschminke Zentralschwiiz",
+				"description": "Professionells Kinderschminke für Geburtstäg, Events und Feste i de Zentralschwiiz",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "de-CH",
+				"type": "website",
+				"url": "https://faceartow.ch"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch",
+				"languages": {
+					"en": "https://faceartow.ch/en",
+					"de-CH": "https://faceartow.ch",
+					"de-DE": "https://faceartow.ch/de"
+				}
+			}
+		},
 		"title": "Gsichtsschminki Obwaldä",
 		"description": "Verwandle dini Fiire mit wunderschönä Gsichtsschminki. Professionell, kreativ und unvergässlich.",
 		"hero": {
@@ -57,6 +93,39 @@
 		}
 	},
 	"AboutPage": {
+		"metadata": {
+			"title": "Über Ois | Kinderschminke Zentralschwiiz",
+			"description": "Erfahre meh über oisi professionelle Kinderschminke-Dienstleistige i de Zentralschwiiz. Erfahreni Künstlerin wo magischi Momente für Chind und Events schafft.",
+			"keywords": [
+				"über kinderschminkerin",
+				"professionells kinderschminke",
+				"zentralschwiiz",
+				"kinderanimation"
+			],
+			"openGraph": {
+				"title": "Über Ois | Kinderschminke Zentralschwiiz",
+				"description": "Erfahre meh über oisi professionelle Kinderschminke-Dienstleistige",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "de-CH",
+				"type": "website",
+				"url": "https://faceartow.ch/about"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/about",
+				"languages": {
+					"en": "https://faceartow.ch/en/about",
+					"de-CH": "https://faceartow.ch/about",
+					"de-DE": "https://faceartow.ch/de/about"
+				}
+			}
+		},
 		"title": "Über Mich",
 		"subtitle": "Freud und Kreativität i Kindergsichter bringe",
 		"introduction": "Willkomme bi Face Art Obwaldä! Ich bringe Leidenschaft i d'Kunst vo dr Gsichtsschminki und schaffe magischi Momänt für Chinder.",
@@ -85,6 +154,39 @@
 		}
 	},
 	"FaqPage": {
+		"metadata": {
+			"title": "FAQ | Froge über Gsichtsschminki beantwortet",
+			"description": "Häufig gstellti Froge über oisi Gsichtsschminki-Dienstleistige i de Zentralschwiiz. Prys, Buchig, Sicherheit und Event-Details beantwortet.",
+			"keywords": [
+				"gsichtsschminki faq",
+				"gsichtsschminki prys",
+				"gsichtsschminker buche",
+				"gsichtsschminki sicherheit"
+			],
+			"openGraph": {
+				"title": "FAQ | Gsichtsschminki Zentralschwiiz",
+				"description": "Häufigi Froge über Gsichtsschminki-Dienstleistige, Prys und Buchige",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "de-CH",
+				"type": "website",
+				"url": "https://faceartow.ch/faq"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/faq",
+				"languages": {
+					"en": "https://faceartow.ch/en/faq",
+					"de-CH": "https://faceartow.ch/faq",
+					"de-DE": "https://faceartow.ch/de/faq"
+				}
+			}
+		},
 		"title": "Häufig Gstellti Froge",
 		"subtitle": "Alles was Sie über mini Gsichtsschminki-Dienstleistige wüsse müend",
 		"questions": [
@@ -137,7 +239,8 @@
 	},
 	"NotFoundPage": {
 		"title": "Seite nöd gfunde",
-		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä."
+		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä.",
+		"backHome": "Zurück zur Startsyte"
 	},
 	"ErrorPage": {
 		"title": "Eppis isch schiefgange!",

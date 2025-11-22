@@ -10,7 +10,7 @@ export default function NotFoundPage() {
 			<h1>{t("title")}</h1>
 			<p>{t("description")}</p>
 			<Link href={"/"} prefetch={false}>
-				Return to Home
+				{t("backHome")}
 			</Link>
 		</PageLayout>
 	)

@@ -3,9 +3,9 @@
 import { useEffect } from "react"
 
 /**
- * Hook to handle smooth scrolling when navigating with URL hash
+ * Handle smooth scrolling when navigating with URL hash
  */
-export function useScrollHandler() {
+export function ScrollHandler() {
 	useEffect(() => {
 		// Handle back/forward navigation and page load with hash
 		const handleHashScroll = () => {
@@ -32,4 +32,6 @@ export function useScrollHandler() {
 			window.removeEventListener("hashchange", handleHashScroll)
 		}
 	}, [])
+
+	return null
 }

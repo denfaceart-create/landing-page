@@ -25,6 +25,42 @@
 		"rights": "All rights reserved"
 	},
 	"HomePage": {
+		"metadata": {
+			"title": "Face Painting Central Switzerland | Professional Face Painter",
+			"description": "Professional face painting in Central Switzerland for birthdays, events and celebrations. Creative designs that delight children and adults. Book now!",
+			"keywords": [
+				"face painting",
+				"face painter",
+				"central switzerland",
+				"face painting",
+				"children's birthday",
+				"events",
+				"children's entertainment"
+			],
+			"openGraph": {
+				"title": "Face Painting Central Switzerland",
+				"description": "Professional face painting for birthdays, events and celebrations in Central Switzerland",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "en",
+				"type": "website",
+				"url": "https://faceartow.ch/en"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/en",
+				"languages": {
+					"en": "https://faceartow.ch/en",
+					"de-CH": "https://faceartow.ch",
+					"de-DE": "https://faceartow.ch/de"
+				}
+			}
+		},
 		"title": "Face Painting Obwalden",
 		"description": "Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
 		"hero": {
@@ -56,6 +92,39 @@
 		}
 	},
 	"AboutPage": {
+		"metadata": {
+			"title": "About Me | Face Painting Obwalden",
+			"description": "Learn more about my professional face painting service in Obwalden. Experienced artist creating magical moments for children and events.",
+			"keywords": [
+				"about face painter",
+				"professional face painting",
+				"obwalden",
+				"children's entertainment"
+			],
+			"openGraph": {
+				"title": "About Me | Face Painting Obwalden",
+				"description": "Learn more about my professional face painting service",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "en",
+				"type": "website",
+				"url": "https://faceartow.ch/en/about"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/en/about",
+				"languages": {
+					"en": "https://faceartow.ch/en/about",
+					"de-CH": "https://faceartow.ch/ch/about",
+					"de-DE": "https://faceartow.ch/de/about"
+				}
+			}
+		},
 		"title": "About Me",
 		"subtitle": "Bringing joy and creativity to children's faces",
 		"introduction": "Welcome to Face Art Obwalden! I'm passionate about creating magical moments for children through the art of face painting.",
@@ -84,6 +153,39 @@
 		}
 	},
 	"FaqPage": {
+		"metadata": {
+			"title": "FAQ | Face Painting Questions Answered",
+			"description": "Frequently asked questions about our face painting services in Central Switzerland. Pricing, booking, safety, and event details answered.",
+			"keywords": [
+				"face painting faq",
+				"face painting prices",
+				"booking face painter",
+				"face painting safety"
+			],
+			"openGraph": {
+				"title": "FAQ | Face Painting Central Switzerland",
+				"description": "Common questions about face painting services, pricing, and bookings",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "en",
+				"type": "website",
+				"url": "https://faceartow.ch/en/faq"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/en/faq",
+				"languages": {
+					"en": "https://faceartow.ch/en/faq",
+					"de-CH": "https://faceartow.ch/faq",
+					"de-DE": "https://faceartow.ch/de/faq"
+				}
+			}
+		},
 		"title": "Frequently Asked Questions",
 		"subtitle": "Everything you need to know about my face painting services",
 		"questions": [
@@ -136,7 +238,8 @@
 	},
 	"NotFoundPage": {
 		"title": "Page not found",
-		"description": "Please double-check the browser address bar or use the navigation to go to a known page."
+		"description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+		"backHome": "Back to Home"
 	},
 	"ErrorPage": {
 		"title": "Something went wrong!",

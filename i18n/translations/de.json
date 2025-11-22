@@ -25,6 +25,42 @@
 		"rights": "Alle Rechte vorbehalten"
 	},
 	"HomePage": {
+		"metadata": {
+			"title": "Gesichtsbemalung Zentralschweiz | Professionelle Gesichtsbemalerin",
+			"description": "Professionelle Gesichtsbemalung in der Zentralschweiz für Geburtstage, Events und Feste. Kreative Designs, die Kinder und Erwachsene begeistern. Jetzt buchen!",
+			"keywords": [
+				"gesichtsbemalung",
+				"gesichtsbemalerin",
+				"zentralschweiz",
+				"face painting",
+				"kindergeburtstag",
+				"events",
+				"kinderanimation"
+			],
+			"openGraph": {
+				"title": "Gesichtsbemalung Zentralschweiz",
+				"description": "Professionelle Gesichtsbemalung für Geburtstage, Events und Feste in der Zentralschweiz",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "de-DE",
+				"type": "website",
+				"url": "https://faceartow.ch/de"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/de",
+				"languages": {
+					"en": "https://faceartow.ch/en",
+					"de-CH": "https://faceartow.ch",
+					"de-DE": "https://faceartow.ch/de"
+				}
+			}
+		},
 		"title": "Gesichtsbemalung Obwalden",
 		"description": "Verwandle deine Feier mit wunderschöner Gesichtsbemalung. Professionell, kreativ und unvergesslich.",
 		"hero": {
@@ -56,6 +92,39 @@
 		}
 	},
 	"AboutPage": {
+		"metadata": {
+			"title": "Über Mich | Gesichtsbemalung Obwalden",
+			"description": "Erfahren Sie mehr über meinen professionellen Gesichtsbemalungsservice in Obwalden. Erfahrene Künstlerin, die magische Momente für Kinder und Veranstaltungen schafft.",
+			"keywords": [
+				"über gesichtsbemalerin",
+				"professionelle gesichtsbemalung",
+				"obwalden",
+				"kinderanimation"
+			],
+			"openGraph": {
+				"title": "Über Mich | Gesichtsbemalung Obwalden",
+				"description": "Erfahren Sie mehr über meinen professionellen Gesichtsbemalungsservice",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "de-DE",
+				"type": "website",
+				"url": "https://faceartow.ch/de/about"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/de/about",
+				"languages": {
+					"en": "https://faceartow.ch/en/about",
+					"de-CH": "https://faceartow.ch/ch/about",
+					"de-DE": "https://faceartow.ch/de/about"
+				}
+			}
+		},
 		"title": "Über Mich",
 		"subtitle": "Freude und Kreativität in Kindergesichter bringen",
 		"introduction": "Willkommen bei Face Art Obwalden! Ich bringe Leidenschaft in die Kunst der Gesichtsbemalung und schaffe magische Momente für Kinder.",
@@ -84,6 +153,39 @@
 		}
 	},
 	"FaqPage": {
+		"metadata": {
+			"title": "FAQ | Face Painting Questions Answered",
+			"description": "Frequently asked questions about our face painting services in Central Switzerland. Pricing, booking, safety, and event details answered.",
+			"keywords": [
+				"face painting faq",
+				"face painting prices",
+				"booking face painter",
+				"face painting safety"
+			],
+			"openGraph": {
+				"title": "FAQ | Face Painting Central Switzerland",
+				"description": "Common questions about face painting services, pricing, and bookings",
+				"images": [
+					{
+						"url": "",
+						"width": 1200,
+						"height": 630,
+						"alt": ""
+					}
+				],
+				"locale": "de-DE",
+				"type": "website",
+				"url": "https://faceartow.ch/de/faq"
+			},
+			"alternates": {
+				"canonical": "https://faceartow.ch/de/faq",
+				"languages": {
+					"en": "https://faceartow.ch/en/faq",
+					"de-CH": "https://faceartow.ch/faq",
+					"de-DE": "https://faceartow.ch/de/faq"
+				}
+			}
+		},
 		"title": "Häufig Gestellte Fragen",
 		"subtitle": "Alles was Sie über meine Gesichtsbemalungsdienste wissen müssen",
 		"questions": [
@@ -136,7 +238,8 @@
 	},
 	"NotFoundPage": {
 		"title": "Seite nicht gefunden",
-		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen."
+		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen.",
+		"backHome": "Zurück zur Startseite"
 	},
 	"ErrorPage": {
 		"title": "Etwas ist schiefgegangen!",
