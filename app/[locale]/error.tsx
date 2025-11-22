@@ -10,7 +10,7 @@ type Props = {
 }
 
 export default function ErrorPage({ error, reset }: Props) {
-	const t = useTranslations("Error")
+	const t = useTranslations("ErrorPage")
 
 	useEffect(() => {
 		console.error(error)

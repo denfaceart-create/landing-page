@@ -1,7 +1,28 @@
 {
-	"Error": {
-		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>",
-		"title": "Something went wrong!"
+	"Manifest": {
+		"name": "Face Art Obwalden",
+		"short_name": "Face Art",
+		"description": "Professional face painting services for children's birthdays, parties, and events in Obwalden.",
+		"keywords": "face painting, children's parties, events, Obwalden, face art, professional face painter",
+		"theme_color": "#d946ef",
+		"lang": "en",
+		"dir": "ltr",
+		"orientation": "portrait",
+		"display": "standalone"
+	},
+	"LocaleLayout": {
+		"title": "Face Art Obwalden - Professional Face Painting Services"
+	},
+	"LocaleSwitcher": {
+		"label": "Change language"
+	},
+	"Navigation": {
+		"home": "Home",
+		"about": "About me",
+		"faq": "FAQ"
+	},
+	"Footer": {
+		"rights": "All rights reserved"
 	},
 	"HomePage": {
 		"title": "Face Painting Obwalden",
@@ -16,44 +37,23 @@
 		"gallery": {
 			"title": "My Work"
 		},
-		"contact": {
+		"contactForm": {
 			"contactTitle": "Contact",
 			"contactSubtitle": "Get in touch",
 			"name": "Name",
 			"email": "Email",
 			"phone": "Phone",
 			"message": "Message",
-			"send": "Send"
+			"send": "Send",
+			"submitSuccess": "Thank you for your message! I will get back to you as soon as possible.",
+			"submitError": "Something went wrong. Please try again later."
+		},
+		"contactInfo": {
+			"title": "Contact Information",
+			"email": "Email",
+			"phone": "Phone",
+			"location": "Location"
 		}
-	},
-	"Footer": {
-		"rights": "All rights reserved"
-	},
-	"LocaleLayout": {
-		"title": "Face Art Obwalden - Professional Face Painting Services"
-	},
-	"LocaleSwitcher": {
-		"label": "Change language"
-	},
-	"Manifest": {
-		"name": "Face Art Obwalden",
-		"short_name": "Face Art",
-		"description": "Professional face painting services for children's birthdays, parties, and events in Obwalden.",
-		"keywords": "face painting, children's parties, events, Obwalden, face art, professional face painter",
-		"theme_color": "#d946ef",
-		"lang": "en",
-		"dir": "ltr",
-		"orientation": "portrait",
-		"display": "standalone"
-	},
-	"Navigation": {
-		"home": "Home",
-		"about": "About me",
-		"faq": "FAQ"
-	},
-	"NotFoundPage": {
-		"description": "Please double-check the browser address bar or use the navigation to go to a known page.",
-		"title": "Page not found"
 	},
 	"AboutPage": {
 		"title": "About Me",
@@ -133,5 +133,13 @@
 			"description": "Don't hesitate to get in touch! I'm happy to discuss your specific needs and help make your event magical.",
 			"button": "Contact Me"
 		}
+	},
+	"NotFoundPage": {
+		"title": "Page not found",
+		"description": "Please double-check the browser address bar or use the navigation to go to a known page."
+	},
+	"ErrorPage": {
+		"title": "Something went wrong!",
+		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>"
 	}
 }

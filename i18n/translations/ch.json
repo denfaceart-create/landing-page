@@ -1,7 +1,29 @@
 {
-	"Error": {
-		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>",
-		"title": "Something went wrong!"
+	"Manifest": {
+		"name": "Face Art Obwaldä",
+		"short_name": "Face Art",
+		"description": "Professionelli Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä.",
+		"keywords": "Gsichtsschminki, Kindergeburtstag, Verastaltige, Obwaldä, Face Art, professioneller Gsichtsschminker",
+		"theme_color": "#d946ef",
+		"lang": "de-CH",
+		"dir": "ltr",
+		"orientation": "portrait",
+		"display": "standalone"
+	},
+	"LocaleLayout": {
+		"title": "Face Art Obwaldä - Professionelli Gsichtsschminki-Dienstleistige"
+	},
+	"LocaleSwitcher": {
+		"label": "Sprace wechselä",
+		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English} other {Unknown}}"
+	},
+	"Navigation": {
+		"home": "Startsyte",
+		"about": "Über mich",
+		"faq": "FAQ"
+	},
+	"Footer": {
+		"rights": "Alli Rächt vorbehalte"
 	},
 	"HomePage": {
 		"title": "Gsichtsschminki Obwaldä",
@@ -16,45 +38,23 @@
 		"gallery": {
 			"title": "Mini Arbet"
 		},
-		"contact": {
+		"contactForm": {
 			"contactTitle": "Kontakt",
 			"contactSubtitle": "Schriib üs ah",
 			"name": "Name",
 			"email": "E-mail",
 			"phone": "Telefon",
 			"message": "Nachricht",
-			"send": "Sende"
+			"send": "Sende",
+			"submitSuccess": "Danke für dini Nachricht! Ich werde mich so schnäll wie möglich bi dir melde.",
+			"submitError": "Eppis isch schiefgange. Bitte versuech es spöter nomol."
+		},
+		"contactInfo": {
+			"title": "Kontaktinformatione",
+			"email": "E-Mail",
+			"phone": "Telefon",
+			"location": "Ort"
 		}
-	},
-	"Footer": {
-		"rights": "Alli Rächt vorbehalte"
-	},
-	"LocaleLayout": {
-		"title": "Face Art Obwaldä - Professionelli Gsichtsschminki-Dienstleistige"
-	},
-	"LocaleSwitcher": {
-		"label": "Sprace wechselä",
-		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English} other {Unknown}}"
-	},
-	"Manifest": {
-		"name": "Face Art Obwaldä",
-		"short_name": "Face Art",
-		"description": "Professionelli Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä.",
-		"keywords": "Gsichtsschminki, Kindergeburtstag, Verastaltige, Obwaldä, Face Art, professioneller Gsichtsschminker",
-		"theme_color": "#d946ef",
-		"lang": "de-CH",
-		"dir": "ltr",
-		"orientation": "portrait",
-		"display": "standalone"
-	},
-	"Navigation": {
-		"home": "Startsyte",
-		"about": "Über mich",
-		"faq": "FAQ"
-	},
-	"NotFoundPage": {
-		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä.",
-		"title": "Seite nöd gfunde"
 	},
 	"AboutPage": {
 		"title": "Über Mich",
@@ -134,5 +134,13 @@
 			"description": "Zögered Sie nöd, sich z'melde! Ich besprich gärn Ihri spezifische Bedürfniss und hilf debii, Ihri Verastaltig magisch z'gstalte.",
 			"button": "Kontaktiere Sie mich"
 		}
+	},
+	"NotFoundPage": {
+		"title": "Seite nöd gfunde",
+		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä."
+	},
+	"ErrorPage": {
+		"title": "Eppis isch schiefgange!",
+		"description": "<p>Leider isch en Fehler ufträte.</p><p>Sie chönd versuche, <retry>d'Seite neu z'lade</retry></p>"
 	}
 }

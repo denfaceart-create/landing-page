@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Plus_Jakarta_Sans } from "next/font/google"
 
 import "../styles/globals.css"
+import { Toaster } from "@/components/ui/sonner"
 
 const plusJakartaSans = Plus_Jakarta_Sans({
 	subsets: ["latin"],
@@ -37,8 +38,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 			</head>
 			<body className={`${plusJakartaSans.variable} font-sans antialiased`}>
 				{children}
-
 				<Analytics />
+				<Toaster />
 			</body>
 		</html>
 	)

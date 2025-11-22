@@ -1,7 +1,28 @@
 {
-	"Error": {
-		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>",
-		"title": "Something went wrong!"
+	"Manifest": {
+		"name": "Gesichtsbemalung Obwalden",
+		"short_name": "Gesichtsbemalung",
+		"description": "Professionelle und kreative Gesichtsbemalung für unvergessliche Feiern in Obwalden.",
+		"keywords": "Gesichtsbemalung, Obwalden, Kindergeburtstag, Veranstaltungen, kreative Kunst",
+		"theme_color": "#d946ef",
+		"lang": "de",
+		"dir": "ltr",
+		"orientation": "portrait",
+		"display": "standalone"
+	},
+	"LocaleLayout": {
+		"title": "Gesichtsbemalung Obwalden - Professionelle Gesichtsbemalungsdienste"
+	},
+	"LocaleSwitcher": {
+		"label": "Sprache wechseln"
+	},
+	"Navigation": {
+		"home": "Startseite",
+		"about": "Über mich",
+		"faq": "FAQ"
+	},
+	"Footer": {
+		"rights": "Alle Rechte vorbehalten"
 	},
 	"HomePage": {
 		"title": "Gesichtsbemalung Obwalden",
@@ -16,44 +37,23 @@
 		"gallery": {
 			"title": "Meine Arbeit"
 		},
-		"contact": {
+		"contactForm": {
 			"contactTitle": "Kontakt",
 			"contactSubtitle": "Schreiben Sie uns an",
 			"name": "Name",
 			"email": "E-Mail",
 			"phone": "Telefon",
 			"message": "Nachricht",
-			"send": "Senden"
+			"send": "Senden",
+			"submitSuccess": "Danke für Ihre Nachricht! Ich werde mich so schnell wie möglich bei Ihnen melden.",
+			"submitError": "Etwas ist schiefgegangen. Bitte versuchen Sie es später noch einmal."
+		},
+		"contactInfo": {
+			"title": "Kontaktinformationen",
+			"email": "E-Mail",
+			"phone": "Telefon",
+			"location": "Ort"
 		}
-	},
-	"Footer": {
-		"rights": "Alle Rechte vorbehalten"
-	},
-	"LocaleLayout": {
-		"title": "Gesichtsbemalung Obwalden - Professionelle Gesichtsbemalungsdienste"
-	},
-	"LocaleSwitcher": {
-		"label": "Sprache wechseln"
-	},
-	"Manifest": {
-		"name": "Gesichtsbemalung Obwalden",
-		"short_name": "Gesichtsbemalung",
-		"description": "Professionelle und kreative Gesichtsbemalung für unvergessliche Feiern in Obwalden.",
-		"keywords": "Gesichtsbemalung, Obwalden, Kindergeburtstag, Veranstaltungen, kreative Kunst",
-		"theme_color": "#d946ef",
-		"lang": "de",
-		"dir": "ltr",
-		"orientation": "portrait",
-		"display": "standalone"
-	},
-	"Navigation": {
-		"home": "Startseite",
-		"about": "Über mich",
-		"faq": "FAQ"
-	},
-	"NotFoundPage": {
-		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen.",
-		"title": "Seite nicht gefunden"
 	},
 	"AboutPage": {
 		"title": "Über Mich",
@@ -133,5 +133,13 @@
 			"description": "Zögern Sie nicht, sich zu melden! Ich bespreche gerne Ihre spezifischen Bedürfnisse und helfe dabei, Ihre Veranstaltung magisch zu gestalten.",
 			"button": "Kontaktieren Sie mich"
 		}
+	},
+	"NotFoundPage": {
+		"title": "Seite nicht gefunden",
+		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen."
+	},
+	"ErrorPage": {
+		"title": "Etwas ist schiefgegangen!",
+		"description": "<p>Leider ist ein Fehler aufgetreten.</p><p>Sie können versuchen, die <retry>Seite neu zu laden</retry></p>"
 	}
 }

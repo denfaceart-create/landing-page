@@ -11,9 +11,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
 		: routing.defaultLocale
 
 	const defaultMessages = (
-		await import(`../translations/${routing.defaultLocale}.json`)
+		await import(`./translations/${routing.defaultLocale}.json`)
 	).default
-	const localeMessages = (await import(`../translations/${locale}.json`))
+	const localeMessages = (await import(`./translations/${locale}.json`))
 		.default
 
 	const messages = merge<AppConfig["Messages"]>(
