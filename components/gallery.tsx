@@ -21,20 +21,24 @@ const GalleryImageCard = memo(function GalleryImageCard({
 	image: { url: string; alt: string }
 }) {
 	return (
-		<CarouselItem>
-			<Card className="bg-neutral-900" tabIndex={0}>
-				<CardContent className="flex aspect-video items-center justify-center p-3">
-					{/* biome-ignore lint/performance/noImgElement: is fine here */}
-					<img
-						src={image.url}
-						alt={image.alt}
-						className="aspect-square h-full w-full max-w-150 object-cover"
-					/>
-					<ShootingStars />
-					<StarsBackground />
-				</CardContent>
-			</Card>
-		</CarouselItem>
+		<Card
+			className={cn(
+				"mx-auto max-w-2xl bg-neutral-900",
+
+				"group-focus-visible:ring-2 group-focus-visible:ring-ring group-focus-visible:ring-offset-4",
+			)}
+		>
+			<CardContent className="flex aspect-video items-center justify-center p-3">
+				{/* biome-ignore lint/performance/noImgElement: is fine here */}
+				<img
+					src={image.url}
+					alt={image.alt}
+					className="aspect-square h-full w-full max-w-150 object-cover"
+				/>
+				<ShootingStars />
+				<StarsBackground />
+			</CardContent>
+		</Card>
 	)
 })
 
@@ -67,7 +71,10 @@ const ThumbnailCard = memo(function ThumbnailCarouselItem({
 			onMouseLeave={onBlur}
 			onFocus={onFocus}
 			onBlur={onBlur}
-			onClick={onClick}
+			onClick={(e) => {
+				onClick()
+				if (navigator?.maxTouchPoints > 0) e.currentTarget?.blur() // blur on touch devices
+			}}
 			onKeyDown={(e) => {
 				if (e.key === "Enter" || e.key === " ") {
 					onClick()
@@ -136,13 +143,16 @@ export function Gallery() {
 
 				<div className="relative">
 					<div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4">
-						<div className="w-full px-20">
+						<div className="w-full px-4 md:px-20">
 							<Carousel
 								setApi={setApi}
-								className="w-full"
+								className="w-full md:px-2"
 								opts={{ loop: true }}
 							>
-								<CarouselContent>
+								<CarouselContent
+									className="group py-2 focus-visible:outline-none"
+									tabIndex={0}
+								>
 									{galleryImages.map((image, index) => (
 										<CarouselItem key={index}>
 											<GalleryImageCard image={image} />

@@ -6,8 +6,9 @@ import { getTranslations } from "next-intl/server"
 import PageLayout from "@/components/page-layout"
 
 import { TracingBeam } from "@/components/ui/tracing-beam"
+import UnderConstructionPage from "@/components/under-contsructions"
 import { routing } from "@/i18n/routing"
-import { AboutClient } from "./about-client"
+// import { AboutClient } from "./about-client"
 
 export async function generateMetadata(
 	props: Omit<PageProps<"/[locale]/about">, "children">,
@@ -35,9 +36,10 @@ export async function generateMetadata(
 
 export default function AboutPage() {
 	return (
-		<PageLayout>
+		<PageLayout className="pt-6">
 			<TracingBeam>
-				<AboutClient />
+				{/* <AboutClient /> */}
+				<UnderConstructionPage />
 			</TracingBeam>
 		</PageLayout>
 	)

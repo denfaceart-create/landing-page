@@ -236,13 +236,29 @@
 			"button": "Contact Me"
 		}
 	},
+	"UnderConstructionPage": {
+		"title": "Under Construction",
+		"description": "My website is currently under construction. I'm working hard to build it. Check back soon!",
+		"expectedLaunch": "Expected launch: Coming Soon"
+	},
 	"NotFoundPage": {
 		"title": "Page not found",
-		"description": "Please double-check the browser address bar or use the navigation to go to a known page.",
-		"backHome": "Back to Home"
+		"description": "Oops! The page you're looking for doesn't exist. It might have been moved or deleted, or perhaps the URL was mistyped.",
+		"goHome": "Back to Home",
+		"goBack": "Go Back",
+		"errorCode": "Error Code: 404 - Resource Not Found"
 	},
 	"ErrorPage": {
 		"title": "Something went wrong!",
-		"description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry></p>"
+		"description": "We've unfortunately encountered an error.",
+		"retry": "reload the page",
+		"goHome": "go to the homepage",
+		"errorId": "Error ID: {errorId}"
+	},
+	"components": {
+		"phone-input": {
+			"placeholder": "Search Country...",
+			"notFound": "No country found."
+		}
 	}
 }

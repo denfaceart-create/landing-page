@@ -1,8 +1,8 @@
 import { CheckIcon, ChevronsUpDown } from "lucide-react"
+import { useTranslations } from "next-intl"
 import * as React from "react"
 import * as RPNInput from "react-phone-number-input"
 import flags from "react-phone-number-input/flags"
-
 import { Button } from "@/components/ui/button"
 import {
 	Command,
@@ -88,7 +88,7 @@ const CountrySelect = ({
 	const scrollAreaRef = React.useRef<HTMLDivElement>(null)
 	const [searchValue, setSearchValue] = React.useState("")
 	const [isOpen, setIsOpen] = React.useState(false)
-
+	const t = useTranslations("components.phone-input")
 	return (
 		<Popover
 			open={isOpen}
@@ -134,11 +134,11 @@ const CountrySelect = ({
 								}
 							}, 0)
 						}}
-						placeholder="Search country..."
+						placeholder={t("placeholder")}
 					/>
 					<CommandList>
 						<ScrollArea ref={scrollAreaRef} className="h-72">
-							<CommandEmpty>No country found.</CommandEmpty>
+							<CommandEmpty>{t("notFound")}</CommandEmpty>
 							<CommandGroup>
 								{countryList.map(({ value, label }) =>
 									value ? (

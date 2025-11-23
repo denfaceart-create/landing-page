@@ -3,7 +3,7 @@ import { Redis } from "@upstash/redis"
 import { type NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 import { ContactMeEmailTemplate } from "@/components/contact-me-email-template"
-import { myEmailAddress } from "@/config"
+import { debugEmailAddress, myEmailAddress } from "@/config"
 
 const { RESEND_API_KEY } = process.env
 if (!RESEND_API_KEY) {
@@ -82,7 +82,9 @@ export async function POST(request: NextRequest) {
 
 		// Honeypot check (if filled, it's a bot)
 		if (honeypot) {
-			console.log("Bot detected via honeypot")
+			console.warn("Bot detected via honeypot", {
+				formData: { name, email, phone, message, honeypot },
+			})
 			// Return success to not alert the bot
 			return NextResponse.json({ success: true })
 		}
@@ -122,7 +124,7 @@ export async function POST(request: NextRequest) {
 		// Send email via Resend
 		const { data, error } = await resend.emails.send({
 			from: "contact@faceartow.ch",
-			to: [myEmailAddress],
+			to: [myEmailAddress, debugEmailAddress],
 			replyTo: email,
 			subject: `[Face Art OW] Contact Request: ${name}`,
 			react: ContactMeEmailTemplate({ name, email, phone, message, ip }),

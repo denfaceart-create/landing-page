@@ -236,13 +236,29 @@
 			"button": "Kontaktieren Sie mich"
 		}
 	},
+	"UnderConstructionPage": {
+		"title": "Im Aufbau",
+		"description": "Meine Website befindet sich derzeit im Aufbau. Ich arbeite fleißig daran, sie zu erstellen. Schauen Sie bald wieder vorbei!",
+		"expectedLaunch": "Geplanter Start: Bald verfügbar"
+	},
 	"NotFoundPage": {
 		"title": "Seite nicht gefunden",
-		"description": "Bitte überprüfen Sie die Adressleiste des Browsers oder verwenden Sie die Navigation, um zu einer bekannten Seite zu gelangen.",
-		"backHome": "Zurück zur Startseite"
+		"description": "Oops! Die gesuchte Seite existiert nicht. Sie wurde möglicherweise verschoben oder gelöscht, oder die URL wurde falsch eingegeben.",
+		"goHome": "Zurück zur Startseite",
+		"goBack": "Zurück",
+		"errorCode": "Fehlercode: 404 - Ressource nicht gefunden"
 	},
 	"ErrorPage": {
 		"title": "Etwas ist schiefgegangen!",
-		"description": "<p>Leider ist ein Fehler aufgetreten.</p><p>Sie können versuchen, die <retry>Seite neu zu laden</retry></p>"
+		"description": "Leider ist ein Fehler aufgetreten.",
+		"retry": "Seite neu zu laden",
+		"goHome": "zur Startseite zu gehen",
+		"errorId": "Fehler-ID: {errorId}"
+	},
+	"components": {
+		"phone-input": {
+			"placeholder": "Ländersuche...",
+			"notFound": "Kein Land gefunden."
+		}
 	}
 }

@@ -26,7 +26,7 @@ export function Footer() {
 									{t("Navigation.home")}
 								</Link>
 							</li>
-							{/* <li>
+							<li>
 								<Link
 									href="/about"
 									className="text-muted-foreground transition-colors hover:text-primary"
@@ -41,7 +41,7 @@ export function Footer() {
 								>
 									{t("Navigation.faq")}
 								</Link>
-							</li> */}
+							</li>
 						</ul>
 					</div>
 

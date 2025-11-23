@@ -237,13 +237,29 @@
 			"button": "Kontaktiere Sie mich"
 		}
 	},
+	"UnderConstructionPage": {
+		"title": "Im Aufbau",
+		"description": "Mini Website befindet sich derzyt im Aufbau. Ich arbeite fleißig daran, sie z'erstellä. Schau bald wieder vorbei!",
+		"expectedLaunch": "Geplanter Start: Bald verfügbar"
+	},
 	"NotFoundPage": {
 		"title": "Seite nöd gfunde",
-		"description": "Bitte überprüfe d'Adressleiste im Browser oder verwänd d'Navigation, um zu ener bekannte Seite z'gä.",
-		"backHome": "Zurück zur Startsyte"
+		"description": "Oops! Die gsuächti Seite existiert nöd. Si isch möglecherwys verschobe oder glöscht worde, oder d'URL isch falsch iigäh.",
+		"goHome": "Zurück zur Startseite",
+		"goBack": "Zurück",
+		"errorCode": "Fehlercode: 404 - Ressource nöd gfunde"
 	},
 	"ErrorPage": {
 		"title": "Eppis isch schiefgange!",
-		"description": "<p>Leider isch en Fehler ufträte.</p><p>Sie chönd versuche, <retry>d'Seite neu z'lade</retry></p>"
+		"description": "Leider isch en Fehler ufträte.",
+		"retry": "d'Seite neu z'lade",
+		"goHome": "zur Startseite z'go",
+		"errorId": "Fehler-ID: {errorId}"
+	},
+	"components": {
+		"phone-input": {
+			"placeholder": "Ländersuche...",
+			"notFound": "Kein Land gefunden."
+		}
 	}
 }

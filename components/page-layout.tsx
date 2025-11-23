@@ -1,12 +1,23 @@
-import type { PropsWithChildren } from "react"
-
+import type { CSSProperties, PropsWithChildren } from "react"
+import { cn } from "@/lib/utils"
 import { Footer } from "./footer"
 import { LanguageSwitcher } from "./language-switcher"
+import { FloatingNav } from "./ui/loating-navbar"
 
-export default function PageLayout({ children }: PropsWithChildren) {
+interface PageLayoutProps extends PropsWithChildren {
+	className?: string
+	style?: CSSProperties
+}
+
+export default function PageLayout({
+	children,
+	className,
+	style,
+}: PageLayoutProps) {
 	return (
-		<main className="min-h-screen">
+		<main className={cn("min-h-screen", className)} style={style}>
 			<LanguageSwitcher />
+			<FloatingNav />
 			{children}
 			<Footer />
 		</main>
