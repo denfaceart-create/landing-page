@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import { useCallback, useEffect, useState } from "react"
+import { memo, useCallback, useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import {
 	Carousel,
@@ -12,6 +12,79 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
+import { ShootingStars } from "./ui/shooting-stars"
+import { StarsBackground } from "./ui/stars-background"
+
+const GalleryImageCard = memo(function GalleryImageCard({
+	image,
+}: {
+	image: { url: string; alt: string }
+}) {
+	return (
+		<CarouselItem>
+			<Card className="bg-neutral-900" tabIndex={0}>
+				<CardContent className="flex aspect-video items-center justify-center p-3">
+					{/* biome-ignore lint/performance/noImgElement: is fine here */}
+					<img
+						src={image.url}
+						alt={image.alt}
+						className="aspect-square h-full w-full max-w-150 object-cover"
+					/>
+					<ShootingStars />
+					<StarsBackground />
+				</CardContent>
+			</Card>
+		</CarouselItem>
+	)
+})
+
+const ThumbnailCard = memo(function ThumbnailCarouselItem({
+	image,
+	isActive,
+	isHovered,
+	shouldBlur,
+	onFocus,
+	onBlur,
+	onClick,
+}: {
+	image: { url: string; alt: string }
+	isActive: boolean
+	isHovered: boolean
+	shouldBlur: boolean
+	onFocus: () => void
+	onBlur: () => void
+	onClick: () => void
+}) {
+	return (
+		<Card
+			className={cn(
+				"relative w-full overflow-hidden rounded-lg bg-primary/10 transition-all duration-300 ease-out dark:bg-primary/90",
+				isActive || isHovered ? "opacity-100" : "opacity-50",
+				shouldBlur && "scale-[0.95] blur-[2px]",
+			)}
+			tabIndex={0}
+			onMouseEnter={onFocus}
+			onMouseLeave={onBlur}
+			onFocus={onFocus}
+			onBlur={onBlur}
+			onClick={onClick}
+			onKeyDown={(e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					onClick()
+				}
+			}}
+		>
+			<CardContent className="flex aspect-square items-center justify-center p-0">
+				{/* biome-ignore lint/performance/noImgElement:  is fine here */}
+				<img
+					src={image.url}
+					alt={image.alt}
+					className="inset-0 h-24 w-full object-cover"
+				/>
+			</CardContent>
+		</Card>
+	)
+})
 
 const galleryImages = [
 	{
@@ -47,6 +120,8 @@ export function Gallery() {
 		(index: number) => api?.scrollTo(index),
 		[api],
 	)
+	const [hovered, setHovered] = useState<number | null>(null)
+
 	return (
 		<section
 			id="gallery"
@@ -70,16 +145,7 @@ export function Gallery() {
 								<CarouselContent>
 									{galleryImages.map((image, index) => (
 										<CarouselItem key={index}>
-											<Card className="bg-primary/10" tabIndex={0}>
-												<CardContent className="flex aspect-video items-center justify-center p-3">
-													{/* biome-ignore lint/performance/noImgElement: is fine here */}
-													<img
-														src={image.url}
-														alt={image.alt}
-														className="aspect-square h-full w-full max-w-150 object-cover"
-													/>
-												</CardContent>
-											</Card>
+											<GalleryImageCard image={image} />
 										</CarouselItem>
 									))}
 								</CarouselContent>
@@ -90,26 +156,26 @@ export function Gallery() {
 								opts={{ loop: true }}
 							>
 								<CarouselContent className="my-1 flex justify-center">
-									{galleryImages.map((image, index) => (
-										<CarouselItem
-											key={index}
-											className={cn(
-												"basis-1/5 cursor-pointer",
-												current === index + 1 ? "opacity-100" : "opacity-50",
-											)}
-										>
-											<Card onClick={() => handleThumbClick(index)}>
-												<CardContent className="flex aspect-square items-center justify-center p-0">
-													{/* biome-ignore lint/performance/noImgElement:  is fine here */}
-													<img
-														src={image.url}
-														alt={image.alt}
-														className="h-24 w-auto object-cover"
-													/>
-												</CardContent>
-											</Card>
-										</CarouselItem>
-									))}
+									{galleryImages.map((image, index) => {
+										const isActive = current === index + 1
+										const isHovered = hovered === index
+										return (
+											<CarouselItem
+												key={index}
+												className={cn("basis-1/5 cursor-pointer")}
+											>
+												<ThumbnailCard
+													onFocus={() => setHovered(index)}
+													onBlur={() => setHovered(null)}
+													onClick={() => handleThumbClick(index)}
+													image={image}
+													isActive={isActive}
+													isHovered={isHovered}
+													shouldBlur={hovered !== null && !isHovered}
+												/>
+											</CarouselItem>
+										)
+									})}
 								</CarouselContent>
 								{galleryImages.length > 5 && (
 									<>
