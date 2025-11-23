@@ -1,166 +1,299 @@
 "use client"
 
-import type React from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { Mail, MapPin, Phone } from "lucide-react"
+import { type Locale, useLocale, useTranslations } from "next-intl"
+import { useForm } from "react-hook-form"
+import deLabels from "react-phone-number-input/locale/de"
+import enLabels from "react-phone-number-input/locale/en"
+import { toast } from "sonner"
+import { z } from "zod"
 import { Button } from "@/components/ui/button"
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardHeader,
+	CardTitle,
+} from "@/components/ui/card"
+import {
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { PhoneInput } from "@/components/ui/phone-input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, Send } from "lucide-react"
-import { useState } from "react"
-import type { Language } from "@/lib/i18n"
-import { getTranslation } from "@/lib/i18n"
-import { Label } from "./ui/label"
+import { location, myEmailAddress, phoneNumber } from "@/config"
+import { Spinner } from "./ui/spinner"
 
-interface ContactProps {
-  lang: Language
+const getLocaleCountryLabels = (locale: Locale) => {
+	switch (locale) {
+		case "en":
+			return enLabels
+		default:
+			return deLabels
+	}
 }
 
-export function Contact({ lang }: ContactProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
+const formSchema = z.object({
+	name: z.string().min(1),
+	email: z.email(),
+	phone: z.string().optional(),
+	message: z.string().min(10).max(5000),
+	honeypot: z.string().optional(),
+})
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log("Form submitted:", formData)
-    alert("Merci!")
-    setFormData({ name: "", email: "", phone: "", message: "" })
+const defaultValues: z.infer<typeof formSchema> = {
+	name: "",
+	email: "",
+	phone: "",
+	message: "",
+	honeypot: "",
+}
 
-    // Simulate form submission
-    setIsSubmitting(true)
-    setTimeout(() => {
-      setIsSubmitting(false)
-    }, 2000)
-  }
+export function Contact() {
+	const t = useTranslations("HomePage")
+	const locale = useLocale()
+	const form = useForm<z.infer<typeof formSchema>>({
+		resolver: zodResolver(formSchema),
+		defaultValues,
+	})
 
-  return (
-    <section id="contact" className="py-24 md:py-32 bg-muted/30">
-      <div className="container px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            {getTranslation(lang, "contactTitle")}
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4">{getTranslation(lang, "contactSubtitle")}</p>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+	async function onSubmit(formData: z.infer<typeof formSchema>) {
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			})
+			if (response.ok) {
+				toast.success(
+					<p className="text-secondary">{t("contactForm.submitSuccess")}</p>,
+					{ classNames: { icon: "text-primary" } },
+				)
+			} else throw new Error(response.statusText, { cause: response })
+		} catch (error) {
+			console.error("Form submission error", error)
+			toast.error(t("contactForm.submitError"), {
+				closeButton: true,
+				richColors: true,
+			})
+		}
+	}
 
-          <Card className=" p-8">
-            <CardHeader>
-              <CardTitle className="text-2xl">{getTranslation(lang, "contactTitle")}</CardTitle>
-              <CardDescription>{getTranslation(lang, "contactSubtitle")}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">{getTranslation(lang, "name")}</Label>
-                    <Input
-                      id="name"
-                      placeholder={getTranslation(lang, "name")}
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="h-12"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">{getTranslation(lang, "email")}</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder={getTranslation(lang, "email")}
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="h-12"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">{getTranslation(lang, "phone")}</Label>
+	const countryLabels = getLocaleCountryLabels(locale)
 
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder={getTranslation(lang, "phone")}
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="h-12"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">{getTranslation(lang, "message")}</Label>
+	return (
+		<section
+			id="contact"
+			className="flex items-center justify-center bg-muted/30 py-24 md:py-32"
+		>
+			<div className="container px-4">
+				<div className="mx-auto mb-16 max-w-3xl text-center">
+					<h2 className="font-bold text-4xl tracking-tight md:text-5xl lg:text-6xl">
+						{t("contactForm.contactTitle")}
+					</h2>
+					<p className="mt-4 text-lg text-muted-foreground">
+						{t("contactForm.contactSubtitle")}
+					</p>
+				</div>
+				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
+					<Card className="p-8">
+						<CardHeader>
+							<CardTitle className="text-2xl">
+								{t("contactForm.contactTitle")}
+							</CardTitle>
+							<CardDescription>
+								{t("contactForm.contactSubtitle")}
+							</CardDescription>
+						</CardHeader>
+						<CardContent>
+							<Form {...form}>
+								<form
+									onSubmit={form.handleSubmit(onSubmit)}
+									className="mx-auto max-w-3xl space-y-8 py-10"
+								>
+									<div className="grid grid-cols-12 gap-4">
+										<div className="col-span-6">
+											<FormField
+												control={form.control}
+												name="name"
+												render={({ field }) => (
+													<FormItem>
+														<FormLabel>{t("contactForm.name")}</FormLabel>
+														<FormControl>
+															<Input
+																type=""
+																{...field}
+																placeholder={t("contactForm.name")}
+																className="h-12"
+															/>
+														</FormControl>
+														<FormMessage />
+													</FormItem>
+												)}
+											/>
+										</div>
 
-                  <Textarea
-                    id="message"
-                    placeholder={"Tell us about your event..."}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    required
-                    rows={6}
-                    className="resize-none"
-                  />
-                </div>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Sending..." : getTranslation(lang, "send")}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+										<div className="col-span-6">
+											<FormField
+												control={form.control}
+												name="email"
+												render={({ field }) => (
+													<FormItem>
+														<FormLabel>{t("contactForm.email")}</FormLabel>
+														<FormControl>
+															<Input
+																type=""
+																{...field}
+																placeholder={t("contactForm.email")}
+																className="h-12"
+															/>
+														</FormControl>
+														<FormMessage />
+													</FormItem>
+												)}
+											/>
+										</div>
+									</div>
 
+									<FormField
+										control={form.control}
+										name="phone"
+										render={({ field }) => (
+											<FormItem className="flex flex-col items-start">
+												<FormLabel>{t("contactForm.phone")}</FormLabel>
+												<FormControl className="w-full">
+													<PhoneInput
+														placeholder={t("contactForm.phone")}
+														{...field}
+														defaultCountry="CH"
+														className="*:h-12"
+														focusInputOnCountrySelection
+														smartCaret
+														labels={countryLabels}
+													/>
+												</FormControl>
+												<FormMessage />
+											</FormItem>
+										)}
+									/>
 
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold mb-1">{getTranslation(lang, "email")}</div>
-                    <a
-                      href="mailto:faceartow@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      faceartow@gmail.com
-                    </a>
-                  </div>
-                </div>
+									<FormField
+										control={form.control}
+										name="message"
+										render={({ field }) => (
+											<FormItem>
+												<FormLabel>{t("contactForm.message")}</FormLabel>
+												<FormControl>
+													<Textarea
+														placeholder={t("contactForm.message")}
+														className="resize-none"
+														{...field}
+													/>
+												</FormControl>
+												<FormMessage />
+											</FormItem>
+										)}
+									/>
+									<FormField
+										control={form.control}
+										name="honeypot"
+										render={({ field }) => (
+											<FormItem
+												style={{
+													position: "absolute",
+													opacity: 0,
+													pointerEvents: "none",
+												}}
+											>
+												<FormControl>
+													<input
+														type=""
+														{...field}
+														tabIndex={-1}
+														autoComplete="off"
+														aria-hidden="true"
+													/>
+												</FormControl>
+												<FormMessage />
+											</FormItem>
+										)}
+									/>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                    <Phone className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                    <div className="font-semibold mb-1">Phone</div>
-                    <a href="tel:+41796736445" className="text-muted-foreground hover:text-accent transition-colors">
-                      079 673 64 45
-                    </a>
-                  </div>
-                </div>
+									<Button
+										type="submit"
+										className="w-full"
+										disabled={form.formState.isSubmitting}
+									>
+										{form.formState.isSubmitting && <Spinner />}
+										{t("contactForm.send")}
+									</Button>
+								</form>
+							</Form>
+						</CardContent>
+					</Card>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-secondary/50 flex items-center justify-center shrink-0">
-                    <MapPin className="h-6 w-6 text-secondary-foreground" />
-                  </div>
-                  <div>
-                    <div className="font-semibold mb-1">Location</div>
-                    <p className="text-muted-foreground">
-                      Sarnen, Obwalden, Switzerland
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+					<div className="space-y-8">
+						<div>
+							<h3 className="mb-6 font-bold text-2xl">
+								{t("contactInfo.title")}
+							</h3>
+							<div className="space-y-6">
+								<div className="flex items-start gap-4">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+										<Mail className="h-6 w-6 text-primary" />
+									</div>
+									<div>
+										<div className="mb-1 font-semibold">
+											{t("contactInfo.email")}
+										</div>
+										<a
+											href="mailto:faceartow@gmail.com"
+											className="text-muted-foreground transition-colors hover:text-primary"
+										>
+											{myEmailAddress}
+										</a>
+									</div>
+								</div>
 
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+								<div className="flex items-start gap-4">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10">
+										<Phone className="h-6 w-6 text-accent" />
+									</div>
+									<div>
+										<div className="mb-1 font-semibold">
+											{t("contactInfo.phone")}
+										</div>
+										<a
+											href="tel:+41796736445"
+											className="text-muted-foreground transition-colors hover:text-accent"
+										>
+											{phoneNumber}
+										</a>
+									</div>
+								</div>
+
+								<div className="flex items-start gap-4">
+									<div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary/50">
+										<MapPin className="h-6 w-6 text-secondary-foreground" />
+									</div>
+									<div>
+										<div className="mb-1 font-semibold">
+											{t("contactInfo.location")}
+										</div>
+										<p className="text-muted-foreground">{location}</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	)
 }
