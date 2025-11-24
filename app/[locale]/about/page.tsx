@@ -31,6 +31,14 @@ export async function generateMetadata(
 		keywords: t.raw("metadata.keywords"),
 		openGraph: t.raw("metadata.openGraph"),
 		alternates: t.raw("metadata.alternates"),
+		robots: {
+			index: true,
+			follow: true,
+			googleBot: {
+				index: true,
+				follow: true,
+			},
+		},
 	} satisfies Metadata
 }
 

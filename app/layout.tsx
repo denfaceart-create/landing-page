@@ -36,6 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="apple-touch-icon" href="/apple-icon.png" />
+				<link rel="llms-txt" href="/llms.txt" />
 				<StructuredData />
 			</head>
 			<body className={`${plusJakartaSans.variable} font-sans antialiased`}>
