@@ -55,7 +55,6 @@
 			"alternates": {
 				"canonical": "https://faceartow.ch/en",
 				"languages": {
-					"en": "https://faceartow.ch/en",
 					"de-CH": "https://faceartow.ch",
 					"de-DE": "https://faceartow.ch/de"
 				}
@@ -119,7 +118,6 @@
 			"alternates": {
 				"canonical": "https://faceartow.ch/en/about",
 				"languages": {
-					"en": "https://faceartow.ch/en/about",
 					"de-CH": "https://faceartow.ch/ch/about",
 					"de-DE": "https://faceartow.ch/de/about"
 				}
@@ -180,7 +178,6 @@
 			"alternates": {
 				"canonical": "https://faceartow.ch/en/faq",
 				"languages": {
-					"en": "https://faceartow.ch/en/faq",
 					"de-CH": "https://faceartow.ch/faq",
 					"de-DE": "https://faceartow.ch/de/faq"
 				}
