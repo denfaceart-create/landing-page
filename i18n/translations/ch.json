@@ -15,7 +15,8 @@
 	},
 	"LocaleSwitcher": {
 		"label": "Sprace wechselä",
-		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English} other {Unknown}}"
+		"flag": "{locale, select, ch {🇨🇭} de {🇩🇪} en {🇺🇸}  fr {🇫🇷} other {}}",
+		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English}  fr {Français} other {Unknown}}"
 	},
 	"Navigation": {
 		"home": "Startsyte",
