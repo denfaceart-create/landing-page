@@ -104,7 +104,6 @@ export const Navbar = ({ className }: { className?: string }) => {
 							return (
 								<DropdownMenuItem
 									key={locale}
-									// value={locale}
 									onClick={() => onSelectChange(locale)}
 									className={`h-8 cursor-pointer rounded-full px-3 font-medium text-xs ${
 										selected
