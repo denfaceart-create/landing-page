@@ -104,7 +104,7 @@ export function Contact() {
 				</div>
 				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
 					<Card className="p-8">
-						<CardHeader>
+						<CardHeader className="px-0">
 							<CardTitle className="text-2xl">
 								{t("contactForm.contactTitle")}
 							</CardTitle>
@@ -112,11 +112,11 @@ export function Contact() {
 								{t("contactForm.contactSubtitle")}
 							</CardDescription>
 						</CardHeader>
-						<CardContent>
+						<CardContent className="px-0">
 							<Form {...form}>
 								<form
 									onSubmit={form.handleSubmit(onSubmit)}
-									className="mx-auto max-w-3xl space-y-8 py-10"
+									className="mx-auto max-w-3xl space-y-8"
 								>
 									<div className="grid grid-cols-12 gap-4">
 										<div className="col-span-12 md:col-span-6">
@@ -228,7 +228,7 @@ export function Contact() {
 
 									<Button
 										type="submit"
-										className="w-full"
+										className="w-full cursor-pointer"
 										disabled={form.formState.isSubmitting}
 									>
 										{form.formState.isSubmitting && <Spinner />}
