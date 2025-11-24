@@ -3,11 +3,21 @@
 import { Construction } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { Card } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 
-export default function UnderConstructionPage() {
+export default function UnderConstructionPage({
+	className,
+}: {
+	className?: string
+}) {
 	const t = useTranslations("UnderConstructionPage")
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-background p-4">
+		<div
+			className={cn(
+				"flex items-center justify-center bg-background p-4",
+				className,
+			)}
+		>
 			<Card className="w-full max-w-2xl border-primary/20 bg-card p-8 text-center shadow-lg md:p-12">
 				<div className="mb-6 flex justify-center">
 					<div className="relative">

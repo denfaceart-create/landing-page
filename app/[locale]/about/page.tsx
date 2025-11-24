@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server"
 
 import PageLayout from "@/components/page-layout"
 
-import { TracingBeam } from "@/components/ui/tracing-beam"
+// import { TracingBeam } from "@/components/ui/tracing-beam"
 import UnderConstructionPage from "@/components/under-contsructions"
 import { routing } from "@/i18n/routing"
 // import { AboutClient } from "./about-client"
@@ -36,11 +36,11 @@ export async function generateMetadata(
 
 export default function AboutPage() {
 	return (
-		<PageLayout className="pt-6">
-			<TracingBeam>
-				{/* <AboutClient /> */}
-				<UnderConstructionPage />
-			</TracingBeam>
+		<PageLayout className="pt-20">
+			{/* <TracingBeam> */}
+			{/* <AboutClient /> */}
+			<UnderConstructionPage className="my-10" />
+			{/* </TracingBeam> */}
 		</PageLayout>
 	)
 }

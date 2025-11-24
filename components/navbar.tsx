@@ -53,7 +53,7 @@ export const Navbar = ({ className }: { className?: string }) => {
 		if (typeof current === "number" && typeof prev === "number") {
 			const direction = current - prev
 
-			setVisible(direction < 0) // Show when scrolling up, hide when scrolling down
+			setVisible(current < 0.05 || direction < 0) // Show when scrolling up, hide when scrolling down
 		}
 	})
 
@@ -70,7 +70,7 @@ export const Navbar = ({ className }: { className?: string }) => {
 					duration: 0.3,
 				}}
 				className={cn(
-					"fixed inset-x-0 top-10 z-5000 mx-auto flex max-w-fit items-center justify-center space-x-4 px-8 py-2",
+					"fixed inset-x-0 top-0 z-10 mx-auto flex h-20 w-full items-center justify-center space-x-4 bg-background/10 px-8 py-2 shadow-xs backdrop-blur-sm",
 					className,
 				)}
 			>
