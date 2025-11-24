@@ -115,7 +115,9 @@ export function AboutClient() {
 						>
 							<CardContent className="flex items-center gap-3 p-6">
 								<Users className="h-5 w-5 text-primary" />
-								<span className="font-medium">{service}</span>
+								<span className="wrap-break-words hyphens-auto font-medium">
+									{service}
+								</span>
 							</CardContent>
 						</Card>
 					))}
