@@ -34,7 +34,7 @@ export function Hero() {
 	}, [])
 
 	return (
-		<section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5">
+		<section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5 md:min-h-screen">
 			{/* Animated background elements */}
 			<div className="absolute inset-0 overflow-hidden">
 				<div className="absolute top-20 left-10 h-72 w-72 animate-float rounded-full bg-primary/20 blur-3xl" />
@@ -68,7 +68,7 @@ export function Hero() {
 						<span className="text-foreground">{t("heroTitle2")}</span>
 					</h1>
 
-					<p className="fade-in-element mx-auto max-w-2xl translate-y-4 text-balance text-muted-foreground text-xl opacity-0 transition-all delay-200 duration-700 md:text-2xl">
+					<p className="fade-in-element mx-auto max-w-xl translate-y-4 text-balance text-muted-foreground text-xl opacity-0 transition-all delay-200 duration-700 md:max-w-2xl md:text-2xl">
 						{t("heroSubtitle")}
 					</p>
 

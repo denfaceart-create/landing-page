@@ -9,13 +9,7 @@ import enLabels from "react-phone-number-input/locale/en"
 import { toast } from "sonner"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import {
 	Form,
 	FormControl,
@@ -94,7 +88,7 @@ export function Contact() {
 			className="flex items-center justify-center bg-muted/30 py-24 md:py-32"
 		>
 			<div className="container px-4">
-				<div className="mx-auto mb-16 max-w-3xl text-center">
+				<div className="mx-auto mb-12 max-w-3xl text-center">
 					<h2 className="font-bold text-4xl tracking-tight md:text-5xl lg:text-6xl">
 						{t("contactForm.contactTitle")}
 					</h2>
@@ -104,14 +98,6 @@ export function Contact() {
 				</div>
 				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
 					<Card className="p-8">
-						<CardHeader className="px-0">
-							<CardTitle className="text-2xl">
-								{t("contactForm.contactTitle")}
-							</CardTitle>
-							<CardDescription>
-								{t("contactForm.contactSubtitle")}
-							</CardDescription>
-						</CardHeader>
 						<CardContent className="px-0">
 							<Form {...form}>
 								<form
