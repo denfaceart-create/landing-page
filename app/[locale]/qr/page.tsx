@@ -5,19 +5,6 @@ import { getTranslations } from "next-intl/server"
 import { routing } from "@/i18n/routing"
 import { QRCodeClient } from "./qr-client"
 
-export const metadata: Metadata = {
-	title: "QR Code - Face Art Obwalden",
-	robots: {
-		index: false,
-		follow: false,
-		nocache: true,
-		googleBot: {
-			index: false,
-			follow: false,
-		},
-	},
-}
-
 export async function generateMetadata(
 	props: Omit<PageProps<"/[locale]/qr">, "children">,
 ) {
