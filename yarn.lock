@@ -2004,6 +2004,7 @@ __metadata:
     next-intl: "npm:^4.5.5"
     next-themes: "npm:^0.4.6"
     postcss: "npm:^8.5.6"
+    qrcode.react: "npm:^4.2.0"
     react: "npm:19.2.0"
     react-dom: "npm:19.2.0"
     react-hook-form: "npm:^7.66.1"
@@ -2561,6 +2562,15 @@ __metadata:
     object-assign: "npm:^4.1.1"
     react-is: "npm:^16.13.1"
   checksum: 10c0/59ece7ca2fb9838031d73a48d4becb9a7cc1ed10e610517c7d8f19a1e02fa47f7c27d557d8a5702bec3cfeccddc853579832b43f449e54635803f277b1c78077
+  languageName: node
+  linkType: hard
+
+"qrcode.react@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "qrcode.react@npm:4.2.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/68c691d130e5fda2f57cee505ed7aea840e7d02033100687b764601f9595e1116e34c13876628a93e1a5c2b85e4efc27d30b2fda72e2050c02f3e1c4e998d248
   languageName: node
   linkType: hard
 
