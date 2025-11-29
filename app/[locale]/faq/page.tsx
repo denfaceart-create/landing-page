@@ -3,10 +3,9 @@ import { notFound } from "next/navigation"
 import { hasLocale } from "next-intl"
 import { getTranslations } from "next-intl/server"
 import PageLayout from "@/components/page-layout"
-// import { TracingBeam } from "@/components/ui/tracing-beam"
-import UnderConstructionPage from "@/components/under-contsructions"
+import { TracingBeam } from "@/components/ui/tracing-beam"
 import { routing } from "@/i18n/routing"
-// import { FAQClient } from "./faq-client"
+import { FAQClient } from "./faq-client"
 
 export async function generateMetadata(
 	props: Omit<PageProps<"/[locale]/faq">, "children">,
@@ -43,10 +42,9 @@ export async function generateMetadata(
 export default function FAQPage() {
 	return (
 		<PageLayout className="pt-20">
-			{/* <TracingBeam> */}
-			{/* <FAQClient /> */}
-			<UnderConstructionPage className="my-10" />
-			{/* </TracingBeam> */}
+			<TracingBeam>
+				<FAQClient />
+			</TracingBeam>
 		</PageLayout>
 	)
 }
