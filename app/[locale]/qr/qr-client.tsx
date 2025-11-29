@@ -67,7 +67,7 @@ export function QRCodeClient() {
 				</div>
 
 				<div className="text-center text-gray-700 text-sm sm:text-base md:text-lg print:text-xl">
-					<p className="break-all font-mono px-4">{siteUrl}</p>
+					<p className="break-all px-4 font-mono">{siteUrl}</p>
 				</div>
 			</div>
 		</div>
