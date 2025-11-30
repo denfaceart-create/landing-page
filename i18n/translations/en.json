@@ -1,261 +1,260 @@
 {
-	"Manifest": {
-		"name": "Face Art Obwalden",
-		"short_name": "Face Art",
-		"description": "Professional face painting services for children's birthday parties, celebrations, and events in Obwalden and Central Switzerland.",
-		"keywords": "face painting, children's birthday, events, Obwalden, Face Art, professional face painter",
-		"theme_color": "#d946ef",
-		"lang": "en",
-		"dir": "ltr",
-		"orientation": "portrait",
-		"display": "standalone"
-	},
-	"LocaleLayout": {
-		"title": "Face Art Obwalden - Professional Face Painting Services"
-	},
-	"LocaleSwitcher": {
-		"label": "Change language"
-	},
-	"Navigation": {
-		"home": "Home",
-		"about": "About me",
-		"faq": "FAQ"
-	},
-	"Footer": {
-		"rights": "All rights reserved"
-	},
-	"HomePage": {
-		"metadata": {
-			"title": "Face Painting Central Switzerland | Professional Face Painter",
-			"description": "Professional face painting in Central Switzerland for birthdays, events, and celebrations. Creative designs that delight children and adults. Book now!",
-			"keywords": [
-				"face painting",
-				"face painter",
-				"central switzerland",
-				"face painting",
-				"children's birthday",
-				"events",
-				"children's entertainment"
-			],
-			"openGraph": {
-				"title": "Face Painting Central Switzerland | Professional Face Painter",
-				"description": "Professional face painting for birthdays, events, and celebrations in Central Switzerland",
-				"images": [
-					{
-						"url": "",
-						"width": 1200,
-						"height": 630,
-						"alt": ""
-					}
-				],
-				"locale": "en",
-				"type": "website",
-				"url": "https://faceartow.ch/en"
-			},
-			"alternates": {
-				"canonical": "https://faceartow.ch/en",
-				"languages": {
-					"de-CH": "https://faceartow.ch",
-					"de-DE": "https://faceartow.ch/de"
-				}
-			}
-		},
-		"title": "Face Painting Obwalden",
-		"description": "Transform your celebration with beautiful face painting. Professional, creative, and unforgettable.",
-		"hero": {
-			"badge": "Face Painting",
-			"heroTitle1": "Face Art",
-			"heroTitle2": "Obwalden",
-			"heroSubtitle": "Face painting for children's birthdays, celebrations, and events",
-			"ctaBook": "Book now"
-		},
-		"gallery": {
-			"title": "My Work"
-		},
-		"contactForm": {
-			"contactTitle": "Contact",
-			"contactSubtitle": "Write to us",
-			"name": "Name",
-			"email": "Email",
-			"phone": "Phone",
-			"message": "Message",
-			"send": "Send",
-			"submitSuccess": "Thank you for your message! I will get back to you as soon as possible.",
-			"submitError": "Something went wrong. Please try again later."
-		},
-		"contactInfo": {
-			"title": "Contact Information",
-			"email": "Email",
-			"phone": "Phone",
-			"location": "Location"
-		}
-	},
-	"AboutPage": {
-		"metadata": {
-			"title": "About me | Face Painting Central Switzerland",
-			"description": "Learn more about my professional face painting services in Central Switzerland. Passionate artist creating magical moments for children and events.",
-			"keywords": [
-				"about face painter",
-				"professional face painting",
-				"central switzerland",
-				"children's entertainment"
-			],
-			"openGraph": {
-				"title": "About me | Face Painting Central Switzerland",
-				"description": "Learn more about my professional face painting services",
-				"images": [
-					{
-						"url": "",
-						"width": 1200,
-						"height": 630,
-						"alt": ""
-					}
-				],
-				"locale": "en",
-				"type": "website",
-				"url": "https://faceartow.ch/en/about"
-			},
-			"alternates": {
-				"canonical": "https://faceartow.ch/en/about",
-				"languages": {
-					"de-CH": "https://faceartow.ch/about",
-					"de-DE": "https://faceartow.ch/de/about"
-				}
-			}
-		},
-		"title": "About Me",
-		"subtitle": "Bringing joy and creativity to children's faces",
-		"introduction": "Welcome to Face Art Obwalden! I bring passion to the art of face painting and create magical moments for children.",
-		"story": {
-			"title": "My Story",
-			"content": "What started as a hobby has become a passion for bringing smiles to children's faces. I find it wonderful when I can transform children into their desired design and they beam from ear to ear."
-		},
-		"experience": {
-			"title": "Experience & Expertise",
-			"content": "I'm based in beautiful Obwalden and specialize in creating safe, fun, and unforgettable face painting experiences for children. I only use high-quality, non-toxic, and hypoallergenic paints that are safe for sensitive skin. My designs range from simple and quick for large groups to elaborate masterpieces for special occasions."
-		},
-		"services": {
-			"title": "What I Offer",
-			"items": [
-				"Birthday parties and celebrations",
-				"School events and festivals",
-				"Corporate family events",
-				"Community events and markets",
-				"Private parties and gatherings",
-				"Customized designs and themes"
-			]
-		},
-		"commitment": {
-			"title": "My Commitment",
-			"content": "I am committed to providing every child with a safe, hygienic, and pleasant experience, ensuring that each design is created with care and attention to detail."
-		}
-	},
-	"FaqPage": {
-		"metadata": {
-			"title": "FAQ | Questions about Face Painting Answered",
-			"description": "Frequently asked questions about my face painting services in Central Switzerland. Prices, booking, safety, and event details answered.",
-			"keywords": [
-				"face painting faq",
-				"face painting price",
-				"book face painter",
-				"face painting safety"
-			],
-			"openGraph": {
-				"title": "FAQ | Face Painting Central Switzerland",
-				"description": "Frequently asked questions about face painting services, prices, and bookings",
-				"images": [
-					{
-						"url": "",
-						"width": 1200,
-						"height": 630,
-						"alt": ""
-					}
-				],
-				"locale": "en",
-				"type": "website",
-				"url": "https://faceartow.ch/en/faq"
-			},
-			"alternates": {
-				"canonical": "https://faceartow.ch/en/faq",
-				"languages": {
-					"de-CH": "https://faceartow.ch/faq",
-					"de-DE": "https://faceartow.ch/de/faq"
-				}
-			}
-		},
-		"title": "Frequently Asked Questions",
-		"subtitle": "Everything you need to know about my face painting services",
-		"questions": [
-			{
-				"question": "What kind of paints do you use?",
-				"answer": "I exclusively use high-quality, non-toxic, water-based face paints that are specifically developed for use on skin. All paints are hypoallergenic and safe for children with sensitive skin. They wash off easily with soap and water."
-			},
-			{
-				"question": "How long does each face painting take?",
-				"answer": "Simple designs usually take 3-5 minutes, while more elaborate designs can take 8-15 minutes. For parties, I recommend planning about 7-10 minutes per child to ensure everyone gets a beautiful design."
-			},
-			{
-				"question": "What age groups do you paint for?",
-				"answer": "I paint faces for children of all ages, typically from 3 years old. For very young children (under 3), I recommend simple designs on hands or arms."
-			},
-			{
-				"question": "How far in advance should I book?",
-				"answer": "I recommend booking at least 2-3 weeks in advance, especially for weekend events and during peak season like summer and holidays. However, I do my best to accommodate last-minute requests when possible."
-			},
-			{
-				"question": "What do you need from me as the host?",
-				"answer": "I only need a space for my table and chair, which I bring. I bring all my materials, including paints, brushes, mirrors, and wet wipes. A shaded area is preferred for outdoor events."
-			},
-			{
-				"question": "Do you have insurance?",
-				"answer": "Yes, I have comprehensive liability insurance for all my face painting activities. Safety and professionalism are my top priorities."
-			},
-			{
-				"question": "What happens if it rains at an outdoor event?",
-				"answer": "For outdoor events, I need a covered area to set up in case of rain. If the event is canceled due to weather, we can arrange a new date without additional costs."
-			},
-			{
-				"question": "Can you create custom designs or themes?",
-				"answer": "Absolutely! I love creating custom designs that match your party theme or your child's favorite characters. Just let me know what you have in mind when you book, and I'll prepare accordingly."
-			},
-			{
-				"question": "How do I care for the face painting after the event?",
-				"answer": "The face painting typically lasts 4-6 hours, depending on activity level. To remove, simply use soap and warm water. Avoid harsh rubbing - gentle washing removes the paint easily."
-			},
-			{
-				"question": "What are your prices?",
-				"answer": "My prices vary depending on duration, number of children, and type of event. Please contact me for a personalized quote. I offer competitive prices for various occasions."
-			}
-		],
-		"contact": {
-			"title": "Have more questions?",
-			"description": "Don't hesitate to reach out! I'm happy to discuss your specific needs and help make your event magical.",
-			"button": "Contact me"
-		}
-	},
-	"UnderConstructionPage": {
-		"title": "Under Construction",
-		"description": "My website is currently under construction. I'm working diligently to create it. Check back soon!",
-		"expectedLaunch": "Expected Launch: Coming Soon"
-	},
-	"NotFoundPage": {
-		"title": "Page not found",
-		"description": "Oops! The page you're looking for doesn't exist. It may have been moved or deleted, or the URL was entered incorrectly.",
-		"goHome": "Back to home",
-		"goBack": "Go back",
-		"errorCode": "Error code: 404 - Resource not found"
-	},
-	"ErrorPage": {
-		"title": "Something went wrong!",
-		"description": "Unfortunately, an error occurred.",
-		"retry": "reload the page",
-		"goHome": "go to home page",
-		"errorId": "Error ID: {errorId}"
-	},
-	"components": {
-		"phone-input": {
-			"placeholder": "Search country...",
-			"notFound": "No country found."
-		}
-	}
+    "Manifest": {
+        "name": "Face Art Obwalden",
+        "short_name": "Face Art",
+        "description": "Creative face painting for children's birthdays, celebrations, and events in Obwalden and Central Switzerland.",
+        "keywords": "face painting, children's birthday, events, Obwalden, Face Art, face painter",
+        "theme_color": "#d946ef",
+        "lang": "en",
+        "dir": "ltr",
+        "orientation": "portrait",
+        "display": "standalone"
+    },
+    "LocaleLayout": {
+        "title": "Face Art Obwalden - Face Painting Services"
+    },
+    "LocaleSwitcher": {
+        "label": "Change language"
+    },
+    "Navigation": {
+        "home": "Home",
+        "about": "About me",
+        "faq": "FAQ"
+    },
+    "Footer": {
+        "rights": "All rights reserved"
+    },
+    "HomePage": {
+        "metadata": {
+            "title": "Face Painting Central Switzerland | Face Art Obwalden",
+            "description": "Face painting for birthdays, events, and celebrations in Central Switzerland. Friendly, creative designs for kids and families.",
+            "keywords": [
+                "face painting",
+                "face painter",
+                "central switzerland",
+                "children's birthday",
+                "events",
+                "children's entertainment"
+            ],
+            "openGraph": {
+                "title": "Face Painting Central Switzerland | Face Art Obwalden",
+                "description": "Face painting for birthdays, events, and celebrations in Central Switzerland",
+                "images": [
+                    {
+                        "url": "",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": ""
+                    }
+                ],
+                "locale": "en",
+                "type": "website",
+                "url": "https://faceartow.ch/en"
+            },
+            "alternates": {
+                "canonical": "https://faceartow.ch/en",
+                "languages": {
+                    "de-CH": "https://faceartow.ch",
+                    "de-DE": "https://faceartow.ch/de"
+                }
+            }
+        },
+        "title": "Face Painting Obwalden",
+        "description": "Add colour and joy to your celebration with friendly and creative face painting.",
+        "hero": {
+            "badge": "Face Painting",
+            "heroTitle1": "Face Art",
+            "heroTitle2": "Obwalden",
+            "heroSubtitle": "Face painting for children's birthdays, celebrations, and events",
+            "ctaBook": "Book now"
+        },
+        "gallery": {
+            "title": "My Work"
+        },
+        "contactForm": {
+            "contactTitle": "Contact",
+            "contactSubtitle": "Send me a message",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "message": "Message",
+            "send": "Send",
+            "submitSuccess": "Thank you for your message! I’ll reply as soon as I can.",
+            "submitError": "Something went wrong. Please try again later."
+        },
+        "contactInfo": {
+            "title": "Contact Information",
+            "email": "Email",
+            "phone": "Phone",
+            "location": "Location"
+        }
+    },
+    "AboutPage": {
+        "metadata": {
+            "title": "About me | Face Art Obwalden",
+            "description": "Learn more about my face painting in Central Switzerland. Bringing smiles and colour to children and events.",
+            "keywords": [
+                "about face painter",
+                "face painting",
+                "central switzerland",
+                "children's entertainment"
+            ],
+            "openGraph": {
+                "title": "About me | Face Art Obwalden",
+                "description": "Learn more about my face painting services",
+                "images": [
+                    {
+                        "url": "",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": ""
+                    }
+                ],
+                "locale": "en",
+                "type": "website",
+                "url": "https://faceartow.ch/en/about"
+            },
+            "alternates": {
+                "canonical": "https://faceartow.ch/en/about",
+                "languages": {
+                    "de-CH": "https://faceartow.ch/about",
+                    "de-DE": "https://faceartow.ch/de/about"
+                }
+            }
+        },
+        "title": "About Me",
+        "subtitle": "Bringing smiles and colour to children's faces",
+        "introduction": "Hi and welcome to Face Art Obwalden! I love painting kids' favourite characters and creating small moments of magic.",
+        "story": {
+            "title": "My Story",
+            "content": "What started as a simple hobby grew into something I truly enjoy. Seeing children light up when they recognise themselves in the mirror is my favourite part of this work."
+        },
+        "experience": {
+            "title": "Experience & Approach",
+            "content": "I’m based in Obwalden and paint at birthdays, family celebrations, and all kinds of events. I use high-quality, water-based, skin-safe paints that wash off easily. Whether it’s quick designs for many children or detailed artwork for a special moment, I always take my time and paint with care."
+        },
+        "services": {
+            "title": "What I Offer",
+            "items": [
+                "Birthday parties and celebrations",
+                "School events and festivals",
+                "Family and company events",
+                "Community events and markets",
+                "Private parties",
+                "Custom themes and designs"
+            ]
+        },
+        "commitment": {
+            "title": "My Commitment",
+            "content": "Every child should feel comfortable and happy while being painted. I keep my setup clean, my paints safe, and the experience calm and enjoyable."
+        }
+    },
+    "FaqPage": {
+        "metadata": {
+            "title": "FAQ | Questions about Face Painting",
+            "description": "Frequently asked questions about face painting in Central Switzerland. Prices, booking, safety, and event details.",
+            "keywords": [
+                "face painting faq",
+                "face painting price",
+                "book face painter",
+                "face painting safety"
+            ],
+            "openGraph": {
+                "title": "FAQ | Face Art Obwalden",
+                "description": "Frequently asked questions about face painting services, prices, and bookings",
+                "images": [
+                    {
+                        "url": "",
+                        "width": 1200,
+                        "height": 630,
+                        "alt": ""
+                    }
+                ],
+                "locale": "en",
+                "type": "website",
+                "url": "https://faceartow.ch/en/faq"
+            },
+            "alternates": {
+                "canonical": "https://faceartow.ch/en/faq",
+                "languages": {
+                    "de-CH": "https://faceartow.ch/faq",
+                    "de-DE": "https://faceartow.ch/de/faq"
+                }
+            }
+        },
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know",
+        "questions": [
+            {
+                "question": "What kind of paints do you use?",
+                "answer": "I use high-quality, water-based face paints made for skin. They are non-toxic, hypoallergenic, and wash off easily with soap and water."
+            },
+            {
+                "question": "How long does each face painting take?",
+                "answer": "Simple designs take around 3–5 minutes. More detailed ones take 8–15 minutes. For parties, planning 7–10 minutes per child works well."
+            },
+            {
+                "question": "What age groups do you paint for?",
+                "answer": "I paint children from about 3 years old. For younger ones, small hand or arm designs are usually easier."
+            },
+            {
+                "question": "How far in advance should I book?",
+                "answer": "2–3 weeks ahead is ideal, especially for weekends, but I try to help with last-minute requests whenever possible."
+            },
+            {
+                "question": "What do you need from me as the host?",
+                "answer": "Just a small space for my table and chair. I bring all materials. For outdoor events, a shaded or covered area is best."
+            },
+            {
+                "question": "Do you have insurance?",
+                "answer": "Yes, I’m fully insured for all my face painting activities."
+            },
+            {
+                "question": "What happens if it rains at an outdoor event?",
+                "answer": "I need a covered space. If the event is cancelled due to weather, we can easily find a new date."
+            },
+            {
+                "question": "Can you create custom designs or themes?",
+                "answer": "Yes! I’m happy to match your party theme or create designs based on your child’s favourite ideas."
+            },
+            {
+                "question": "How do I care for the face painting after the event?",
+                "answer": "The paint lasts around 4–6 hours depending on activity. To remove it, use warm water and mild soap. No strong rubbing needed."
+            },
+            {
+                "question": "What are your prices?",
+                "answer": "Prices depend on the event, duration, and number of children. Please contact me for a simple and clear quote."
+            }
+        ],
+        "contact": {
+            "title": "More questions?",
+            "description": "Feel free to reach out. I’m happy to help you plan your event.",
+            "button": "Contact me"
+        }
+    },
+    "UnderConstructionPage": {
+        "title": "Under Construction",
+        "description": "My website is currently being updated. Please check back soon.",
+        "expectedLaunch": "Expected Launch: Coming Soon"
+    },
+    "NotFoundPage": {
+        "title": "Page not found",
+        "description": "This page doesn’t exist or may have been moved.",
+        "goHome": "Back to home",
+        "goBack": "Go back",
+        "errorCode": "Error code: 404 - Resource not found"
+    },
+    "ErrorPage": {
+        "title": "Something went wrong!",
+        "description": "An unexpected error occurred.",
+        "retry": "reload the page",
+        "goHome": "go to home page",
+        "errorId": "Error ID: {errorId}"
+    },
+    "components": {
+        "phone-input": {
+            "placeholder": "Search country...",
+            "notFound": "No country found."
+        }
+    }
 }

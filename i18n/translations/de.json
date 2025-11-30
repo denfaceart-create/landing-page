@@ -2,16 +2,16 @@
 	"Manifest": {
 		"name": "Face Art Obwalden",
 		"short_name": "Face Art",
-		"description": "Professionelle Kinderschminke-Dienstleistungen für Kindergeburtstage, Feste und Veranstaltungen in Obwalden und in der Zentralschweiz.",
-		"keywords": "Kinderschminken, Kindergeburtstag, Veranstaltungen, Obwalden, Face Art, professioneller Kinderschminker",
+		"description": "Kreatives Schminken für Kindergeburtstage, Feiern und Veranstaltungen in Obwalden und der Zentralschweiz",
+		"keywords": "Gesichtsbemalung, Kindergeburtstag, Veranstaltungen, Obwalden, Face Art, Gesichtsmaler",
 		"theme_color": "#d946ef",
-		"lang": "de-DE",
+		"lang": "en",
 		"dir": "ltr",
-		"orientation": "portrait",
-		"display": "standalone"
+		"Ausrichtung": "Hochformat",
+		"Anzeige": "eigenständig"
 	},
 	"LocaleLayout": {
-		"title": "Face Art Obwalden - Professionelle Kinderschminke-Dienstleistungen"
+		"Titel": "Face Art Obwalden – Gesichtsbemalung"
 	},
 	"LocaleSwitcher": {
 		"label": "Sprache wechseln"
@@ -26,20 +26,24 @@
 	},
 	"HomePage": {
 		"metadata": {
-			"title": "Kinderschminken Zentralschweiz | Professionelle Kinderschminkerin",
-			"description": "Professionelles Kinderschminken in der Zentralschweiz für Geburtstage, Events und Feste. Kreative Designs, die Kinder und Erwachsene begeistern. Jetzt buchen!",
+			"title": "Kinderschminken Zentralschweiz | Face Art Obwalden",
+			"description": "Kinderschminken für Geburtstage, Veranstaltungen und Feiern in der Zentralschweiz. Freundliche, kreative Designs für Kinder und Familien.",
 			"keywords": [
+				"Gesichtsbemalung",
+				"Gesichtsmaler",
+				"Zentralschweiz",
+				"Kindergeburtstag",
+				"Veranstaltungen",
+				"Kinderunterhaltun",
 				"kinderschminken",
 				"kinderschminkerin",
-				"zentralschweiz",
 				"face painting",
-				"kindergeburtstag",
 				"events",
 				"kinderanimation"
 			],
 			"openGraph": {
-				"title": "Kinderschminken Zentralschweiz | Professionelle Kinderschminkerin",
-				"description": "Professionelles Kinderschminken für Geburtstage, Events und Feste in der Zentralschweiz",
+				"title": "Kinderschminken Zentralschweiz | Face Art Obwalden",
+				"description": "Kinderschminken für Geburtstage, Veranstaltungen und Feiern in der Zentralschweiz",
 				"images": [
 					{
 						"url": "",
@@ -61,7 +65,7 @@
 			}
 		},
 		"title": "Kinderschminken Obwalden",
-		"description": "Verwandeln Sie Ihre Feier mit wunderschönem Kinderschminken. Professionell, kreativ und unvergesslich.",
+		"description": "Verleihen Sie Ihrer Feier mit freundlichem und kreativem Schminken Farbe und Freude.",
 		"hero": {
 			"badge": "Kinderschminken",
 			"heroTitle1": "Face Art",
@@ -92,8 +96,8 @@
 	},
 	"AboutPage": {
 		"metadata": {
-			"title": "Über mich | Kinderschminken Zentralschweiz",
-			"description": "Erfahren Sie mehr über meine professionellen Kinderschminke-Dienstleistungen in der Zentralschweiz. Begeisterte Künstlerin, die magische Momente für Kinder und Events schafft.",
+			"title": "Über mich | Face Art Zentralschweiz",
+			"description": "Erfahren Sie mehr über meine Gesichtsbemalung in der Zentralschweiz. Ich bringe Kindern und Veranstaltungen ein Lächeln und Farbe ins Gesicht.",
 			"keywords": [
 				"über kinderschminkerin",
 				"professionelles kinderschminken",
@@ -124,15 +128,15 @@
 			}
 		},
 		"title": "Über Mich",
-		"subtitle": "Freude und Kreativität in Kindergesichter bringen",
-		"introduction": "Willkommen bei Face Art Obwalden! Ich bringe Leidenschaft in die Kunst des Kinderschminkens und schaffe magische Momente für Kinder.",
+		"subtitle": "Wir zaubern ein Lächeln und Farbe auf die Gesichter der Kinder",
+		"introduction": "Hallo und herzlich willkommen bei Face Art Obwalden! Ich liebe es, die Lieblingsfiguren der Kinder zu malen und kleine magische Momente zu schaffen.",
 		"story": {
 			"title": "Meine Geschichte",
-			"content": "Was als Hobby begann, ist zu einer Leidenschaft geworden, Kindern ein Lächeln ins Gesicht zu zaubern. Ich finde es wunderschön, wenn ich die Kinder in das gewünschte Design verwandeln darf und sie dann bis über beide Ohren strahlen."
+			"content": "Was als einfaches Hobby begann, entwickelte sich zu etwas, das mir wirklich Spaß macht. Zu sehen, wie Kinder strahlen, wenn sie sich im Spiegel erkennen, ist mein Lieblingsaspekt dieser Arbeit."
 		},
 		"experience": {
-			"title": "Erfahrung & Expertise",
-			"content": "Ich bin im wunderschönen Obwalden zu Hause und spezialisiert darauf, sichere, lustige und unvergessliche Kinderschminke-Erlebnisse für Kinder zu schaffen. Ich verwende nur hochwertige, ungiftige und hypoallergene Farben, die für empfindliche Haut sicher sind. Meine Designs reichen von einfachen und schnellen für große Gruppen bis hin zu aufwändigen Meisterwerken für besondere Anlässe."
+			"title": "Erfahrung & Ansatz",
+			"content": "Ich bin in Obwalden ansässig und male auf Geburtstagen, Familienfeiern und allen Arten von Veranstaltungen. Ich verwende hochwertige, wasserbasierte, hautverträgliche Farben, die sich leicht abwaschen lassen. Ob schnelle Motive für viele Kinder oder detaillierte Kunstwerke für einen besonderen Moment – ich nehme mir immer Zeit und male mit Sorgfalt."
 		},
 		"services": {
 			"title": "Was Ich Anbiete",
@@ -147,13 +151,13 @@
 		},
 		"commitment": {
 			"title": "Mein Versprechen",
-			"content": "Ich verpflichte mich, jedem Kind eine sichere, hygienische und angenehme Erfahrung zu bieten und stelle sicher, dass jedes Design mit Sorgfalt und Aufmerksamkeit für Details erstellt wird."
+			"content": "Jedes Kind sollte sich beim Schminken wohl und glücklich fühlen. Ich achte darauf, dass meine Arbeitsfläche sauber ist, meine Farben sicher sind und die Erfahrung ruhig und angenehm ist."
 		}
 	},
 	"FaqPage": {
 		"metadata": {
-			"title": "FAQ | Fragen über Kinderschminken beantwortet",
-			"description": "Häufig gestellte Fragen über meine Kinderschminke-Dienstleistungen in der Zentralschweiz. Preise, Buchung, Sicherheit und Event-Details beantwortet.",
+			"title": "FAQ | Fragen über Kinderschminken",
+			"description": "Häufig gestellte Fragen zum Thema Gesichtsbemalung in der Zentralschweiz. Preise, Buchung, Sicherheit und Veranstaltungsdetails.",
 			"keywords": [
 				"kinderschminken faq",
 				"kinderschminken preis",
@@ -161,7 +165,7 @@
 				"kinderschminken sicherheit"
 			],
 			"openGraph": {
-				"title": "FAQ | Kinderschminken Zentralschweiz",
+				"title": "FAQ | Face Art Obwalden",
 				"description": "Häufige Fragen über Kinderschminke-Dienstleistungen, Preise und Buchungen",
 				"images": [
 					{
@@ -184,52 +188,52 @@
 			}
 		},
 		"title": "Häufig gestellte Fragen",
-		"subtitle": "Alles, was Sie über meine Kinderschminke-Dienstleistungen wissen müssen",
+		"subtitle": "Alles, was Sie wissen müssen",
 		"questions": [
 			{
 				"question": "Welche Art von Farben verwenden Sie?",
-				"answer": "Ich verwende ausschließlich hochwertige, ungiftige, wasserbasierte Gesichtsfarben, die speziell für die Anwendung auf der Haut entwickelt wurden. Alle Farben sind hypoallergen und sicher für Kinder mit empfindlicher Haut. Sie lassen sich leicht mit Seife und Wasser abwaschen."
+				"answer": "Ich verwende hochwertige, wasserbasierte Gesichtsfarben, die speziell für die Haut entwickelt wurden. Sie sind ungiftig, hypoallergen und lassen sich leicht mit Wasser und Seife abwaschen."
 			},
 			{
 				"question": "Wie lange dauert jedes Kinderschminken?",
-				"answer": "Einfache Designs dauern normalerweise 3-5 Minuten, während aufwändigere Designs 8-15 Minuten dauern können. Für Partys empfehle ich etwa 7-10 Minuten pro Kind einzuplanen, um sicherzustellen, dass jeder ein schönes Design bekommt."
+				"answer": "Einfache Motive dauern etwa 3–5 Minuten. Detailliertere Motive dauern 8–15 Minuten. Für Partys empfiehlt es sich, 7–10 Minuten pro Kind einzuplanen."
 			},
 			{
 				"question": "Für welche Altersgruppe schminken Sie?",
-				"answer": "Ich schminke Gesichter für Kinder jeden Alters, normalerweise ab 3 Jahren. Für sehr kleine Kinder (unter 3) empfehle ich einfache Designs auf Händen oder Armen."
+				"answer": "Ich male Kinder ab etwa 3 Jahren. Für jüngere Kinder sind kleine Motive auf den Händen oder Armen in der Regel einfacher."
 			},
 			{
 				"question": "Wie weit im Voraus sollte ich buchen?",
-				"answer": "Ich empfehle, mindestens 2-3 Wochen im Voraus zu buchen, besonders für Wochenend-Veranstaltungen und während der Hochsaison wie Sommer und Feiertage. Ich tue jedoch mein Bestes, um auch kurzfristigere Anfragen zu berücksichtigen, wenn möglich."
+				"answer": "2–3 Wochen im Voraus ist ideal, insbesondere für Wochenenden, aber ich versuche, auch bei kurzfristigen Anfragen zu helfen, wann immer dies möglich ist."
 			},
 			{
 				"question": "Was brauchen Sie von mir als Gastgeber?",
-				"answer": "Ich brauche nur einen Platz für meinen Tisch und Stuhl, die ich mitbringe. Ich bringe alle meine Materialien mit, einschließlich Farben, Pinsel, Spiegel und Feuchttücher. Ein schattiger Bereich wird für Outdoor-Veranstaltungen bevorzugt."
+				"answer": "Nur einen kleinen Platz für meinen Tisch und Stuhl. Ich bringe alle Materialien mit. Für Veranstaltungen im Freien ist ein schattiger oder überdachter Bereich am besten geeignet."
 			},
 			{
-				"question": "Haben Sie eine Versicherung?",
-				"answer": "Ja, ich habe eine umfassende Haftpflichtversicherung für alle meine Kinderschminke-Aktivitäten. Sicherheit und Professionalität sind meine obersten Prioritäten."
+				"question": "Sind Sie versichert?",
+				"answer": "Ja, ich bin für alle meine Facepainting-Aktivitäten voll versichert."
 			},
 			{
 				"question": "Was passiert, wenn es bei einer Outdoor-Veranstaltung regnet?",
-				"answer": "Für Outdoor-Veranstaltungen brauche ich einen überdachten Bereich zum Aufbauen für den Fall von Regen. Wenn die Veranstaltung wetterbedingt abgesagt wird, können wir ohne zusätzliche Kosten einen neuen Termin vereinbaren."
+				"answer": "Ich benötige einen überdachten Platz. Wenn die Veranstaltung aufgrund des Wetters abgesagt wird, können wir problemlos einen neuen Termin finden."
 			},
 			{
 				"question": "Können Sie maßgeschneiderte Designs oder Themen erstellen?",
-				"answer": "Absolut! Ich liebe es, maßgeschneiderte Designs zu erstellen, die zu Ihrem Partythema oder den Lieblingsfiguren Ihres Kindes passen. Lassen Sie mich einfach wissen, was Sie sich vorstellen, wenn Sie buchen, und ich bereite mich entsprechend vor."
+				"answer": "Ja! Gerne passe ich mich Ihrem Partythema an oder erstelle Designs, die auf den Lieblingsideen Ihres Kindes basieren."
 			},
 			{
 				"question": "Wie pflege ich das Kinderschminken nach der Veranstaltung?",
-				"answer": "Das Kinderschminken hält normalerweise 4-6 Stunden, abhängig vom Aktivitätslevel. Zum Entfernen verwenden Sie einfach Seife und warmes Wasser. Vermeiden Sie starkes Reiben - sanftes Waschen entfernt die Farbe leicht."
+				"answer": "Die Farbe hält je nach Aktivität etwa 4 bis 6 Stunden. Zum Entfernen verwenden Sie warmes Wasser und milde Seife. Starkes Reiben ist nicht erforderlich."
 			},
 			{
 				"question": "Wie sind Ihre Preise?",
-				"answer": "Meine Preise variieren je nach Dauer, Anzahl der Kinder und Art der Veranstaltung. Bitte kontaktieren Sie mich für ein personalisiertes Angebot. Ich biete wettbewerbsfähige Preise für verschiedene Anlässe."
+				"answer": "Die Preise hängen von der Veranstaltung, der Dauer und der Anzahl der Kinder ab. Bitte kontaktieren Sie mich für ein einfaches und klares Angebot."
 			}
 		],
 		"contact": {
 			"title": "Haben Sie noch Fragen?",
-			"description": "Zögern Sie nicht, sich zu melden! Ich bespreche gerne Ihre spezifischen Bedürfnisse und helfe dabei, Ihre Veranstaltung magisch zu gestalten.",
+			"description": "Zögern Sie nicht, mich zu kontaktieren. Ich helfe Ihnen gerne bei der Planung Ihrer Veranstaltung.",
 			"button": "Kontaktieren Sie mich"
 		}
 	},
