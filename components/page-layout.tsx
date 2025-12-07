@@ -1,3 +1,5 @@
+"use client"
+
 import type { CSSProperties, PropsWithChildren } from "react"
 import { cn } from "@/lib/utils"
 import { Footer } from "./footer"
@@ -14,10 +16,13 @@ export default function PageLayout({
 	style,
 }: PageLayoutProps) {
 	return (
-		<main className={cn("min-h-screen", className)} style={style}>
+		<>
 			<Navbar />
-			{children}
+
+			<main className={cn("min-h-screen", className)} style={style}>
+				{children}
+			</main>
 			<Footer />
-		</main>
+		</>
 	)
 }
