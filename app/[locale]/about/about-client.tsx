@@ -4,39 +4,17 @@ import { Heart, Palette, Shield, Star, Users } from "lucide-react"
 
 import { useTranslations } from "next-intl"
 
-import { useEffect, useRef } from "react"
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useFadeInElementObserver } from "@/hooks/useFadeInElementObserver"
+import type messages from "@/i18n/translations/ch.d.json"
 
 export function AboutClient() {
 	const t = useTranslations("AboutPage")
-	const contentRef = useRef<HTMLDivElement>(null)
+	const contentRef = useFadeInElementObserver()
 
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const elements = entry.target.querySelectorAll(".fade-in-element")
-						elements.forEach((el, index) => {
-							setTimeout(() => {
-								el.classList.remove("opacity-0", "translate-y-4")
-							}, index * 100)
-						})
-					}
-				})
-			},
-			{ threshold: 0.1 },
-		)
-
-		if (contentRef.current) {
-			observer.observe(contentRef.current)
-		}
-
-		return () => observer.disconnect()
-	}, [])
-
-	const services = Array.from({ length: 6 }, (_, i) => t(`services.items.${i}`))
+	const services = t.raw(
+		"services.items",
+	) as (typeof messages)["AboutPage"]["services"]["items"]
 
 	return (
 		<div ref={contentRef} className="container mx-auto px-4 py-16 md:py-24">

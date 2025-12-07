@@ -69,7 +69,8 @@
 			"heroTitle1": "Face Art",
 			"heroTitle2": "Obwaldä",
 			"heroSubtitle": "Gsichtsschminke für Kindergeburtstäg, Fäscht und Verastaltige",
-			"ctaBook": "Bueche jetzt"
+			"ctaBook": "Bueche jetzt",
+			"ctaMyWork": "Mini Arbet"
 		},
 		"gallery": {
 			"title": "Mini Arbet"
@@ -80,6 +81,7 @@
 			"name": "Name",
 			"email": "E-mail",
 			"phone": "Telefon",
+			"optional": "optional",
 			"message": "Nachricht",
 			"send": "Sende",
 			"submitSuccess": "Danke für dini Nachricht! Ich werde mich so schnäll wie möglich bi dir mälde.",

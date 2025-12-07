@@ -2,39 +2,21 @@
 
 import { ArrowRight, Sparkles } from "lucide-react"
 import { useTranslations } from "next-intl"
-import { useEffect, useRef } from "react"
+
 import { Button } from "@/components/ui/button"
+import { useFadeInElementObserver } from "@/hooks/useFadeInElementObserver"
 import { scrollToSection } from "@/lib/utils"
 
 export function Hero() {
 	const t = useTranslations("HomePage.hero")
 
-	const contentRef = useRef<HTMLDivElement>(null)
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const elements = entry.target.querySelectorAll(".fade-in-element")
-						elements.forEach((el) => {
-							el.classList.remove("opacity-0", "translate-y-4")
-						})
-					}
-				})
-			},
-			{ threshold: 0.1 },
-		)
-
-		if (contentRef.current) {
-			observer.observe(contentRef.current)
-		}
-
-		return () => observer.disconnect()
-	}, [])
+	const contentRef = useFadeInElementObserver()
 
 	return (
-		<section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5 md:min-h-screen">
+		<section
+			id="hero"
+			className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5 md:min-h-screen"
+		>
 			{/* Animated background elements */}
 			<div className="absolute inset-0 overflow-hidden">
 				<div className="absolute top-20 left-10 h-72 w-72 animate-float rounded-full bg-primary/20 blur-3xl" />
@@ -72,13 +54,22 @@ export function Hero() {
 						{t("heroSubtitle")}
 					</p>
 
-					<div className="fade-in-element flex translate-y-4 flex-col items-center justify-center gap-4 opacity-0 transition-all delay-300 duration-700 sm:flex-row">
+					<div className="fade-in-element flex translate-y-4 flex-col items-stretch justify-center gap-4 opacity-0 transition-all delay-300 duration-700 sm:flex-row sm:items-center">
 						<Button
 							size="lg"
 							className="group rounded-xl bg-primary px-8 py-6 text-lg text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
 							onClick={() => scrollToSection("contact", 80)}
 						>
 							{t("ctaBook")}
+							<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+						</Button>
+						<Button
+							size="lg"
+							className="group rounded-xl bg-secondary px-8 py-6 text-lg text-secondary-foreground shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl"
+							onClick={() => scrollToSection("gallery")}
+							variant="secondary"
+						>
+							{t("ctaMyWork")}
 							<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 						</Button>
 					</div>

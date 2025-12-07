@@ -71,7 +71,8 @@
 			"heroTitle1": "Face Art",
 			"heroTitle2": "Obwalden",
 			"heroSubtitle": "Kinderschminken für Kindergeburtstage, Feste und Veranstaltungen",
-			"ctaBook": "Jetzt buchen"
+			"ctaBook": "Jetzt buchen",
+			"ctaMyWork": "Meine Arbeit"
 		},
 		"gallery": {
 			"title": "Meine Arbeit"
@@ -82,6 +83,7 @@
 			"name": "Name",
 			"email": "E-Mail",
 			"phone": "Telefon",
+			"optional": "optional",
 			"message": "Nachricht",
 			"send": "Senden",
 			"submitSuccess": "Vielen Dank für Ihre Nachricht! Ich werde mich so schnell wie möglich bei Ihnen melden.",
