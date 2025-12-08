@@ -2,7 +2,7 @@
 	"Manifest": {
 		"name": "Face Art Obwaldä",
 		"short_name": "Face Art",
-		"description": "Professionelli Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä und i de Zentralschwiiz.",
+		"description": "Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä und i de Zentralschwiiz.",
 		"keywords": "Gsichtsschminki, Kindergeburtstag, Verastaltige, Obwaldä, Face Art, professioneller Gsichtsschminker",
 		"theme_color": "#d946ef",
 		"lang": "de-CH",
@@ -11,7 +11,7 @@
 		"display": "standalone"
 	},
 	"LocaleLayout": {
-		"title": "Face Art Obwaldä - Professionelli Gsichtsschminki-Dienstleistige"
+		"title": "Face Art Obwaldä - Gsichtsschminki-Dienstleistige"
 	},
 	"LocaleSwitcher": {
 		"label": "Sprache wächslä",
@@ -28,7 +28,7 @@
 	},
 	"HomePage": {
 		"metadata": {
-			"title": "Kinderschminken Zentralschwiiz | Professionelli Kinderschminkerin",
+			"title": "Kinderschminken Zentralschwiiz | Kinderschminkerin",
 			"description": "Professionells Kinderschminke i de Zentralschwiiz für Geburtstäg, Events und Feste. Kreativi Designs wo Chind und Erwachseni begeistered. Jetzt bueche!",
 			"keywords": [
 				"kinderschminken",
@@ -40,14 +40,14 @@
 				"kinderanimation"
 			],
 			"openGraph": {
-				"title": "Kinderschminken Zentralschwiiz | Professionelli Kinderschminkerin",
+				"title": "Kinderschminken Zentralschwiiz | Kinderschminkerin",
 				"description": "Professionells Kinderschminke für Geburtstäg, Events und Fäscht i de Zentralschwiiz",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Gsichtsschminki für Chind"
 					}
 				],
 				"locale": "de-CH",
@@ -69,7 +69,8 @@
 			"heroTitle1": "Face Art",
 			"heroTitle2": "Obwaldä",
 			"heroSubtitle": "Gsichtsschminke für Kindergeburtstäg, Fäscht und Verastaltige",
-			"ctaBook": "Bueche jetzt"
+			"ctaBook": "Bueche jetzt",
+			"ctaMyWork": "Mini Arbet"
 		},
 		"gallery": {
 			"title": "Mini Arbet"
@@ -80,6 +81,7 @@
 			"name": "Name",
 			"email": "E-mail",
 			"phone": "Telefon",
+			"optional": "optional",
 			"message": "Nachricht",
 			"send": "Sende",
 			"submitSuccess": "Danke für dini Nachricht! Ich werde mich so schnäll wie möglich bi dir mälde.",
@@ -107,10 +109,10 @@
 				"description": "Erfahre meh über mini professionelle Kinderschminke-Dienstleistige",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Gsichtsschminki für Chind"
 					}
 				],
 				"locale": "de-CH",
@@ -167,10 +169,10 @@
 				"description": "Hüüfigi Frage über Gsichtsschminki-Dienstleistige, Priis und Buechige",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Gsichtsschminki für Chind"
 					}
 				],
 				"locale": "de-CH",

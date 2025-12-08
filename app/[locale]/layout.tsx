@@ -1,9 +1,20 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
+import { Plus_Jakarta_Sans } from "next/font/google"
 
 import { notFound } from "next/navigation"
-import { hasLocale, NextIntlClientProvider } from "next-intl"
+import { hasLocale, type Locale, NextIntlClientProvider } from "next-intl"
 import { getTranslations } from "next-intl/server"
+import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
+import { StructuredData } from "@/components/structured-data"
+import { Toaster } from "@/components/ui/sonner"
 import { routing } from "@/i18n/routing"
+import "../../styles/globals.css"
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+	subsets: ["latin"],
+	variable: "--font-sans",
+})
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }))
@@ -29,6 +40,13 @@ export async function generateMetadata(
 	} satisfies Metadata
 }
 
+// Map locale to proper lang attribute
+const langMap: Record<Locale, string> = {
+	ch: "de-CH",
+	de: "de-DE",
+	en: "en-US",
+}
+
 export default async function LocaleLayout({
 	children,
 	params,
@@ -37,5 +55,33 @@ export default async function LocaleLayout({
 	const { locale } = await params
 	if (!hasLocale(routing.locales, locale)) notFound()
 
-	return <NextIntlClientProvider>{children}</NextIntlClientProvider>
+	const t = await getTranslations({
+		locale,
+		namespace: "Navigation",
+	})
+	return (
+		<html lang={langMap[locale] || locale}>
+			<head>
+				<link rel="icon" href="/favicon.ico" sizes="any" />
+				<link rel="apple-touch-icon" href="/apple-icon.png" />
+				<link rel="llms-txt" href="/llms.txt" />
+				<StructuredData />
+				<BreadcrumbSchema
+					locale={locale}
+					breadcrumbNames={{
+						home: t("home"),
+						about: t("about"),
+						faq: t("faq"),
+					}}
+				/>
+			</head>
+			<body className={`${plusJakartaSans.variable} font-sans antialiased`}>
+				<NextIntlClientProvider locale={locale}>
+					{children}
+				</NextIntlClientProvider>
+			</body>
+			<Analytics />
+			<Toaster />
+		</html>
+	)
 }

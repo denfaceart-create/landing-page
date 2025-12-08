@@ -5,8 +5,8 @@ import { getTranslations } from "next-intl/server"
 import PageLayout from "@/components/page-layout"
 
 import { routing } from "@/i18n/routing"
+import type messages from "@/i18n/translations/ch.d.json"
 import { FAQClient } from "./faq-client"
-
 export async function generateMetadata(
 	props: Omit<PageProps<"/[locale]/faq">, "children">,
 ) {
@@ -25,9 +25,21 @@ export async function generateMetadata(
 	return {
 		title: t("metadata.title"),
 		description: t("metadata.description"),
-		keywords: t.raw("metadata.keywords"),
-		openGraph: t.raw("metadata.openGraph"),
-		alternates: t.raw("metadata.alternates"),
+		keywords: t.raw(
+			"metadata.keywords",
+		) as (typeof messages)["FaqPage"]["metadata"]["keywords"],
+		openGraph: t.raw(
+			"metadata.openGraph",
+		) as (typeof messages)["FaqPage"]["metadata"]["openGraph"],
+		twitter: {
+			card: "summary_large_image",
+			title: t("metadata.title"),
+			description: t("metadata.description"),
+			creator: "@faceartow",
+		},
+		alternates: t.raw(
+			"metadata.alternates",
+		) as (typeof messages)["FaqPage"]["metadata"]["alternates"],
 		robots: {
 			index: true,
 			follow: true,

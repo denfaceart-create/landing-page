@@ -114,10 +114,11 @@ export function Contact() {
 														<FormLabel>{t("contactForm.name")}</FormLabel>
 														<FormControl>
 															<Input
-																type=""
+																type="text"
 																{...field}
 																placeholder={t("contactForm.name")}
 																className="h-12"
+																autoComplete="name"
 															/>
 														</FormControl>
 														<FormMessage />
@@ -135,10 +136,11 @@ export function Contact() {
 														<FormLabel>{t("contactForm.email")}</FormLabel>
 														<FormControl>
 															<Input
-																type=""
+																type="text"
 																{...field}
 																placeholder={t("contactForm.email")}
 																className="h-12"
+																autoComplete="email"
 															/>
 														</FormControl>
 														<FormMessage />
@@ -153,7 +155,12 @@ export function Contact() {
 										name="phone"
 										render={({ field }) => (
 											<FormItem className="flex flex-col items-start">
-												<FormLabel>{t("contactForm.phone")}</FormLabel>
+												<FormLabel>
+													{t("contactForm.phone")}{" "}
+													<span className="text-muted-foreground text-sm">
+														({t("contactForm.optional")})
+													</span>
+												</FormLabel>
 												<FormControl className="w-full">
 													<PhoneInput
 														placeholder={t("contactForm.phone")}
@@ -200,7 +207,7 @@ export function Contact() {
 											>
 												<FormControl>
 													<input
-														type=""
+														type="text"
 														{...field}
 														tabIndex={-1}
 														autoComplete="off"

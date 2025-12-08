@@ -1893,6 +1893,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-fade@npm:^8.6.0":
+  version: 8.6.0
+  resolution: "embla-carousel-fade@npm:8.6.0"
+  peerDependencies:
+    embla-carousel: 8.6.0
+  checksum: 10c0/00b44b6bd8df7d6854c7ca00e46a25996d58904c790043067e85210b29972fe0a602f0d36e98a27043fd92c229d9f46069be178b8462b7fcedfe13b14d3009b5
+  languageName: node
+  linkType: hard
+
 "embla-carousel-react@npm:^8.6.0":
   version: 8.6.0
   resolution: "embla-carousel-react@npm:8.6.0"
@@ -1980,6 +1989,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     cmdk: "npm:^1.1.1"
     deepmerge: "npm:^4.3.1"
+    embla-carousel-fade: "npm:^8.6.0"
     embla-carousel-react: "npm:^8.6.0"
     input-otp: "npm:1.4.2"
     lucide-react: "npm:^0.556.0"

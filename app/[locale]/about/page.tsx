@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server"
 import PageLayout from "@/components/page-layout"
 
 import { routing } from "@/i18n/routing"
+import type messages from "@/i18n/translations/ch.d.json"
 import { AboutClient } from "./about-client"
 
 export async function generateMetadata(
@@ -26,9 +27,22 @@ export async function generateMetadata(
 	return {
 		title: t("metadata.title"),
 		description: t("metadata.description"),
-		keywords: t.raw("metadata.keywords"),
-		openGraph: t.raw("metadata.openGraph"),
-		alternates: t.raw("metadata.alternates"),
+		keywords: t.raw(
+			"metadata.keywords",
+		) as (typeof messages)["AboutPage"]["metadata"]["keywords"],
+		openGraph: t.raw(
+			"metadata.openGraph",
+		) as (typeof messages)["AboutPage"]["metadata"]["openGraph"],
+
+		twitter: {
+			card: "summary_large_image",
+			title: t("metadata.title"),
+			description: t("metadata.description"),
+			creator: "@faceartow",
+		},
+		alternates: t.raw(
+			"metadata.alternates",
+		) as (typeof messages)["AboutPage"]["metadata"]["alternates"],
 		robots: {
 			index: true,
 			follow: true,
