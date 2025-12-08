@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next"
 import { routing } from "@/i18n/routing"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const baseUrl = "https://faceartow.ch"
+	const baseUrl = "https://www.faceartow.ch"
 	const locales = routing.locales
 
 	// Define your routes
