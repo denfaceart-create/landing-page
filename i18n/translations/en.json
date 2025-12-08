@@ -41,10 +41,10 @@
 				"description": "Face painting for birthdays, events, and celebrations in Central Switzerland",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Face painting for children"
 					}
 				],
 				"locale": "en",
@@ -106,10 +106,10 @@
 				"description": "Learn more about my face painting services",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Face painting for children"
 					}
 				],
 				"locale": "en",
@@ -166,10 +166,10 @@
 				"description": "Frequently asked questions about face painting services, prices, and bookings",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Face painting for children"
 					}
 				],
 				"locale": "en",

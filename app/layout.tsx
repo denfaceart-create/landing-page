@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { host } from "@/config"
 
 export async function generateMetadata(
 	_props: Omit<LayoutProps<"/">, "children">,
@@ -7,6 +8,7 @@ export async function generateMetadata(
 		title: "Face Art Obwaldä - Face Painting",
 		description:
 			"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
+		metadataBase: new URL(host),
 		manifest: "/manifest.json",
 		appleWebApp: {
 			capable: true,

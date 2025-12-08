@@ -46,10 +46,10 @@
 				"description": "Kinderschminken für Geburtstage, Veranstaltungen und Feiern in der Zentralschweiz",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Kinderschminken"
 					}
 				],
 				"locale": "de-DE",
@@ -102,7 +102,7 @@
 			"description": "Erfahren Sie mehr über meine Gesichtsbemalung in der Zentralschweiz. Ich bringe Kindern und Veranstaltungen ein Lächeln und Farbe ins Gesicht.",
 			"keywords": [
 				"über kinderschminkerin",
-				"professionelles kinderschminken",
+				"Kinderschminken",
 				"zentralschweiz",
 				"kinderanimation"
 			],
@@ -111,10 +111,10 @@
 				"description": "Erfahren Sie mehr über meine professionellen Kinderschminke-Dienstleistungen",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Kinderschminken"
 					}
 				],
 				"locale": "de-DE",
@@ -171,10 +171,10 @@
 				"description": "Häufige Fragen über Kinderschminke-Dienstleistungen, Preise und Buchungen",
 				"images": [
 					{
-						"url": "",
+						"url": "/assets/face_art_ow_den_1200x1200.png",
 						"width": 1200,
-						"height": 630,
-						"alt": ""
+						"height": 1200,
+						"alt": "Face Art Obwalden - Kinderschminken"
 					}
 				],
 				"locale": "de-DE",

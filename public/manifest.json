@@ -50,7 +50,7 @@
 			"purpose": "any maskable"
 		},
 		{
-			"src": "/icon-1024x1024.png",
+			"src": "/logo.png",
 			"sizes": "1024x1024",
 			"type": "image/png",
 			"purpose": "any maskable"
