@@ -1,5 +1,6 @@
 "use client"
 
+import Fade from "embla-carousel-fade"
 import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { memo, useCallback, useEffect, useState } from "react"
@@ -13,8 +14,6 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
-import { ShootingStars } from "./ui/shooting-stars"
-import { StarsBackground } from "./ui/stars-background"
 
 // Generate all gallery images from the public/assets folder
 const galleryImages = [
@@ -23,7 +22,7 @@ const galleryImages = [
 	{ url: "/assets/den_2.jpeg", alt: "Face painting artwork" },
 	{ url: "/assets/den_3.jpeg", alt: "Face painting artwork" },
 	// All dated images
-	{ url: "/assets/20251025_211036.jpg", alt: "Face painting artwork" },
+	// { url: "/assets/20251025_211036.jpg", alt: "Face painting artwork" },
 	{ url: "/assets/20251025_212054.jpg", alt: "Face painting artwork" },
 	{ url: "/assets/20251025_213154.jpg", alt: "Face painting artwork" },
 	{ url: "/assets/20251025_214657.jpg", alt: "Face painting artwork" },
@@ -103,8 +102,6 @@ const GalleryImageCard = memo(function GalleryImageCard({
 					loading="lazy"
 					quality={85}
 				/>
-				<ShootingStars />
-				<StarsBackground />
 			</CardContent>
 		</Card>
 	)
@@ -204,7 +201,8 @@ export function Gallery() {
 							<Carousel
 								setApi={setApi}
 								className="w-full md:px-2"
-								opts={{ loop: true }}
+								opts={{ loop: true, containScroll: false }}
+								plugins={[Fade()]}
 							>
 								<CarouselContent
 									className="group py-2 focus-visible:outline-none"
@@ -251,8 +249,8 @@ export function Gallery() {
 								</CarouselContent>
 								{galleryImages.length > 5 && (
 									<>
-										<CarouselPrevious tabIndex={0} />
-										<CarouselNext tabIndex={0} />
+										<CarouselPrevious tabIndex={0} className="hidden md:flex" />
+										<CarouselNext tabIndex={0} className="hidden md:flex" />
 									</>
 								)}
 							</Carousel>
