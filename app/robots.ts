@@ -23,6 +23,6 @@ export default function robots() {
 				allow: "/",
 			},
 		],
-		sitemap: "https://faceartow.ch/sitemap.xml",
+		sitemap: "https://www.faceartow.ch/sitemap.xml",
 	} satisfies MetadataRoute.Robots
 }

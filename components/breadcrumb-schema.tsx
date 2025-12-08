@@ -16,7 +16,7 @@ export function BreadcrumbSchema({
 }) {
 	const pathname = usePathname()
 
-	const baseUrl = "https://faceartow.ch"
+	const baseUrl = "https://www.faceartow.ch"
 	const segments = pathname.split("/").filter(Boolean)
 
 	// Remove locale from segments if present

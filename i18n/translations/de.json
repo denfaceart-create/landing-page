@@ -54,13 +54,13 @@
 				],
 				"locale": "de-DE",
 				"type": "website",
-				"url": "https://faceartow.ch/de"
+				"url": "https://www.faceartow.ch/de"
 			},
 			"alternates": {
-				"canonical": "https://faceartow.ch/de",
+				"canonical": "https://www.faceartow.ch/de",
 				"languages": {
-					"en": "https://faceartow.ch/en",
-					"de-CH": "https://faceartow.ch"
+					"en": "https://www.faceartow.ch/en",
+					"de-CH": "https://www.faceartow.ch"
 				}
 			}
 		},
@@ -119,13 +119,13 @@
 				],
 				"locale": "de-DE",
 				"type": "website",
-				"url": "https://faceartow.ch/de/about"
+				"url": "https://www.faceartow.ch/de/about"
 			},
 			"alternates": {
-				"canonical": "https://faceartow.ch/de/about",
+				"canonical": "https://www.faceartow.ch/de/about",
 				"languages": {
-					"en": "https://faceartow.ch/en/about",
-					"de-CH": "https://faceartow.ch/about"
+					"en": "https://www.faceartow.ch/en/about",
+					"de-CH": "https://www.faceartow.ch/about"
 				}
 			}
 		},
@@ -179,13 +179,13 @@
 				],
 				"locale": "de-DE",
 				"type": "website",
-				"url": "https://faceartow.ch/de/faq"
+				"url": "https://www.faceartow.ch/de/faq"
 			},
 			"alternates": {
-				"canonical": "https://faceartow.ch/de/faq",
+				"canonical": "https://www.faceartow.ch/de/faq",
 				"languages": {
-					"en": "https://faceartow.ch/en/faq",
-					"de-CH": "https://faceartow.ch/faq"
+					"en": "https://www.faceartow.ch/en/faq",
+					"de-CH": "https://www.faceartow.ch/faq"
 				}
 			}
 		},
