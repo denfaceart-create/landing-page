@@ -190,7 +190,10 @@ export function Gallery() {
 		>
 			<div className="container px-4">
 				<div className="mx-auto mb-16 max-w-3xl space-y-4 text-center">
-					<h2 className="text-balance font-bold text-4xl tracking-tight md:text-5xl lg:text-6xl">
+					<h2
+						id="gallery-title"
+						className="text-balance font-bold text-4xl tracking-tight md:text-5xl lg:text-6xl"
+					>
 						{t("title")}
 					</h2>
 				</div>

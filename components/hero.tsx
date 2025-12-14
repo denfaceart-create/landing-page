@@ -66,7 +66,7 @@ export function Hero() {
 						<Button
 							size="lg"
 							className="group rounded-xl bg-secondary px-8 py-6 text-lg text-secondary-foreground shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl"
-							onClick={() => scrollToSection("gallery")}
+							onClick={() => scrollToSection("gallery-title", 20)}
 							variant="secondary"
 						>
 							{t("ctaMyWork")}
