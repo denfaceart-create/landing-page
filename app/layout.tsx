@@ -15,6 +15,35 @@ export async function generateMetadata(
 			statusBarStyle: "default",
 			title: "Face Art Obwaldä",
 		},
+
+		icons: {
+			icon: "/favicon.ico",
+			apple: "/apple-icon.png",
+		},
+		openGraph: {
+			title: "Face Art Obwaldä - Face Painting",
+			description:
+				"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
+			url: host,
+			siteName: "Face Art Obwaldä",
+			images: [
+				{
+					url: `${host}/logo.png`,
+					width: 1024,
+					height: 1024,
+					alt: "Face Art Obwaldä Logo",
+				},
+			],
+			locale: "de_CH",
+			type: "website",
+		},
+		twitter: {
+			card: "summary",
+			title: "Face Art Obwaldä - Face Painting",
+			description:
+				"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
+			images: [`${host}/logo.png`],
+		},
 	} satisfies Metadata
 }
 
