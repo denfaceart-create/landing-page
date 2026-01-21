@@ -77,7 +77,6 @@ const galleryImages = [
 	{ url: "/assets/20251124_221623.jpg", alt: "Face painting artwork" },
 	// { url: "/assets/20251124_221731.jpg", alt: "Face painting artwork" },
 	// { url: "/assets/20251124_221758.jpg", alt: "Face painting artwork" },
-	
 	{ url: "/assets/20251207_162853.jpg", alt: "Face painting artwork" },
 	{ url: "/assets/20251221_095216.jpg", alt: "Face painting artwork" },
 	{ url: "/assets/20251221_104709.jpg", alt: "Face painting artwork" },
