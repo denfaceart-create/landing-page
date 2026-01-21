@@ -25,7 +25,7 @@ export default function UnderConstructionPage({
 							className="h-24 w-24 animate-pulse text-primary"
 							strokeWidth={1.5}
 						/>
-						<div className="-bottom-2 -right-2 absolute h-8 w-8 animate-bounce rounded-full bg-primary" />
+						<div className="absolute -right-2 -bottom-2 h-8 w-8 animate-bounce rounded-full bg-primary" />
 					</div>
 				</div>
 

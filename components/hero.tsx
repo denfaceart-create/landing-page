@@ -25,7 +25,7 @@ export function Hero() {
 					style={{ animationDelay: "2s" }}
 				/>
 				<div
-					className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[600px] w-[600px] animate-float rounded-full bg-accent/10 blur-3xl"
+					className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float rounded-full bg-accent/10 blur-3xl"
 					style={{ animationDelay: "4s" }}
 				/>
 			</div>
@@ -76,7 +76,7 @@ export function Hero() {
 				</div>
 			</div>
 
-			<div className="-translate-x-1/2 absolute bottom-8 left-1/2 animate-bounce">
+			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
 				<div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-foreground/20 p-2">
 					<div className="h-3 w-1.5 rounded-full bg-foreground/40" />
 				</div>
