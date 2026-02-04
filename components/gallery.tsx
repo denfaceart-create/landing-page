@@ -138,6 +138,11 @@ const ThumbnailCard = memo(function ThumbnailCarouselItem({
 				shouldBlur && "scale-[0.98] blur-[1px] delay-200",
 			)}
 			tabIndex={0}
+			role="button"
+			aria-current={isActive ? "true" : undefined}
+			aria-label={
+				isActive ? `Current image: ${image.alt}` : `Go to: ${image.alt}`
+			}
 			onMouseEnter={onFocus}
 			onMouseLeave={onBlur}
 			onFocus={onFocus}
@@ -191,7 +196,7 @@ export function Gallery() {
 
 	return (
 		<section
-			id="gallery"
+			id="main-content"
 			className="flex items-center justify-center bg-background py-24 md:py-32"
 		>
 			<div className="container px-4">
@@ -212,6 +217,7 @@ export function Gallery() {
 								className="w-full md:px-2"
 								opts={{ loop: true, containScroll: false }}
 								plugins={[Fade()]}
+								aria-labelledby="gallery-title"
 							>
 								<CarouselContent
 									className="group py-2 focus-visible:outline-none"
@@ -223,6 +229,13 @@ export function Gallery() {
 										</CarouselItem>
 									))}
 								</CarouselContent>
+								{/* Screen reader slide position announcement */}
+								<p className="sr-only" aria-live="polite" aria-atomic="true">
+									{t("positionAnnouncement", {
+										current: `${current + 1}`,
+										total: `${galleryImages.length}`,
+									})}
+								</p>
 							</Carousel>
 
 							<Carousel

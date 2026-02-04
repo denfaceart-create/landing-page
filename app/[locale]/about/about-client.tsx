@@ -1,6 +1,6 @@
 "use client"
 
-import { Heart, Palette, Shield, Star, Users } from "lucide-react"
+import { CircleUser, Heart, Shield, Star, Users } from "lucide-react"
 
 import { useTranslations } from "next-intl"
 
@@ -17,11 +17,15 @@ export function AboutClient() {
 	) as (typeof messages)["AboutPage"]["services"]["items"]
 
 	return (
-		<div ref={contentRef} className="container mx-auto px-4 py-16 md:py-24">
+		<div
+			id="main-content"
+			ref={contentRef}
+			className="container mx-auto px-4 py-16 md:py-24"
+		>
 			{/* Hero Section */}
 			<div className="mx-auto mb-16 max-w-4xl text-center">
 				<div className="fade-in-element mb-6 inline-flex translate-y-4 items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-700">
-					<Palette className="h-4 w-4 text-primary" />
+					<CircleUser className="h-4 w-4 text-primary" aria-hidden="true" />
 					<span className="font-medium text-foreground text-sm">
 						Face Art Professional
 					</span>
@@ -50,7 +54,7 @@ export function AboutClient() {
 				<Card className="fade-in-element translate-y-4 border-0 bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5 opacity-0 shadow-lg transition-all delay-400 duration-700">
 					<CardHeader>
 						<CardTitle className="flex items-center gap-3 text-2xl">
-							<Heart className="h-6 w-6 text-primary" />
+							<Heart className="h-6 w-6 text-primary" aria-hidden="true" />
 							{t("story.title")}
 						</CardTitle>
 					</CardHeader>
@@ -67,7 +71,7 @@ export function AboutClient() {
 				<Card className="fade-in-element translate-y-4 border-0 bg-linear-to-br from-secondary/5 via-accent/5 to-primary/5 opacity-0 shadow-lg transition-all delay-500 duration-700">
 					<CardHeader>
 						<CardTitle className="flex items-center gap-3 text-2xl">
-							<Star className="h-6 w-6 text-secondary" />
+							<Star className="h-6 w-6 text-secondary" aria-hidden="true" />
 							{t("experience.title")}
 						</CardTitle>
 					</CardHeader>
@@ -84,22 +88,23 @@ export function AboutClient() {
 				<h2 className="fade-in-element mb-8 translate-y-4 text-center font-bold text-3xl opacity-0 transition-all delay-600 duration-700">
 					{t("services.title")}
 				</h2>
-				<div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+				<ul className="grid list-none gap-6 md:grid-cols-2 lg:grid-cols-3">
 					{services.map((service, index) => (
-						<Card
-							key={index}
-							className="fade-in-element translate-y-4 border-0 bg-card/50 opacity-0 shadow-md backdrop-blur-sm transition-all duration-700 hover:shadow-lg"
-							style={{ transitionDelay: `${700 + index * 100}ms` }}
-						>
-							<CardContent className="flex items-center gap-3 p-6">
-								<Users className="h-5 w-5 text-primary" />
-								<span className="wrap-break-words hyphens-auto font-medium">
-									{service}
-								</span>
-							</CardContent>
-						</Card>
+						<li key={index}>
+							<Card
+								className="fade-in-element h-full translate-y-4 border-0 bg-card/50 opacity-0 shadow-md backdrop-blur-sm transition-all duration-700 hover:shadow-lg"
+								style={{ transitionDelay: `${700 + index * 100}ms` }}
+							>
+								<CardContent className="flex items-center gap-3 p-6">
+									<Users className="h-5 w-5 text-primary" aria-hidden="true" />
+									<span className="wrap-break-words hyphens-auto font-medium">
+										{service}
+									</span>
+								</CardContent>
+							</Card>
+						</li>
 					))}
-				</div>
+				</ul>
 			</div>
 
 			{/* Commitment Section */}
@@ -107,7 +112,7 @@ export function AboutClient() {
 				<Card className="fade-in-element translate-y-4 border-0 bg-linear-to-br from-accent/5 via-primary/5 to-secondary/5 opacity-0 shadow-lg transition-all delay-1000 duration-700">
 					<CardHeader>
 						<CardTitle className="flex items-center gap-3 text-2xl">
-							<Shield className="h-6 w-6 text-accent" />
+							<Shield className="h-6 w-6 text-accent" aria-hidden="true" />
 							{t("commitment.title")}
 						</CardTitle>
 					</CardHeader>

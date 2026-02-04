@@ -17,11 +17,18 @@
 		"label": "Change language"
 	},
 	"Navigation": {
+		"skipToContent": "Skip to main content",
+		"mainNavigationAriaLabel": "Main navigation",
+		"mobileNavigationAriaLabel": "Mobile navigation",
 		"home": "Home",
 		"about": "About me",
-		"faq": "FAQ"
+		"faq": "FAQ",
+		"accessibility": "Accessibility"
 	},
 	"Footer": {
+		"appName": "Face Art Obwalden",
+		"followMe": "Follow me",
+		"instagramAriaLabel": "Follow Face Art Obwalden on Instagram (opens in a new tab)",
 		"rights": "All rights reserved"
 	},
 	"HomePage": {
@@ -67,12 +74,16 @@
 			"heroTitle2": "Obwalden",
 			"heroSubtitle": "Face painting for children's birthdays, celebrations, and events",
 			"ctaBook": "Book now",
-			"ctaMyWork": "My Work"
+			"ctaBookAriaLabel": "Book now - navigate to contact form",
+			"ctaMyWork": "My Work",
+			"ctaMyWorkAriaLabel": "View my work - navigate to gallery section"
 		},
 		"gallery": {
-			"title": "My Work"
+			"title": "My Work",
+			"positionAnnouncement": "Image {current} of {total}"
 		},
 		"contactForm": {
+			"required": "This field is required",
 			"contactTitle": "Contact",
 			"contactSubtitle": "Send me a message",
 			"name": "Name",
@@ -184,6 +195,7 @@
 				}
 			}
 		},
+		"badge": "Questions & Answers",
 		"title": "Frequently Asked Questions",
 		"subtitle": "Everything you need to know",
 		"questions": [
@@ -257,6 +269,63 @@
 		"phone-input": {
 			"placeholder": "Search country...",
 			"notFound": "No country found."
+		}
+	},
+	"AccessibilityPage": {
+		"metadata": {
+			"title": "Accessibility | Face Art Obwalden",
+			"description": "Our commitment to digital accessibility and WCAG 2.1 AA compliance.",
+			"keywords": [
+				"accessibility statement",
+				"WCAG compliance",
+				"digital accessibility",
+				"accessible website"
+			],
+			"openGraph": {
+				"title": "Accessibility Statement | Face Art Obwalden",
+				"description": "Our commitment to digital accessibility and WCAG 2.1 AA compliance",
+				"images": [
+					{
+						"url": "/assets/face_art_ow_den_1200x1200.jpg",
+						"width": 1200,
+						"height": 1200,
+						"alt": "Face Art Obwalden - Face painting for children"
+					}
+				],
+				"locale": "en",
+				"type": "website",
+				"url": "https://www.faceartow.ch/en/accessibility"
+			},
+			"alternates": {
+				"canonical": "https://www.faceartow.ch/en/accessibility",
+				"languages": {
+					"de-CH": "https://www.faceartow.ch/accessibility",
+					"de-DE": "https://www.faceartow.ch/de/accessibility"
+				}
+			}
+		},
+		"badge": "Accessibility",
+		"title": "Accessibility Statement",
+		"subtitle": "Our commitment to making this website accessible to everyone",
+		"commitment": {
+			"title": "Our Commitment",
+			"description": "Face Art Obwalden is committed to ensuring our website is accessible to all visitors, regardless of their abilities. We strive to meet WCAG 2.1 AA guidelines."
+		},
+		"standards": {
+			"title": "Accessibility Standards",
+			"description": "We have developed this website with the following accessibility features:",
+			"items": {
+				"keyboard": "Full keyboard navigation for all interactive elements",
+				"screenReader": "Screen reader compatibility with proper ARIA labeling",
+				"contrast": "Color contrast that meets WCAG AA standards",
+				"semanticHtml": "Semantic HTML for clear document structure",
+				"focusIndicators": "Visible focus indicators for keyboard users"
+			}
+		},
+		"feedback": {
+			"title": "Feedback & Contact",
+			"description": "We are continuously improving our website. If you encounter accessibility issues or have suggestions, please contact us.",
+			"button": "Send Feedback"
 		}
 	}
 }

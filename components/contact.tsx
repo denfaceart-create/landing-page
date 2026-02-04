@@ -111,7 +111,18 @@ export function Contact() {
 												name="name"
 												render={({ field }) => (
 													<FormItem>
-														<FormLabel>{t("contactForm.name")}</FormLabel>
+														<FormLabel>
+															{t("contactForm.name")}
+															<span
+																className="text-destructive"
+																aria-hidden="true"
+															>
+																*
+															</span>
+															<span className="sr-only">
+																({t("contactForm.required")})
+															</span>
+														</FormLabel>
 														<FormControl>
 															<Input
 																type="text"
@@ -119,6 +130,7 @@ export function Contact() {
 																placeholder={t("contactForm.name")}
 																className="h-12"
 																autoComplete="name"
+																aria-required="true"
 															/>
 														</FormControl>
 														<FormMessage />
@@ -133,14 +145,26 @@ export function Contact() {
 												name="email"
 												render={({ field }) => (
 													<FormItem>
-														<FormLabel>{t("contactForm.email")}</FormLabel>
+														<FormLabel>
+															{t("contactForm.email")}
+															<span
+																className="text-destructive"
+																aria-hidden="true"
+															>
+																*
+															</span>
+															<span className="sr-only">
+																({t("contactForm.required")})
+															</span>
+														</FormLabel>
 														<FormControl>
 															<Input
-																type="text"
+																type="email"
 																{...field}
 																placeholder={t("contactForm.email")}
 																className="h-12"
 																autoComplete="email"
+																aria-required="true"
 															/>
 														</FormControl>
 														<FormMessage />
@@ -156,7 +180,7 @@ export function Contact() {
 										render={({ field }) => (
 											<FormItem className="flex flex-col items-start">
 												<FormLabel>
-													{t("contactForm.phone")}{" "}
+													{t("contactForm.phone")}
 													<span className="text-muted-foreground text-sm">
 														({t("contactForm.optional")})
 													</span>
@@ -182,11 +206,20 @@ export function Contact() {
 										name="message"
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel>{t("contactForm.message")}</FormLabel>
+												<FormLabel>
+													{t("contactForm.message")}
+													<span className="text-destructive" aria-hidden="true">
+														*
+													</span>
+													<span className="sr-only">
+														({t("contactForm.required")})
+													</span>
+												</FormLabel>
 												<FormControl>
 													<Textarea
 														placeholder={t("contactForm.message")}
 														className="resize-none"
+														aria-required="true"
 														{...field}
 													/>
 												</FormControl>

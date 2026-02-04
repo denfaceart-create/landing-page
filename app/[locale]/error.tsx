@@ -20,7 +20,10 @@ export default function ErrorPage({ error, reset }: Props) {
 	}, [error])
 
 	return (
-		<section className="flex min-h-screen items-center justify-center bg-background p-4">
+		<section
+			id="main-content"
+			className="flex min-h-screen items-center justify-center bg-background p-4"
+		>
 			<Card className="w-full max-w-2xl border-primary/20 bg-card p-8 text-center shadow-lg md:p-12">
 				<div className="mb-6 flex justify-center">
 					<div className="relative">

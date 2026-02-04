@@ -17,11 +17,18 @@
 		"label": "Sprache wechseln"
 	},
 	"Navigation": {
+		"skipToContent": "Zum Hauptinhalt springen",
+		"mainNavigationAriaLabel": "Hauptnavigation",
+		"mobileNavigationAriaLabel": "Mobile Navigation",
 		"home": "Startseite",
 		"about": "Über mich",
-		"faq": "FAQ"
+		"faq": "FAQ",
+		"accessibility": "Barrierefreiheit"
 	},
 	"Footer": {
+		"appName": "Face Art Obwaldä",
+		"followMe": "Folge mir",
+		"instagramAriaLabel": "Folge Face Art Obwaldä uf Instagram (öffnet in ere neue Siite)",
 		"rights": "Alle Rechte vorbehalten"
 	},
 	"HomePage": {
@@ -72,12 +79,16 @@
 			"heroTitle2": "Obwalden",
 			"heroSubtitle": "Kinderschminken für Kindergeburtstage, Feste und Veranstaltungen",
 			"ctaBook": "Jetzt buchen",
-			"ctaMyWork": "Meine Arbeit"
+			"ctaBookAriaLabel": "Jetzt buchen - zum Kontaktformular navigieren",
+			"ctaMyWork": "Meine Arbeit",
+			"ctaMyWorkAriaLabel": "Meine Arbeit ansehen - zur Galerie-Sektion navigieren"
 		},
 		"gallery": {
-			"title": "Meine Arbeit"
+			"title": "Meine Arbeit",
+			"positionAnnouncement": "Bild {current} von {total}"
 		},
 		"contactForm": {
+			"required": "Dieses Feld ist erforderlich",
 			"contactTitle": "Kontakt",
 			"contactSubtitle": "Schreiben Sie uns",
 			"name": "Name",
@@ -129,6 +140,7 @@
 				}
 			}
 		},
+
 		"title": "Über Mich",
 		"subtitle": "Wir zaubern ein Lächeln und Farbe auf die Gesichter der Kinder",
 		"introduction": "Hallo und herzlich willkommen bei Face Art Obwalden! Ich liebe es, die Lieblingsfiguren der Kinder zu malen und kleine magische Momente zu schaffen.",
@@ -189,6 +201,7 @@
 				}
 			}
 		},
+		"badge": "Fragen & Antworten",
 		"title": "Häufig gestellte Fragen",
 		"subtitle": "Alles, was Sie wissen müssen",
 		"questions": [
@@ -262,6 +275,63 @@
 		"phone-input": {
 			"placeholder": "Ländersuche...",
 			"notFound": "Kein Land gefunden."
+		}
+	},
+	"AccessibilityPage": {
+		"metadata": {
+			"title": "Barrierefreiheit | Face Art Obwalden",
+			"description": "Unsere Verpflichtung zur digitalen Barrierefreiheit und WCAG 2.1 AA Konformität.",
+			"keywords": [
+				"barrierefreiheit",
+				"wcag konformität",
+				"digitale barrierefreiheit",
+				"zugängliche webseite"
+			],
+			"openGraph": {
+				"title": "Barrierefreiheit | Face Art Obwalden",
+				"description": "Erklärung zur Barrierefreiheit und unser Engagement für eine zugängliche Website",
+				"images": [
+					{
+						"url": "/assets/face_art_ow_den_1200x1200.jpg",
+						"width": 1200,
+						"height": 1200,
+						"alt": "Face Art Obwalden - Kinderschminken"
+					}
+				],
+				"locale": "de-DE",
+				"type": "website",
+				"url": "https://www.faceartow.ch/de/accessibility"
+			},
+			"alternates": {
+				"canonical": "https://www.faceartow.ch/de/accessibility",
+				"languages": {
+					"en": "https://www.faceartow.ch/en/accessibility",
+					"de-CH": "https://www.faceartow.ch/accessibility"
+				}
+			}
+		},
+		"badge": "Barrierefreiheit",
+		"title": "Erklärung zur Barrierefreiheit",
+		"subtitle": "Unsere Verpflichtung, diese Website für alle zugänglich zu machen",
+		"commitment": {
+			"title": "Unsere Verpflichtung",
+			"description": "Face Art Obwalden setzt sich dafür ein, dass unsere Website für alle Besucher zugänglich ist, unabhängig von ihren Fähigkeiten. Wir streben die Erfüllung der WCAG 2.1 AA-Richtlinien an."
+		},
+		"standards": {
+			"title": "Barrierefreiheits-Standards",
+			"description": "Wir haben diese Website mit den folgenden Barrierefreiheits-Funktionen entwickelt:",
+			"items": {
+				"keyboard": "Vollständige Tastatur-Navigation für alle interaktiven Elemente",
+				"screenReader": "Screen-Reader-Kompatibilität mit korrektem ARIA-Labeling",
+				"contrast": "Farbkontrast, der den WCAG AA-Standards entspricht",
+				"semanticHtml": "Semantisches HTML für klare Dokumentenstruktur",
+				"focusIndicators": "Sichtbare Fokus-Indikatoren für Tastatur-Benutzer"
+			}
+		},
+		"feedback": {
+			"title": "Feedback & Kontakt",
+			"description": "Wir verbessern unsere Website ständig. Wenn Sie Barrierefreiheits-Probleme begegnen oder Vorschläge haben, melden Sie sich bitte bei uns.",
+			"button": "Feedback senden"
 		}
 	}
 }

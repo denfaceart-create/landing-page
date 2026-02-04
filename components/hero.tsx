@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ArrowRight, Palette } from "lucide-react"
 import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
@@ -25,7 +25,7 @@ export function Hero() {
 					style={{ animationDelay: "2s" }}
 				/>
 				<div
-					className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 animate-float rounded-full bg-accent/10 blur-3xl"
+					className="absolute top-1/2 left-1/2 h-[150] w-[150] -translate-x-1/2 -translate-y-1/2 animate-float rounded-full bg-accent/10 blur-3xl"
 					style={{ animationDelay: "4s" }}
 				/>
 			</div>
@@ -36,7 +36,7 @@ export function Hero() {
 			>
 				<div className="mx-auto max-w-5xl space-y-8 text-center">
 					<div className="fade-in-element inline-flex translate-y-4 items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-700">
-						<Sparkles className="h-4 w-4 text-primary" />
+						<Palette className="h-4 w-4 text-primary" />
 						<span className="font-medium text-foreground text-sm">
 							{t("badge")}
 						</span>
@@ -59,18 +59,26 @@ export function Hero() {
 							size="lg"
 							className="group rounded-xl bg-primary px-8 py-6 text-lg text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
 							onClick={() => scrollToSection("contact", 80)}
+							aria-label={t("ctaBookAriaLabel")}
 						>
 							{t("ctaBook")}
-							<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+							<ArrowRight
+								className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+								aria-hidden="true"
+							/>
 						</Button>
 						<Button
 							size="lg"
 							className="group rounded-xl bg-secondary px-8 py-6 text-lg text-secondary-foreground shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl"
 							onClick={() => scrollToSection("gallery-title", 20)}
 							variant="secondary"
+							aria-label={t("ctaMyWorkAriaLabel")}
 						>
 							{t("ctaMyWork")}
-							<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+							<ArrowRight
+								className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+								aria-hidden="true"
+							/>
 						</Button>
 					</div>
 				</div>

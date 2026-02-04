@@ -14,6 +14,10 @@ export const routing = defineRouting({
 			ch: "/über",
 		},
 		"/faq": "/faq",
+		"/accessibility": {
+			de: "/barrierefreiheit",
+			ch: "/barrierefreiheit",
+		},
 	},
 	localePrefix: "as-needed",
 })

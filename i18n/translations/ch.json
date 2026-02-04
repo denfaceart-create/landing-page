@@ -19,11 +19,18 @@
 		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English}  fr {Français} other {Unknown}}"
 	},
 	"Navigation": {
+		"skipToContent": "Zum Hauptinhalt springen",
+		"mainNavigationAriaLabel": "Hauptnavigation",
+		"mobileNavigationAriaLabel": "Mobile Navigation",
 		"home": "Startsiite",
 		"about": "Über mich",
-		"faq": "FAQ"
+		"faq": "FAQ",
+		"accessibility": "Barrierefreiheit"
 	},
 	"Footer": {
+		"appName": "Face Art Obwaldä",
+		"followMe": "Folge mir",
+		"instagramAriaLabel": "Folge Face Art Obwaldä uf Instagram (öffnet in ere neue Siite)",
 		"rights": "Alli Rächt vorbehalte"
 	},
 	"HomePage": {
@@ -70,12 +77,16 @@
 			"heroTitle2": "Obwaldä",
 			"heroSubtitle": "Gsichtsschminke für Kindergeburtstäg, Fäscht und Verastaltige",
 			"ctaBook": "Bueche jetzt",
-			"ctaMyWork": "Mini Arbet"
+			"ctaBookAriaLabel": "Bueche jetzt - zum Kontaktformular navigiere",
+			"ctaMyWork": "Mini Arbet",
+			"ctaMyWorkAriaLabel": "Mini Arbet aaluege - zur Galerie-Sektion navigiere"
 		},
 		"gallery": {
-			"title": "Mini Arbet"
+			"title": "Mini Arbet",
+			"positionAnnouncement": "Bild {current} vo {total}"
 		},
 		"contactForm": {
+			"required": "Dieses Feld ist erforderlich",
 			"contactTitle": "Kontakt",
 			"contactSubtitle": "Schriib üs ah",
 			"name": "Name",
@@ -187,6 +198,7 @@
 				}
 			}
 		},
+		"badge": "Frage & Antwort",
 		"title": "Hüüfig gstellti Frage",
 		"subtitle": "Alles was Sie über mini Gsichtsschminki-Dienstleistige wüsse müend",
 		"questions": [
@@ -260,6 +272,63 @@
 		"phone-input": {
 			"placeholder": "Ländersuche...",
 			"notFound": "Kein Land gefunden."
+		}
+	},
+	"AccessibilityPage": {
+		"metadata": {
+			"title": "Barrierefreiheit | Face Art Obwaldä",
+			"description": "Üsi Verpflichtig zur digitale Barrierefreiheit und WCAG 2.1 AA Konformität.",
+			"keywords": [
+				"barrierefreiheit",
+				"wcag",
+				"digital accessibility",
+				"accessible website"
+			],
+			"openGraph": {
+				"title": "Barrierefreiheit | Face Art Obwaldä",
+				"description": "Üsi Verpflichtig zur digitale Barrierefreiheit und WCAG 2.1 AA Konformität.",
+				"images": [
+					{
+						"url": "/assets/face_art_ow_den_1200x1200.jpg",
+						"width": 1200,
+						"height": 1200,
+						"alt": "Face Art Obwalden - Gsichtsschminki für Chind"
+					}
+				],
+				"locale": "de-CH",
+				"type": "website",
+				"url": "https://www.faceartow.ch/accessibility"
+			},
+			"alternates": {
+				"canonical": "https://www.faceartow.ch/accessibility",
+				"languages": {
+					"en": "https://www.faceartow.ch/en/accessibility",
+					"de-DE": "https://www.faceartow.ch/de/accessibility"
+				}
+			}
+		},
+		"badge": "Barrierefreiheit",
+		"title": "Erklärig zur Barrierefreiheit",
+		"subtitle": "Üsi Verpflichtig, die Website für alli zugänglich z'mache",
+		"commitment": {
+			"title": "Üsi Verpflichtig",
+			"description": "Face Art Obwaldä setzt sich derfür i, dass üsi Website für alli Bsuecher zugänglich isch, unabhängig vo ihrne Fähigkeite. Mir strebe d'Erfüllig vo de WCAG 2.1 AA-Richtlinie ah."
+		},
+		"standards": {
+			"title": "Barrierefreiheits-Standards",
+			"description": "Mir händ die Website mit de folgende Barrierefreiheits-Funktione entwicklet:",
+			"items": {
+				"keyboard": "Vollständigi Taschtatur-Navigation für alli interaktive Elemänt",
+				"screenReader": "Screen-Reader-Kompatibilität mit korrektem ARIA-Labeling",
+				"contrast": "Farbkontrast wo de WCAG AA-Standards entspricht",
+				"semanticHtml": "Semantischs HTML für klari Dokumentestruktur",
+				"focusIndicators": "Sichtbari Fokus-Indikatoren für Taschtatur-Benutzer"
+			}
+		},
+		"feedback": {
+			"title": "Feedback & Kontakt",
+			"description": "Mir verbessered üsi Website ständig. Wenn Sie Barrierefreiheits-Problem begägned oder Vorschläg händ, bitte mälded Sie sich bi üs.",
+			"button": "Feedback schicke"
 		}
 	}
 }

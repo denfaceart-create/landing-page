@@ -35,6 +35,10 @@ const navItems = [
 		name: "faq",
 		href: "/faq",
 	},
+	{
+		name: "accessibility",
+		href: "/accessibility",
+	},
 ] as const satisfies {
 	name: string
 	href: ComponentPropsWithoutRef<typeof Link>["href"]
@@ -61,9 +65,10 @@ export const Navbar = ({ className }: { className?: string }) => {
 	const { onSelectChange, isPending, currentLocale } = useLocaleSwitch()
 
 	return (
-		<>
+		<header>
 			<AnimatePresence mode="wait">
 				<motion.nav
+					aria-label={t("Navigation.mainNavigationAriaLabel")}
 					animate={{
 						y: visible ? 0 : -100,
 						opacity: visible ? 1 : 0,
@@ -92,12 +97,14 @@ export const Navbar = ({ className }: { className?: string }) => {
 						)}
 					</Button>
 
-					{/* Desktop navigation */}
 					<ul className="hidden items-center space-x-4 md:flex">
 						{navItems.map((navItem, index) => (
 							<li key={index}>
 								<Link
 									href={navItem.href}
+									aria-current={
+										currentPathname === navItem.href ? "page" : undefined
+									}
 									className={cn(
 										"relative flex items-center space-x-1 text-2xl text-neutral-600 hover:text-primary dark:text-neutral-50",
 										currentPathname === navItem.href &&
@@ -112,8 +119,12 @@ export const Navbar = ({ className }: { className?: string }) => {
 						<li>
 							<DropdownMenu>
 								<DropdownMenuTrigger asChild>
-									<Button className="cursor-pointer" tabIndex={0}>
-										<Languages className="h-4 w-4" />
+									<Button
+										className="cursor-pointer"
+										tabIndex={0}
+										aria-label={t("LocaleSwitcher.label")}
+									>
+										<Languages className="h-4 w-4" aria-hidden="true" />
 									</Button>
 								</DropdownMenuTrigger>
 								<DropdownMenuContent>
@@ -150,8 +161,13 @@ export const Navbar = ({ className }: { className?: string }) => {
 					<div className="md:hidden">
 						<DropdownMenu>
 							<DropdownMenuTrigger asChild>
-								<Button size="icon" className="cursor-pointer" tabIndex={0}>
-									<Languages className="h-4 w-4" />
+								<Button
+									size="icon"
+									className="cursor-pointer"
+									tabIndex={0}
+									aria-label={t("LocaleSwitcher.label")}
+								>
+									<Languages className="h-4 w-4" aria-hidden="true" />
 								</Button>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent>
@@ -196,12 +212,15 @@ export const Navbar = ({ className }: { className?: string }) => {
 						className="fixed inset-y-0 left-0 z-20 w-64 bg-background/95 shadow-lg backdrop-blur-md md:hidden"
 					>
 						<div className="flex h-full flex-col p-6 pt-24">
-							<nav>
+							<nav aria-label={t("Navigation.mobileNavigationAriaLabel")}>
 								<ul className="space-y-4">
 									{navItems.map((navItem, index) => (
 										<li key={index}>
 											<Link
 												href={navItem.href}
+												aria-current={
+													currentPathname === navItem.href ? "page" : undefined
+												}
 												className={cn(
 													"block rounded-lg px-4 py-3 text-lg transition-colors hover:bg-muted",
 													currentPathname === navItem.href &&
@@ -234,6 +253,6 @@ export const Navbar = ({ className }: { className?: string }) => {
 					/>
 				)}
 			</AnimatePresence>
-		</>
+		</header>
 	)
 }
