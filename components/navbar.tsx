@@ -35,10 +35,6 @@ const navItems = [
 		name: "faq",
 		href: "/faq",
 	},
-	{
-		name: "accessibility",
-		href: "/accessibility",
-	},
 ] as const satisfies {
 	name: string
 	href: ComponentPropsWithoutRef<typeof Link>["href"]

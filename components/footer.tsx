@@ -1,9 +1,27 @@
 "use client"
 
-import { Sparkles } from "lucide-react"
 import { useTranslations } from "next-intl"
-import type { ComponentProps, FC } from "react"
-import { Link } from "@/i18n/navigation"
+import type { ComponentProps, ComponentPropsWithoutRef, FC } from "react"
+import { Link, usePathname } from "@/i18n/navigation"
+import { cn } from "@/lib/utils"
+
+const footerNavItems = [
+	{
+		name: "about",
+		href: "/about",
+	},
+	{
+		name: "faq",
+		href: "/faq",
+	},
+	{
+		name: "accessibility",
+		href: "/accessibility",
+	},
+] as const satisfies {
+	name: string
+	href: ComponentPropsWithoutRef<typeof Link>["href"]
+}[]
 
 const Instagram: FC<
 	Omit<ComponentProps<"svg">, "role" | "viewBox" | "xmlns">
@@ -21,6 +39,8 @@ const Instagram: FC<
 
 export function Footer() {
 	const t = useTranslations()
+	const currentPathname = usePathname()
+
 	const currentYear = new Date().getFullYear()
 
 	return (
@@ -28,45 +48,27 @@ export function Footer() {
 			<div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
 				<div className="mb-8 grid gap-8 md:grid-cols-6">
 					<div className="space-y-4">
-						<Link href="/" className="flex items-center gap-2">
-							<Sparkles className="h-6 w-6 text-primary" aria-hidden="true" />
-							<span className="font-semibold text-lg">
-								{t("Footer.appName")}
-							</span>
+						<Link
+							href="/"
+							className="flex items-center gap-2 font-semibold text-lg"
+						>
+							{t("Footer.appName")}
 						</Link>
 						<ul className="space-y-2 text-sm">
-							<li>
-								<Link
-									href="/"
-									className="text-muted-foreground transition-colors hover:text-primary"
-								>
-									{t("Navigation.home")}
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/about"
-									className="text-muted-foreground transition-colors hover:text-primary"
-								>
-									{t("Navigation.about")}
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/faq"
-									className="text-muted-foreground transition-colors hover:text-primary"
-								>
-									{t("Navigation.faq")}
-								</Link>
-							</li>
-							<li>
-								<Link
-									href="/accessibility"
-									className="text-muted-foreground transition-colors hover:text-primary"
-								>
-									{t("Navigation.accessibility")}
-								</Link>
-							</li>
+							{footerNavItems.map((item, index) => (
+								<li key={index}>
+									<Link
+										href={item.href}
+										className={cn(
+											"text-muted-foreground transition-colors hover:text-primary",
+											currentPathname === item.href &&
+												"font-bold text-primary/70",
+										)}
+									>
+										{t(`Navigation.${item.name}`)}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
 

@@ -5,7 +5,7 @@ import {
 	type CSSProperties,
 	type PropsWithChildren,
 	useEffect,
-	useRef,
+	useState,
 } from "react"
 import { cn } from "@/lib/utils"
 import { Footer } from "./footer"
@@ -42,9 +42,11 @@ export default function PageLayout({
 
 const SkipToContentLink = () => {
 	const t = useTranslations("Navigation")
-	const isFirstRender = useRef(true)
+	const [isFirstRender, setIsFirstRender] = useState(true)
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: should only run on mount
 	useEffect(() => {
-		if (isFirstRender.current) isFirstRender.current = false
+		if (isFirstRender) setIsFirstRender(false)
 	}, [])
 
 	return (
@@ -53,7 +55,7 @@ const SkipToContentLink = () => {
 			className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:font-medium focus:text-foreground focus:shadow-lg focus:ring-2 focus:ring-ring focus:ring-offset-2"
 			ref={(node) => {
 				const nodeFocused = !!node && document.activeElement === node
-				if (nodeFocused && !isFirstRender.current) {
+				if (nodeFocused && isFirstRender) {
 					node.blur() // we want to avoid focus being stuck on the link after navigation
 				}
 			}}
