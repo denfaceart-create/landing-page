@@ -13,10 +13,7 @@ export default function NotFoundPage() {
 	const navigation = useRouter()
 	return (
 		<PageLayout className="flex flex-col">
-			<section
-				id="main-content"
-				className="mt-24 mb-12 flex flex-1 items-center justify-center bg-background"
-			>
+			<section className="mt-24 mb-12 flex flex-1 items-center justify-center bg-background">
 				<Card className="w-full max-w-2xl border-primary/20 bg-card p-8 text-center shadow-lg md:p-12">
 					<div className="mb-6 flex justify-center">
 						<div className="relative">

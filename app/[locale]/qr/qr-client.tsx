@@ -21,7 +21,7 @@ export function QRCodeClient() {
 	}
 
 	return (
-		<div id="main-content" className="min-h-screen bg-white print:bg-white">
+		<div className="min-h-screen bg-white print:bg-white">
 			{/* Hide on print */}
 			<div className="container mx-auto px-4 py-6 sm:p-8 print:hidden">
 				<div className="mx-auto max-w-2xl">

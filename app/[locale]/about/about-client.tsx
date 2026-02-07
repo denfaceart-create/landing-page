@@ -17,11 +17,7 @@ export function AboutClient() {
 	) as (typeof messages)["AboutPage"]["services"]["items"]
 
 	return (
-		<div
-			id="main-content"
-			ref={contentRef}
-			className="container mx-auto px-4 py-16 md:py-24"
-		>
+		<div ref={contentRef} className="container mx-auto px-4 py-16 md:py-24">
 			{/* Hero Section */}
 			<div className="mx-auto mb-16 max-w-4xl text-center">
 				<div className="fade-in-element mb-6 inline-flex translate-y-4 items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-700">

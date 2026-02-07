@@ -195,10 +195,7 @@ export function Gallery() {
 	const [hovered, setHovered] = useState<number | null>(null)
 
 	return (
-		<section
-			id="main-content"
-			className="flex items-center justify-center bg-background py-24 md:py-32"
-		>
+		<section className="flex items-center justify-center bg-background py-24 md:py-32">
 			<div className="container px-4">
 				<div className="mx-auto mb-16 max-w-3xl space-y-4 text-center">
 					<h2
