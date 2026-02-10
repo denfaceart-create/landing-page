@@ -15,80 +15,73 @@ import {
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
 
-// Generate all gallery images from the public/assets folder
 const galleryImages = [
-	// Den's featured images
-	{ url: "/assets/den_1.jpeg", alt: "Face painting artwork" },
-	{ url: "/assets/den_2.jpeg", alt: "Face painting artwork" },
+	{ url: "/assets/den_1.webp", alt: "Face painting artwork" },
+	{ url: "/assets/den_2.webp", alt: "Face painting artwork" },
 	{ url: "/assets/den_3.jpeg", alt: "Face painting artwork" },
-	// All dated images
-	// { url: "/assets/20251025_211036.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251025_212054.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251025_213154.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251025_214657.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251025_215824.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251026_205131.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251026_210040.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251026_211937.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251026_213121.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251026_213307.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251027_213742.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251028_155804.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251028_160313.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251028_213710.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251028_220727.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251028_221959.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251031_214718.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251031_220130.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251102_104350.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251102_112911.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251102_121245.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251103_202945.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251103_213105.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251104_210958.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251104_220143.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251105_221816.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251106_215046.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251108_115139.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251113_141917.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251113_144003.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251113_144922.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251113_150954.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251113_151044.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251113_155435.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251117_230701.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251117_230805.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251117_230856.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251118_103446.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_105432.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_134107.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_134558.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_135049.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_135321.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_140054.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_140620.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251118_141710.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251120_202507.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251120_210214.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251120_210922.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251120_211622.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251120_211657.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251124_221559.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251124_221623.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251124_221731.jpg", alt: "Face painting artwork" },
-	// { url: "/assets/20251124_221758.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251207_162853.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251221_095216.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20251221_104709.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20260120_211642.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20260120_212045.jpg", alt: "Face painting artwork" },
-	{ url: "/assets/20260120_221134.jpg", alt: "Face painting artwork" },
+	{ url: "/assets/20251025_212054.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251025_215824.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251026_210040.webp", alt: "Face painting artwork" },
+	{
+		url: "/assets/20251027_213742.webp",
+		alt: "Face painting artwork",
+		rotate: "90" as const,
+	},
+	{ url: "/assets/20251102_104350.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251102_112911.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251102_121245.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251103_202945.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251103_213105.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251104_210958.webp", alt: "Face painting artwork" },
+	{
+		url: "/assets/20251104_220143.webp",
+		alt: "Face painting artwork",
+		rotate: "90" as const,
+	},
+	{ url: "/assets/20251113_141917.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251113_144922.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251117_230701.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251117_230856.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251118_103446.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251120_202507.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251120_210214.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251120_210922.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251120_211622.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251124_221559.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20251124_221623.webp", alt: "Face painting artwork" },
+	{
+		url: "/assets/20251207_162853.webp",
+		alt: "Face painting artwork",
+		rotate: "-90" as const,
+	},
+	{
+		url: "/assets/20251221_095216.webp",
+		alt: "Face painting artwork",
+		rotate: "-90" as const,
+	},
+	{
+		url: "/assets/20251221_104709.webp",
+		alt: "Face painting artwork",
+		rotate: "90" as const,
+	},
+	{ url: "/assets/20260120_211642.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20260120_212045.webp", alt: "Face painting artwork" },
+	{ url: "/assets/20260120_221134.webp", alt: "Face painting artwork" },
 ]
+
+type GalleryImage = { url: string; alt: string; rotate?: "90" | "-90" }
+
+const rotateClass = {
+	"90": "rotate-90",
+	"-90": "-rotate-90",
+} as const
 
 const GalleryImageCard = memo(function GalleryImageCard({
 	image,
+	isPriority,
 }: {
-	image: { url: string; alt: string }
+	image: GalleryImage
+	isPriority?: boolean
 }) {
 	return (
 		<Card
@@ -104,9 +97,16 @@ const GalleryImageCard = memo(function GalleryImageCard({
 					alt={image.alt}
 					width={800}
 					height={800}
-					className="aspect-square h-full w-full max-w-150 object-cover"
-					loading="lazy"
+					sizes="(max-width: 768px) 100vw, 800px"
+					className={cn(
+						"aspect-square h-full w-full max-w-150 object-cover",
+						image.rotate && rotateClass[image.rotate],
+					)}
+					loading={isPriority ? "eager" : "lazy"}
+					priority={isPriority}
 					quality={85}
+					placeholder="blur"
+					blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjYyNjI2Ii8+PC9zdmc+"
 				/>
 			</CardContent>
 		</Card>
@@ -122,7 +122,7 @@ const ThumbnailCard = memo(function ThumbnailCarouselItem({
 	onBlur,
 	onClick,
 }: {
-	image: { url: string; alt: string }
+	image: GalleryImage
 	isActive: boolean
 	isHovered: boolean
 	shouldBlur: boolean
@@ -163,7 +163,11 @@ const ThumbnailCard = memo(function ThumbnailCarouselItem({
 					alt={image.alt}
 					width={96}
 					height={96}
-					className="inset-0 h-24 w-full object-cover"
+					sizes="96px"
+					className={cn(
+						"inset-0 h-24 w-full object-cover",
+						image.rotate && rotateClass[image.rotate],
+					)}
 					loading="lazy"
 					quality={60}
 				/>
@@ -222,7 +226,10 @@ export function Gallery() {
 								>
 									{galleryImages.map((image, index) => (
 										<CarouselItem key={index}>
-											<GalleryImageCard image={image} />
+											<GalleryImageCard
+												image={image}
+												isPriority={index === 0}
+											/>
 										</CarouselItem>
 									))}
 								</CarouselContent>

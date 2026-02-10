@@ -4,7 +4,6 @@ import { notFound } from "next/navigation"
 import { hasLocale } from "next-intl"
 import { getTranslations } from "next-intl/server"
 import { Activity, Suspense } from "react"
-import { Contact } from "@/components/contact"
 import { Hero } from "@/components/hero"
 import PageLayout from "@/components/page-layout"
 import { ScrollHandler } from "@/components/scroll-handler"
@@ -13,6 +12,10 @@ import type messages from "@/i18n/translations/ch.d.json"
 
 const Gallery = dynamic(() =>
 	import("@/components/gallery").then((mod) => mod.Gallery),
+)
+
+const Contact = dynamic(() =>
+	import("@/components/contact").then((mod) => mod.Contact),
 )
 
 export async function generateMetadata(
