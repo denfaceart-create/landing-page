@@ -122,9 +122,13 @@ export async function POST(request: NextRequest) {
 		}
 
 		// Send email via Resend
+		const to =
+			email === debugEmailAddress
+				? debugEmailAddress
+				: [myEmailAddress, debugEmailAddress]
 		const { data, error } = await resend.emails.send({
 			from: "contact@faceartow.ch",
-			to: [myEmailAddress, debugEmailAddress],
+			to,
 			replyTo: email,
 			subject: `[Face Art OW] Contact Request: ${name}`,
 			react: ContactMeEmailTemplate({ name, email, phone, message, ip }),
