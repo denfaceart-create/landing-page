@@ -1,12 +1,6 @@
 "use client"
 
-import { useTranslations } from "next-intl"
-import {
-	type CSSProperties,
-	type PropsWithChildren,
-	useEffect,
-	useState,
-} from "react"
+import type { CSSProperties, PropsWithChildren } from "react"
 import { cn } from "@/lib/utils"
 import { Footer } from "./footer"
 import { Navbar } from "./navbar"
