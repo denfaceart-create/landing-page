@@ -1,7 +1,7 @@
 # Face Art Obwalden - Face Painting Services
 
 ## About
-Professional face painting services for children's birthdays, parties, and events in Obwalden, Switzerland. I'm passionate about creating magical moments for children through the art of face painting, transforming little ones into their favorite characters, animals, and magical creatures.
+Professional face painting services for children's birthdays, parties, and events in Obwalden, Switzerland. Run by Denise Winberger (formerly known as Denise Aeschbacher), a passionate face painter bringing magical moments to children throughout Obwalden and Central Switzerland.
 
 ## Services Offered
 - Children's birthday parties and celebrations
@@ -77,6 +77,7 @@ Rates vary based on:
 Contact for personalized quote and package options.
 
 ## Contact
+- Artist: Denise Winberger (also known as Denise Aeschbacher)
 - Phone: +41796736445
 - Email: faceartow@gmail.com
 - Location: Sarnen, Obwalden, Switzerland

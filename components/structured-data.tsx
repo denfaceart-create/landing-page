@@ -1,6 +1,18 @@
 import { myEmailAddress, phoneNumber } from "@/config"
 
 export function StructuredData() {
+	const denise = {
+		"@type": "Person",
+		"@id": "https://www.faceartow.ch/#denise-winberger",
+		name: "Denise Winberger",
+		alternateName: ["Denise Aeschbacher", "Denise Winberger-Aeschbacher"],
+		jobTitle: "Face Painter",
+		worksFor: {
+			"@id": "https://www.faceartow.ch",
+		},
+		sameAs: ["https://www.instagram.com/faceartow"],
+	}
+
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": ["Organization", "LocalBusiness"],
@@ -18,6 +30,8 @@ export function StructuredData() {
 		telephone: phoneNumber,
 		email: myEmailAddress,
 		priceRange: "$$",
+		founder: denise,
+		employee: denise,
 		address: {
 			"@type": "PostalAddress",
 			addressLocality: "Sarnen",
