@@ -2,8 +2,8 @@
 	"Manifest": {
 		"name": "Face Art Obwalden",
 		"short_name": "Face Art",
-		"description": "Creative face painting for children's birthdays, celebrations, and events in Obwalden and Central Switzerland.",
-		"keywords": "face painting, children's birthday, events, Obwalden, Face Art, face painter",
+		"description": "Creative face painting for children's birthdays, celebrations, and events in Obwalden and Central Switzerland. Book Denise Winberger (Denise Aeschbacher) today.",
+		"keywords": "face painting, children's birthday, events, Obwalden, Face Art, face painter, denise winberger, denise aeschbacher",
 		"theme_color": "#d946ef",
 		"lang": "en",
 		"dir": "ltr",
@@ -41,7 +41,10 @@
 				"central switzerland",
 				"children's birthday",
 				"events",
-				"children's entertainment"
+				"children's entertainment",
+				"denise winberger",
+				"denise aeschbacher",
+				"face art obwalden"
 			],
 			"openGraph": {
 				"title": "Face Painting Central Switzerland | Face Art Obwalden",
@@ -104,8 +107,8 @@
 	},
 	"AboutPage": {
 		"metadata": {
-			"title": "About me | Face Art Obwalden",
-			"description": "Learn more about my face painting in Central Switzerland. Bringing smiles and colour to children and events.",
+		"title": "Denise Winberger | Face Painter Obwalden",
+			"description": "Learn more about Denise Winberger (formerly Denise Aeschbacher), face painter in Central Switzerland. Bringing smiles and colour to children and events.",
 			"keywords": [
 				"about face painter",
 				"face painting",
@@ -116,8 +119,11 @@
 				"Denise face painting"
 			],
 			"openGraph": {
-				"title": "About me | Face Art Obwalden",
-				"description": "Learn more about my face painting services",
+				"title": "Denise Winberger | Face Painter Obwalden",
+				"description": "Learn more about Denise Winberger (formerly Denise Aeschbacher) and her face painting services",
+				"type": "profile",
+				"profile:first_name": "Denise",
+				"profile:last_name": "Winberger",
 				"images": [
 					{
 						"url": "/assets/face_art_ow_den_1200x1200.jpg",
@@ -127,7 +133,6 @@
 					}
 				],
 				"locale": "en",
-				"type": "website",
 				"url": "https://www.faceartow.ch/en/about"
 			},
 			"alternates": {
@@ -172,7 +177,9 @@
 			"keywords": [
 				"face painting faq",
 				"face painting price",
-				"book face painter",
+				"face painting safety",
+				"denise winberger",
+				"denise aeschbacher",
 				"face painting safety"
 			],
 			"openGraph": {

@@ -6,6 +6,8 @@ export function StructuredData() {
 		"@id": "https://www.faceartow.ch/#denise-winberger",
 		name: "Denise Winberger",
 		alternateName: ["Denise Aeschbacher", "Denise Winberger-Aeschbacher"],
+		givenName: "Denise",
+		familyName: "Winberger",
 		jobTitle: "Face Painter",
 		worksFor: {
 			"@id": "https://www.faceartow.ch",

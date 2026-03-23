@@ -2,8 +2,8 @@
 	"Manifest": {
 		"name": "Face Art Obwaldä",
 		"short_name": "Face Art",
-		"description": "Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä und i de Zentralschwiiz.",
-		"keywords": "Gsichtsschminki, Kindergeburtstag, Verastaltige, Obwaldä, Face Art, professioneller Gsichtsschminker",
+		"description": "Gsichtsschminki-Dienstleistige für Kindergeburtstäg, Fäscht und Verastaltige in Obwaldä und i de Zentralschwiiz. Buech Denise Winberger (Denise Aeschbacher) hüt no.",
+		"keywords": "Gsichtsschminki, Kindergeburtstag, Verastaltige, Obwaldä, Face Art, professioneller Gsichtsschminker, denise winberger, denise aeschbacher",
 		"theme_color": "#d946ef",
 		"lang": "de-CH",
 		"dir": "ltr",
@@ -44,7 +44,10 @@
 				"face painting",
 				"chindergeburtstag",
 				"events",
-				"kinderanimation"
+				"kinderanimation",
+				"denise winberger",
+				"denise aeschbacher",
+				"face art obwalden"
 			],
 			"openGraph": {
 				"title": "Kinderschminken Zentralschwiiz | Kinderschminkerin",
@@ -107,8 +110,8 @@
 	},
 	"AboutPage": {
 		"metadata": {
-			"title": "Über mich | Kinderschminken Zentralschwiiz",
-			"description": "Erfahre meh über mini professionelle Kinderschminke-Dienstleistige i de Zentralschwiiz. Begeisterti Künstlerin wo magischi Momente für Chind und Events schafft.",
+			"title": "Denise Winberger | Kinderschminkerin Zentralschwiiz",
+			"description": "Erfahre meh über Denise Winberger (früecher Denise Aeschbacher), professionelli Kinderschminkerin i de Zentralschwiiz. Begeisterti Künstlerin wo magischi Momänt für Chind und Events schafft.",
 			"keywords": [
 				"über kinderschminkerin",
 				"professionells kinderschminke",
@@ -119,8 +122,10 @@
 				"Denise Gsichtsschminki"
 			],
 			"openGraph": {
-				"title": "Über mich | Kinderschminke Zentralschwiiz",
-				"description": "Erfahre meh über mini professionelle Kinderschminke-Dienstleistige",
+				"title": "Denise Winberger | Kinderschminkerin Zentralschwiiz",
+				"description": "Erfahre meh über Denise Winberger (früecher Denise Aeschbacher) und ihri professionelle Kinderschminke-Dienstleistige",
+				"profile:first_name": "Denise",
+				"profile:last_name": "Winberger",
 				"images": [
 					{
 						"url": "/assets/face_art_ow_den_1200x1200.jpg",
@@ -130,7 +135,7 @@
 					}
 				],
 				"locale": "de-CH",
-				"type": "website",
+				"type": "profile",
 				"url": "https://www.faceartow.ch/about"
 			},
 			"alternates": {
@@ -176,7 +181,9 @@
 				"gsichtsschminki faq",
 				"gsichtsschminki prys",
 				"gsichtsschminker buche",
-				"gsichtsschminki sicherheit"
+				"gsichtsschminki sicherheit",
+				"Denise Winberger",
+				"Denise Aeschbacher"
 			],
 			"openGraph": {
 				"title": "FAQ | Gsichtsschminki Zentralschwiiz",

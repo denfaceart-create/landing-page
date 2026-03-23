@@ -65,6 +65,7 @@ export default async function LocaleLayout({
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="apple-touch-icon" href="/apple-icon.png" />
 				<link rel="llms-txt" href="/llms.txt" />
+				<meta name="author" content="Denise Winberger, Denise Aeschbacher" />
 				<StructuredData />
 				<BreadcrumbSchema
 					locale={locale}

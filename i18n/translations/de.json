@@ -2,8 +2,8 @@
 	"Manifest": {
 		"name": "Face Art Obwalden",
 		"short_name": "Face Art",
-		"description": "Kreatives Schminken für Kindergeburtstage, Feiern und Veranstaltungen in Obwalden und der Zentralschweiz",
-		"keywords": "Gesichtsbemalung, Kindergeburtstag, Veranstaltungen, Obwalden, Face Art, Gesichtsmaler",
+		"description": "Kreatives Schminken für Kindergeburtstage, Feiern und Veranstaltungen in Obwalden und der Zentralschweiz. Buchen Sie Denise Winberger (Denise Aeschbacher) noch heute.",
+		"keywords": "Gesichtsbemalung, Kindergeburtstag, Veranstaltungen, Obwalden, Face Art, Gesichtsmaler, denise winberger, denise aeschbacher",
 		"theme_color": "#d946ef",
 		"lang": "en",
 		"dir": "ltr",
@@ -46,7 +46,10 @@
 				"kinderschminkerin",
 				"face painting",
 				"events",
-				"kinderanimation"
+				"kinderanimation",
+				"denise winberger",
+				"denise aeschbacher",
+				"face art obwalden"
 			],
 			"openGraph": {
 				"title": "Kinderschminken Zentralschweiz | Face Art Obwalden",
@@ -109,8 +112,8 @@
 	},
 	"AboutPage": {
 		"metadata": {
-			"title": "Über mich | Face Art Zentralschweiz",
-			"description": "Erfahren Sie mehr über meine Gesichtsbemalung in der Zentralschweiz. Ich bringe Kindern und Veranstaltungen ein Lächeln und Farbe ins Gesicht.",
+		"title": "Denise Winberger | Kinderschminkerin Zentralschweiz",
+			"description": "Erfahren Sie mehr über Denise Winberger (früher Denise Aeschbacher), Kinderschminkerin in der Zentralschweiz. Ich bringe Kindern und Veranstaltungen ein Lächeln und Farbe ins Gesicht.",
 			"keywords": [
 				"über kinderschminkerin",
 				"Kinderschminken",
@@ -121,8 +124,10 @@
 				"Denise Kinderschminken"
 			],
 			"openGraph": {
-				"title": "Über mich | Kinderschminken Zentralschweiz",
-				"description": "Erfahren Sie mehr über meine professionellen Kinderschminke-Dienstleistungen",
+				"title": "Denise Winberger | Kinderschminkerin Zentralschweiz",
+				"description": "Erfahren Sie mehr über Denise Winberger (früher Denise Aeschbacher) und ihre professionellen Kinderschminke-Dienstleistungen",
+				"profile:first_name": "Denise",
+				"profile:last_name": "Winberger",
 				"images": [
 					{
 						"url": "/assets/face_art_ow_den_1200x1200.jpg",
@@ -132,7 +137,7 @@
 					}
 				],
 				"locale": "de-DE",
-				"type": "website",
+				"type": "profile",
 				"url": "https://www.faceartow.ch/de/about"
 			},
 			"alternates": {
@@ -179,7 +184,9 @@
 				"kinderschminken faq",
 				"kinderschminken preis",
 				"kinderschminker buchen",
-				"kinderschminken sicherheit"
+				"kinderschminken sicherheit",
+				"Denise Winberger",
+				"Denise Aeschbacher"
 			],
 			"openGraph": {
 				"title": "FAQ | Face Art Obwalden",
