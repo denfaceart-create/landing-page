@@ -1,7 +1,6 @@
 "use client"
 
 import Fade from "embla-carousel-fade"
-import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { memo, useCallback, useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -92,21 +91,15 @@ const GalleryImageCard = memo(function GalleryImageCard({
 			)}
 		>
 			<CardContent className="relative flex aspect-video items-center justify-center p-3">
-				<Image
+				{/** biome-ignore lint/performance/noImgElement: Using nextjs Image element for optimizations limits the ability to apply dynamic dimensions */}
+				<img
 					src={image.url}
 					alt={image.alt}
-					width={800}
-					height={800}
-					sizes="(max-width: 768px) 100vw, 800px"
 					className={cn(
 						"aspect-square h-full w-full max-w-150 object-cover",
 						image.rotate && rotateClass[image.rotate],
 					)}
 					loading={isPriority ? "eager" : "lazy"}
-					priority={isPriority}
-					quality={85}
-					placeholder="blur"
-					blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjgwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMjYyNjI2Ii8+PC9zdmc+"
 				/>
 			</CardContent>
 		</Card>
@@ -158,18 +151,15 @@ const ThumbnailCard = memo(function ThumbnailCarouselItem({
 			}}
 		>
 			<CardContent className="flex aspect-square items-center justify-center p-0">
-				<Image
+				{/** biome-ignore lint/performance/noImgElement: Using nextjs Image element for optimizations limits the ability to apply dynamic dimensions */}
+				<img
 					src={image.url}
 					alt={image.alt}
-					width={96}
-					height={96}
-					sizes="96px"
 					className={cn(
 						"inset-0 h-24 w-full object-cover",
 						image.rotate && rotateClass[image.rotate],
 					)}
 					loading="lazy"
-					quality={60}
 				/>
 			</CardContent>
 		</Card>
