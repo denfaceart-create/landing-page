@@ -1,19 +1,25 @@
 import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
-import { Plus_Jakarta_Sans } from "next/font/google"
+import { DM_Sans, Playfair_Display } from "next/font/google"
 
 import { notFound } from "next/navigation"
 import { hasLocale, type Locale, NextIntlClientProvider } from "next-intl"
 import { getTranslations } from "next-intl/server"
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 import { StructuredData } from "@/components/structured-data"
+import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/sonner"
 import { routing } from "@/i18n/routing"
 import "../../styles/globals.css"
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const dmSans = DM_Sans({
 	subsets: ["latin"],
 	variable: "--font-sans",
+})
+
+const playfairDisplay = Playfair_Display({
+	subsets: ["latin"],
+	variable: "--font-display",
 })
 
 export function generateStaticParams() {
@@ -60,7 +66,7 @@ export default async function LocaleLayout({
 		namespace: "Navigation",
 	})
 	return (
-		<html lang={langMap[locale] || locale}>
+		<html lang={langMap[locale] || locale} suppressHydrationWarning>
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="apple-touch-icon" href="/apple-icon.png" />
@@ -76,10 +82,14 @@ export default async function LocaleLayout({
 					}}
 				/>
 			</head>
-			<body className={`${plusJakartaSans.variable} font-sans antialiased`}>
-				<NextIntlClientProvider locale={locale}>
-					{children}
-				</NextIntlClientProvider>
+			<body
+				className={`${dmSans.variable} ${playfairDisplay.variable} font-sans antialiased`}
+			>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<NextIntlClientProvider locale={locale}>
+						{children}
+					</NextIntlClientProvider>
+				</ThemeProvider>
 				<Toaster />
 			</body>
 			<Analytics />
