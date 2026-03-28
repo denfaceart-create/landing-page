@@ -1,86 +1,145 @@
 "use client"
 
-import { ArrowRight, Palette } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import type { Transition } from "motion/react"
+import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
-
 import { Button } from "@/components/ui/button"
-import { useFadeInElementObserver } from "@/hooks/useFadeInElementObserver"
 import { scrollToSection } from "@/lib/utils"
+
+const easeOut: Transition = { duration: 0.7, ease: "easeOut" }
+
+const fadeUp = (delay: number) => ({
+	initial: { opacity: 0, y: 32 },
+	animate: { opacity: 1, y: 0 },
+	transition: { ...easeOut, delay } as Transition,
+})
 
 export function Hero() {
 	const t = useTranslations("HomePage.hero")
 
-	const contentRef = useFadeInElementObserver()
-
 	return (
 		<section
 			id="hero"
-			className="relative flex min-h-[90vh] items-center justify-center overflow-hidden bg-linear-to-br from-primary/5 via-secondary/5 to-accent/5 md:min-h-screen"
+			className="relative flex min-h-screen items-center overflow-hidden bg-background pt-20"
 		>
-			{/* Animated background elements */}
-			<div className="absolute inset-0 overflow-hidden">
-				<div className="absolute top-20 left-10 h-72 w-72 animate-float rounded-full bg-primary/20 blur-3xl" />
-				<div
-					className="absolute right-10 bottom-20 h-96 w-96 animate-float rounded-full bg-secondary/20 blur-3xl"
-					style={{ animationDelay: "2s" }}
-				/>
-				<div
-					className="absolute top-1/2 left-1/2 h-[150] w-[150] -translate-x-1/2 -translate-y-1/2 animate-float rounded-full bg-accent/10 blur-3xl"
-					style={{ animationDelay: "4s" }}
-				/>
-			</div>
-
 			<div
-				ref={contentRef}
-				className="container relative z-10 px-4 py-20 md:py-32"
-			>
-				<div className="mx-auto max-w-5xl space-y-8 text-center">
-					<div className="fade-in-element inline-flex translate-y-4 items-center gap-2 rounded-full border border-border bg-card/80 px-4 py-2 opacity-0 shadow-lg backdrop-blur-sm transition-all duration-700">
-						<Palette className="h-4 w-4 text-primary" />
-						<span className="font-medium text-foreground text-sm">
-							{t("badge")}
-						</span>
+				className="pointer-events-none absolute -top-24 -right-24 h-[600px] w-[600px] animate-blob-morph rounded-full bg-primary/15 blur-3xl"
+				aria-hidden="true"
+			/>
+			<div
+				className="pointer-events-none absolute bottom-0 -left-32 h-[400px] w-[400px] animate-blob-morph rounded-full bg-secondary/10 blur-3xl"
+				style={{ animationDelay: "4s" }}
+				aria-hidden="true"
+			/>
+
+			<div className="container relative z-10 mx-auto px-6 py-16 md:py-24 lg:py-32">
+				<div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+					<div className="order-2 flex flex-col items-start gap-6 lg:order-1">
+						<motion.div {...fadeUp(0)}>
+							<span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 font-medium text-primary text-sm">
+								<span
+									className="h-1.5 w-1.5 rounded-full bg-primary"
+									aria-hidden="true"
+								/>
+								{t("badge")}
+							</span>
+						</motion.div>
+
+						<motion.h1
+							{...fadeUp(0.1)}
+							className="text-balance font-bold font-display text-5xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl"
+						>
+							<span className="bg-gradient-to-br from-primary via-primary to-secondary bg-clip-text text-transparent">
+								{t("heroTitle1")}
+							</span>
+							<br />
+							<span className="text-foreground">{t("heroTitle2")}</span>
+						</motion.h1>
+
+						<motion.p
+							{...fadeUp(0.2)}
+							className="max-w-lg text-balance text-lg text-muted-foreground leading-relaxed md:text-xl"
+						>
+							{t("heroSubtitle")}
+						</motion.p>
+
+						<motion.div
+							{...fadeUp(0.3)}
+							className="flex flex-col gap-3 sm:flex-row sm:items-center"
+						>
+							<Button
+								size="lg"
+								className="group rounded-full bg-primary px-8 py-6 font-semibold text-base text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-primary/30 hover:shadow-xl"
+								onClick={() => scrollToSection("contact", 80)}
+								aria-label={t("ctaBookAriaLabel")}
+							>
+								{t("ctaBook")}
+								<ArrowRight
+									className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+									aria-hidden="true"
+								/>
+							</Button>
+							<Button
+								size="lg"
+								variant="ghost"
+								className="group rounded-full border border-border px-8 py-6 font-semibold text-base transition-all hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
+								onClick={() => scrollToSection("gallery", 80)}
+								aria-label={t("ctaMyWorkAriaLabel")}
+							>
+								{t("ctaMyWork")}
+								<ArrowRight
+									className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+									aria-hidden="true"
+								/>
+							</Button>
+						</motion.div>
 					</div>
 
-					<h1 className="fade-in-element translate-y-4 text-balance font-bold text-5xl tracking-tight opacity-0 transition-all delay-100 duration-700 md:text-7xl lg:text-8xl">
-						<span className="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-							{t("heroTitle1")}
-						</span>
-						<br />
-						<span className="text-foreground">{t("heroTitle2")}</span>
-					</h1>
-
-					<p className="fade-in-element mx-auto max-w-xl translate-y-4 text-balance text-muted-foreground text-xl opacity-0 transition-all delay-200 duration-700 md:max-w-2xl md:text-2xl">
-						{t("heroSubtitle")}
-					</p>
-
-					<div className="fade-in-element flex translate-y-4 flex-col items-stretch justify-center gap-4 opacity-0 transition-all delay-300 duration-700 sm:flex-row sm:items-center">
-						<Button
-							size="lg"
-							className="group rounded-xl bg-primary px-8 py-6 text-lg text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:shadow-xl"
-							onClick={() => scrollToSection("contact", 80)}
-							aria-label={t("ctaBookAriaLabel")}
-						>
-							{t("ctaBook")}
-							<ArrowRight
-								className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+					<motion.div
+						className="order-1 flex justify-center lg:order-2"
+						initial={{ opacity: 0, scale: 0.92 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{
+							duration: 0.9,
+							delay: 0.15,
+							ease: "easeOut",
+						}}
+					>
+						<div className="relative">
+							<div
+								className="pointer-events-none absolute -inset-6 animate-blob-morph bg-gradient-to-br from-primary/20 via-secondary/15 to-accent/20 blur-2xl"
+								style={{ animationDelay: "2s" }}
 								aria-hidden="true"
 							/>
-						</Button>
-						<Button
-							size="lg"
-							className="group rounded-xl bg-secondary px-8 py-6 text-lg text-secondary-foreground shadow-lg transition-all hover:bg-secondary/90 hover:shadow-xl"
-							onClick={() => scrollToSection("gallery-title", 20)}
-							variant="secondary"
-							aria-label={t("ctaMyWorkAriaLabel")}
-						>
-							{t("ctaMyWork")}
-							<ArrowRight
-								className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1"
+
+							<div className="relative h-[340px] w-[340px] animate-blob-morph overflow-hidden bg-muted shadow-2xl sm:h-[420px] sm:w-[420px] lg:h-[480px] lg:w-[480px]">
+								{/* biome-ignore lint/performance/noImgElement: intentional */}
+								<img
+									src="/assets/face_art_ow_den_1200x1200.webp"
+									alt="Denise Winberger — Face Art Obwalden"
+									className="h-full w-full object-cover"
+									loading="eager"
+								/>
+							</div>
+
+							<div
+								className="absolute -top-4 -right-4 h-14 w-14 animate-gentle-sway rounded-full bg-accent/80 shadow-lg"
+								style={{ animationDelay: "0s" }}
 								aria-hidden="true"
 							/>
-						</Button>
-					</div>
+							<div
+								className="absolute -bottom-6 -left-6 h-10 w-10 animate-gentle-sway rounded-full bg-secondary/60 shadow-md"
+								style={{ animationDelay: "2s" }}
+								aria-hidden="true"
+							/>
+							<div
+								className="absolute top-1/2 -right-8 h-6 w-6 animate-gentle-sway rounded-full bg-primary/50"
+								style={{ animationDelay: "1s" }}
+								aria-hidden="true"
+							/>
+						</div>
+					</motion.div>
 				</div>
 			</div>
 
