@@ -20,6 +20,8 @@ const Contact = dynamic(() =>
 	import("@/components/contact").then((mod) => mod.Contact),
 )
 
+export const revalidate = 3600
+
 export async function generateMetadata(
 	props: Omit<PageProps<"/[locale]">, "children">,
 ) {
