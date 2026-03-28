@@ -1,27 +1,10 @@
 "use client"
 
+import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
-import type { ComponentProps, ComponentPropsWithoutRef, FC } from "react"
-import { Link, usePathname } from "@/i18n/navigation"
-import { cn } from "@/lib/utils"
-
-const footerNavItems = [
-	{
-		name: "about",
-		href: "/about",
-	},
-	{
-		name: "faq",
-		href: "/faq",
-	},
-	{
-		name: "accessibility",
-		href: "/accessibility",
-	},
-] as const satisfies {
-	name: string
-	href: ComponentPropsWithoutRef<typeof Link>["href"]
-}[]
+import type { ComponentProps, FC } from "react"
+import { Link } from "@/i18n/navigation"
+import { scrollToSection } from "@/lib/utils"
 
 const Instagram: FC<
 	Omit<ComponentProps<"svg">, "role" | "viewBox" | "xmlns">
@@ -37,65 +20,89 @@ const Instagram: FC<
 	</svg>
 )
 
+const NAV_OFFSET = 80
+
 export function Footer() {
 	const t = useTranslations()
-	const currentPathname = usePathname()
-
 	const currentYear = new Date().getFullYear()
+	const pathname = usePathname()
+
+	// Check if we're on the home page (any locale variant: "/", "/en", "/de", "/ch")
+	const isHomePage = /^\/(en|de|ch)?\/?$/.test(pathname)
+
+	const footerLinks = [
+		{ label: t("Navigation.about"), sectionId: "about" },
+		{ label: t("Navigation.faq"), sectionId: "faq" },
+		{ label: t("HomePage.contactForm.contactTitle"), sectionId: "contact" },
+	]
 
 	return (
-		<footer className="border-border border-t bg-muted/50">
+		<footer className="border-border/50 border-t bg-card/30">
 			<div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-				<div className="mb-8 grid gap-8 md:grid-cols-6">
-					<div className="space-y-4">
-						<Link
-							href="/"
-							className="flex items-center gap-2 font-semibold text-lg"
-						>
-							{t("Footer.appName")}
-						</Link>
-						<ul className="space-y-2 text-sm">
-							{footerNavItems.map((item, index) => (
-								<li key={index}>
-									<Link
-										href={item.href}
-										className={cn(
-											"text-muted-foreground transition-colors hover:text-primary",
-											currentPathname === item.href &&
-												"font-bold text-primary/70",
-										)}
-									>
-										{t(`Navigation.${item.name}`)}
-									</Link>
+				<div className="mb-10 flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
+					<button
+						type="button"
+						onClick={() => scrollToSection("hero", NAV_OFFSET)}
+						className="font-bold font-display text-2xl text-primary transition-opacity hover:opacity-80"
+						aria-label="Go to top of page"
+					>
+						Face Art Obwalden
+					</button>
+
+					<nav aria-label="Footer navigation">
+						<ul className="flex flex-wrap gap-6">
+							{footerLinks.map((link) => (
+								<li key={link.sectionId}>
+									{isHomePage ? (
+										<button
+											type="button"
+											onClick={() =>
+												scrollToSection(link.sectionId, NAV_OFFSET)
+											}
+											className="text-muted-foreground text-sm transition-colors hover:text-primary"
+										>
+											{link.label}
+										</button>
+									) : (
+										<a
+											href={`/#${link.sectionId}`}
+											className="text-muted-foreground text-sm transition-colors hover:text-primary"
+										>
+											{link.label}
+										</a>
+									)}
 								</li>
 							))}
 						</ul>
-					</div>
+					</nav>
 
 					<div>
-						<h2 className="mb-4 font-semibold text-base">
-							{t("Footer.followMe")}
-						</h2>
-						<div className="flex gap-3">
-							<a
-								href="https://www.instagram.com/faceartow"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label={t("Footer.instagramAriaLabel")}
-								className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 transition-colors hover:bg-primary/20"
-							>
-								<Instagram
-									className="h-5 w-5 fill-current text-primary"
-									aria-hidden="true"
-								/>
-							</a>
-						</div>
+						<p className="mb-3 font-medium text-sm">{t("Footer.followMe")}</p>
+						<a
+							href="https://www.instagram.com/faceartow"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label={t("Footer.instagramAriaLabel")}
+							className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10 transition-colors hover:bg-primary/20"
+						>
+							<Instagram
+								className="h-5 w-5 fill-current text-primary"
+								aria-hidden="true"
+							/>
+						</a>
 					</div>
 				</div>
 
-				<div className="flex flex-col items-center justify-center gap-4 border-border border-t pt-8 text-muted-foreground text-sm sm:flex-row">
+				<div className="flex items-center justify-center border-border/50 border-t pt-8 text-center text-muted-foreground text-sm">
 					<p>
-						© {currentYear} · {t("Footer.rights")}
+						© {currentYear} · {t("Footer.appName")} ·{" "}
+						<Link
+							href="/accessibility"
+							className="transition-colors hover:text-primary"
+						>
+							{t("Navigation.accessibility")}
+						</Link>{" "}
+						· {t("Footer.rights")}
 					</p>
 				</div>
 			</div>
