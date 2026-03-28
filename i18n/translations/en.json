@@ -83,7 +83,8 @@
 		},
 		"gallery": {
 			"title": "My Work",
-			"positionAnnouncement": "Image {current} of {total}"
+			"positionAnnouncement": "Image {current} of {total}",
+			"lightboxLabel": "Image lightbox viewer"
 		},
 		"contactForm": {
 			"required": "This field is required",
@@ -106,43 +107,6 @@
 		}
 	},
 	"AboutPage": {
-		"metadata": {
-			"title": "Denise Winberger | Face Painter Obwalden",
-			"description": "Learn more about Denise Winberger (formerly Denise Aeschbacher), face painter in Central Switzerland. Bringing smiles and colour to children and events.",
-			"keywords": [
-				"about face painter",
-				"face painting",
-				"central switzerland",
-				"children's entertainment",
-				"Denise Winberger",
-				"Denise Aeschbacher",
-				"Denise face painting"
-			],
-			"openGraph": {
-				"title": "Denise Winberger | Face Painter Obwalden",
-				"description": "Learn more about Denise Winberger (formerly Denise Aeschbacher) and her face painting services",
-				"type": "profile",
-				"profile:first_name": "Denise",
-				"profile:last_name": "Winberger",
-				"images": [
-					{
-						"url": "/assets/face_art_ow_den_1200x1200.jpg",
-						"width": 1200,
-						"height": 1200,
-						"alt": "Face Art Obwalden - Face painting for children"
-					}
-				],
-				"locale": "en",
-				"url": "https://www.faceartow.ch/en/about"
-			},
-			"alternates": {
-				"canonical": "https://www.faceartow.ch/en/about",
-				"languages": {
-					"de-CH": "https://www.faceartow.ch/about",
-					"de-DE": "https://www.faceartow.ch/de/about"
-				}
-			}
-		},
 		"title": "About Me",
 		"subtitle": "Bringing smiles and colour to children's faces",
 		"introduction": "Hi and welcome to Face Art Obwalden! I love painting kids' favourite characters and creating small moments of magic.",
@@ -171,40 +135,6 @@
 		}
 	},
 	"FaqPage": {
-		"metadata": {
-			"title": "FAQ | Questions about Face Painting",
-			"description": "Frequently asked questions about face painting in Central Switzerland. Prices, booking, safety, and event details.",
-			"keywords": [
-				"face painting faq",
-				"face painting price",
-				"face painting safety",
-				"denise winberger",
-				"denise aeschbacher",
-				"face painting safety"
-			],
-			"openGraph": {
-				"title": "FAQ | Face Art Obwalden",
-				"description": "Frequently asked questions about face painting services, prices, and bookings",
-				"images": [
-					{
-						"url": "/assets/face_art_ow_den_1200x1200.jpg",
-						"width": 1200,
-						"height": 1200,
-						"alt": "Face Art Obwalden - Face painting for children"
-					}
-				],
-				"locale": "en",
-				"type": "website",
-				"url": "https://www.faceartow.ch/en/faq"
-			},
-			"alternates": {
-				"canonical": "https://www.faceartow.ch/en/faq",
-				"languages": {
-					"de-CH": "https://www.faceartow.ch/faq",
-					"de-DE": "https://www.faceartow.ch/de/faq"
-				}
-			}
-		},
 		"badge": "Questions & Answers",
 		"title": "Frequently Asked Questions",
 		"subtitle": "Everything you need to know",
@@ -255,11 +185,6 @@
 			"description": "Feel free to reach out. I’m happy to help you plan your event.",
 			"button": "Contact me"
 		}
-	},
-	"UnderConstructionPage": {
-		"title": "Under Construction",
-		"description": "My website is currently being updated. Please check back soon.",
-		"expectedLaunch": "Expected Launch: Coming Soon"
 	},
 	"NotFoundPage": {
 		"title": "Page not found",
@@ -335,7 +260,23 @@
 		"feedback": {
 			"title": "Feedback & Contact",
 			"description": "We are continuously improving our website. If you encounter accessibility issues or have suggestions, please contact us.",
-			"button": "Send Feedback"
+			"formTitle": "Send Accessibility Feedback",
+			"email": "Your email",
+			"issueType": "Issue type",
+			"issueTypes": {
+				"keyboard": "Keyboard navigation",
+				"screenReader": "Screen reader compatibility",
+				"contrast": "Colour contrast",
+				"other": "Other"
+			},
+			"pageOrElement": "Page or element affected",
+			"pageOrElementPlaceholder": "e.g. homepage hero button, contact form",
+			"descriptionLabel": "Description",
+			"descriptionPlaceholder": "Please describe the issue you encountered",
+			"send": "Send Feedback",
+			"submitSuccess": "Thank you for your feedback! We will look into it.",
+			"submitError": "Something went wrong. Please try again later.",
+			"required": "This field is required"
 		}
 	}
 }

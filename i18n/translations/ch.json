@@ -86,7 +86,8 @@
 		},
 		"gallery": {
 			"title": "Mini Arbet",
-			"positionAnnouncement": "Bild {current} vo {total}"
+			"positionAnnouncement": "Bild {current} vo {total}",
+			"lightboxLabel": "Bildanzeig"
 		},
 		"contactForm": {
 			"required": "Dieses Feld ist erforderlich",
@@ -109,43 +110,6 @@
 		}
 	},
 	"AboutPage": {
-		"metadata": {
-			"title": "Denise Winberger | Kinderschminkerin Zentralschwiiz",
-			"description": "Erfahre meh über Denise Winberger (früecher Denise Aeschbacher), professionelli Kinderschminkerin i de Zentralschwiiz. Begeisterti Künstlerin wo magischi Momänt für Chind und Events schafft.",
-			"keywords": [
-				"über kinderschminkerin",
-				"professionells kinderschminke",
-				"zentralschwiiz",
-				"kinderanimation",
-				"Denise Winberger",
-				"Denise Aeschbacher",
-				"Denise Gsichtsschminki"
-			],
-			"openGraph": {
-				"title": "Denise Winberger | Kinderschminkerin Zentralschwiiz",
-				"description": "Erfahre meh über Denise Winberger (früecher Denise Aeschbacher) und ihri professionelle Kinderschminke-Dienstleistige",
-				"profile:first_name": "Denise",
-				"profile:last_name": "Winberger",
-				"images": [
-					{
-						"url": "/assets/face_art_ow_den_1200x1200.jpg",
-						"width": 1200,
-						"height": 1200,
-						"alt": "Face Art Obwalden - Gsichtsschminki für Chind"
-					}
-				],
-				"locale": "de-CH",
-				"type": "profile",
-				"url": "https://www.faceartow.ch/about"
-			},
-			"alternates": {
-				"canonical": "https://www.faceartow.ch/about",
-				"languages": {
-					"en": "https://www.faceartow.ch/en/about",
-					"de-DE": "https://www.faceartow.ch/de/about"
-				}
-			}
-		},
 		"title": "Über Mich",
 		"subtitle": "Freud und Kreativität i Kindergsichter bringe",
 		"introduction": "Willkomme bi Face Art Obwaldä! Ich bringe Lidenschaft i d'Kunst vo dr Gsichtsschminki und schaffe magischi Momänt für Chinder.",
@@ -174,40 +138,6 @@
 		}
 	},
 	"FaqPage": {
-		"metadata": {
-			"title": "FAQ | Frage über Gsichtsschminki beantwortet",
-			"description": "Hüüfig gstellti Frage über mini Gsichtsschminki-Dienstleistige i de Zentralschwiiz. Priis, Buechig, Sicherheit und Event-Details beantwortet.",
-			"keywords": [
-				"gsichtsschminki faq",
-				"gsichtsschminki prys",
-				"gsichtsschminker buche",
-				"gsichtsschminki sicherheit",
-				"Denise Winberger",
-				"Denise Aeschbacher"
-			],
-			"openGraph": {
-				"title": "FAQ | Gsichtsschminki Zentralschwiiz",
-				"description": "Hüüfigi Frage über Gsichtsschminki-Dienstleistige, Priis und Buechige",
-				"images": [
-					{
-						"url": "/assets/face_art_ow_den_1200x1200.jpg",
-						"width": 1200,
-						"height": 1200,
-						"alt": "Face Art Obwalden - Gsichtsschminki für Chind"
-					}
-				],
-				"locale": "de-CH",
-				"type": "website",
-				"url": "https://www.faceartow.ch/faq"
-			},
-			"alternates": {
-				"canonical": "https://www.faceartow.ch/faq",
-				"languages": {
-					"en": "https://www.faceartow.ch/en/faq",
-					"de-DE": "https://www.faceartow.ch/de/faq"
-				}
-			}
-		},
 		"badge": "Frage & Antwort",
 		"title": "Hüüfig gstellti Frage",
 		"subtitle": "Alles was Sie über mini Gsichtsschminki-Dienstleistige wüsse müend",
@@ -258,11 +188,6 @@
 			"description": "Zögered Sie nid, sich zmälde! Ich besprich gärn Ihri spezifische Bedürfniss und hilf debii, Ihri Verastaltig magisch z'gstalte.",
 			"button": "Kontaktiered Sie mich"
 		}
-	},
-	"UnderConstructionPage": {
-		"title": "Im Aufbau",
-		"description": "Mini Website befindet sich derzyt im Ufbau. Ich arbeite fllissig dra, sie z'erstellä. Lueg bald wieder vorbei!",
-		"expectedLaunch": "Geplanter Start: Bald verfügbar"
 	},
 	"NotFoundPage": {
 		"title": "Seite nid gfunde",
@@ -338,7 +263,23 @@
 		"feedback": {
 			"title": "Feedback & Kontakt",
 			"description": "Mir verbessered üsi Website ständig. Wenn Sie Barrierefreiheits-Problem begägned oder Vorschläg händ, bitte mälded Sie sich bi üs.",
-			"button": "Feedback schicke"
+			"formTitle": "Barrierefreiheits-Feedback schicke",
+			"email": "Ihri E-Mail-Adress",
+			"issueType": "Art vom Problem",
+			"issueTypes": {
+				"keyboard": "Taschtatur-Navigation",
+				"screenReader": "Screenreader-Kompatibilität",
+				"contrast": "Farbkontrast",
+				"other": "Anderes"
+			},
+			"pageOrElement": "Betroffeni Siite oder Element",
+			"pageOrElementPlaceholder": "z. B. Hero-Knopf uf dr Startsiite, Kontaktformular",
+			"descriptionLabel": "Beschriibig",
+			"descriptionPlaceholder": "Bitte beschriibid Sie das Problem wo Sie gha händ",
+			"send": "Feedback schicke",
+			"submitSuccess": "Merci für Ihr Feedback! Mir wered das aaluege.",
+			"submitError": "Öppis isch schiefgange. Bitte versuechid es spöter nomal.",
+			"required": "Dieses Feld isch erforderlich"
 		}
 	}
 }

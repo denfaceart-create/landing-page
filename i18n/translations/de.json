@@ -88,7 +88,8 @@
 		},
 		"gallery": {
 			"title": "Meine Arbeit",
-			"positionAnnouncement": "Bild {current} von {total}"
+			"positionAnnouncement": "Bild {current} von {total}",
+			"lightboxLabel": "Bildanzeige"
 		},
 		"contactForm": {
 			"required": "Dieses Feld ist erforderlich",
@@ -111,44 +112,6 @@
 		}
 	},
 	"AboutPage": {
-		"metadata": {
-			"title": "Denise Winberger | Kinderschminkerin Zentralschweiz",
-			"description": "Erfahren Sie mehr über Denise Winberger (früher Denise Aeschbacher), Kinderschminkerin in der Zentralschweiz. Ich bringe Kindern und Veranstaltungen ein Lächeln und Farbe ins Gesicht.",
-			"keywords": [
-				"über kinderschminkerin",
-				"Kinderschminken",
-				"zentralschweiz",
-				"kinderanimation",
-				"Denise Winberger",
-				"Denise Aeschbacher",
-				"Denise Kinderschminken"
-			],
-			"openGraph": {
-				"title": "Denise Winberger | Kinderschminkerin Zentralschweiz",
-				"description": "Erfahren Sie mehr über Denise Winberger (früher Denise Aeschbacher) und ihre professionellen Kinderschminke-Dienstleistungen",
-				"profile:first_name": "Denise",
-				"profile:last_name": "Winberger",
-				"images": [
-					{
-						"url": "/assets/face_art_ow_den_1200x1200.jpg",
-						"width": 1200,
-						"height": 1200,
-						"alt": "Face Art Obwalden - Kinderschminken"
-					}
-				],
-				"locale": "de-DE",
-				"type": "profile",
-				"url": "https://www.faceartow.ch/de/about"
-			},
-			"alternates": {
-				"canonical": "https://www.faceartow.ch/de/about",
-				"languages": {
-					"en": "https://www.faceartow.ch/en/about",
-					"de-CH": "https://www.faceartow.ch/about"
-				}
-			}
-		},
-
 		"title": "Über Mich",
 		"subtitle": "Wir zaubern ein Lächeln und Farbe auf die Gesichter der Kinder",
 		"introduction": "Hallo und herzlich willkommen bei Face Art Obwalden! Ich liebe es, die Lieblingsfiguren der Kinder zu malen und kleine magische Momente zu schaffen.",
@@ -177,40 +140,6 @@
 		}
 	},
 	"FaqPage": {
-		"metadata": {
-			"title": "FAQ | Fragen über Kinderschminken",
-			"description": "Häufig gestellte Fragen zum Thema Gesichtsbemalung in der Zentralschweiz. Preise, Buchung, Sicherheit und Veranstaltungsdetails.",
-			"keywords": [
-				"kinderschminken faq",
-				"kinderschminken preis",
-				"kinderschminker buchen",
-				"kinderschminken sicherheit",
-				"Denise Winberger",
-				"Denise Aeschbacher"
-			],
-			"openGraph": {
-				"title": "FAQ | Face Art Obwalden",
-				"description": "Häufige Fragen über Kinderschminke-Dienstleistungen, Preise und Buchungen",
-				"images": [
-					{
-						"url": "/assets/face_art_ow_den_1200x1200.jpg",
-						"width": 1200,
-						"height": 1200,
-						"alt": "Face Art Obwalden - Kinderschminken"
-					}
-				],
-				"locale": "de-DE",
-				"type": "website",
-				"url": "https://www.faceartow.ch/de/faq"
-			},
-			"alternates": {
-				"canonical": "https://www.faceartow.ch/de/faq",
-				"languages": {
-					"en": "https://www.faceartow.ch/en/faq",
-					"de-CH": "https://www.faceartow.ch/faq"
-				}
-			}
-		},
 		"badge": "Fragen & Antworten",
 		"title": "Häufig gestellte Fragen",
 		"subtitle": "Alles, was Sie wissen müssen",
@@ -261,11 +190,6 @@
 			"description": "Zögern Sie nicht, mich zu kontaktieren. Ich helfe Ihnen gerne bei der Planung Ihrer Veranstaltung.",
 			"button": "Kontaktieren Sie mich"
 		}
-	},
-	"UnderConstructionPage": {
-		"title": "Im Aufbau",
-		"description": "Meine Website befindet sich derzeit im Aufbau. Ich arbeite fleißig daran, sie zu erstellen. Schauen Sie bald wieder vorbei!",
-		"expectedLaunch": "Geplanter Start: Bald verfügbar"
 	},
 	"NotFoundPage": {
 		"title": "Seite nicht gefunden",
@@ -340,8 +264,24 @@
 		},
 		"feedback": {
 			"title": "Feedback & Kontakt",
-			"description": "Wir verbessern unsere Website ständig. Wenn Sie Barrierefreiheits-Probleme begegnen oder Vorschläge haben, melden Sie sich bitte bei uns.",
-			"button": "Feedback senden"
+			"description": "Wir verbessern unsere Website laufend. Wenn Sie auf Barrierefreiheitsprobleme stoßen oder Vorschläge haben, kontaktieren Sie uns bitte.",
+			"formTitle": "Feedback zur Barrierefreiheit senden",
+			"email": "Ihre E-Mail-Adresse",
+			"issueType": "Art des Problems",
+			"issueTypes": {
+				"keyboard": "Tastaturnavigation",
+				"screenReader": "Screenreader-Kompatibilität",
+				"contrast": "Farbkontrast",
+				"other": "Sonstiges"
+			},
+			"pageOrElement": "Betroffene Seite oder Element",
+			"pageOrElementPlaceholder": "z. B. Hero-Button auf der Startseite, Kontaktformular",
+			"descriptionLabel": "Beschreibung",
+			"descriptionPlaceholder": "Bitte beschreiben Sie das aufgetretene Problem",
+			"send": "Feedback senden",
+			"submitSuccess": "Vielen Dank für Ihr Feedback! Wir werden es prüfen.",
+			"submitError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+			"required": "Dieses Feld ist erforderlich"
 		}
 	}
 }
