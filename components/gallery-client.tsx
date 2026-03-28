@@ -1,7 +1,7 @@
 "use client"
 
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import {
 	Dialog,
 	DialogClose,
@@ -9,7 +9,111 @@ import {
 	DialogTitle,
 } from "@/components/ui/dialog"
 import type { GalleryImage } from "@/lib/cloudinary"
-import { cn } from "@/lib/utils"
+
+const SLIDE_CLASSES = [
+	"gallery-animate-slide-left",
+	"gallery-animate-slide-up",
+	"gallery-animate-slide-right",
+] as const
+
+const PARALLAX_SPEEDS = [-0.04, 0.0, 0.04] as const
+
+function useParallax(
+	col0Ref: React.RefObject<HTMLDivElement | null>,
+	col1Ref: React.RefObject<HTMLDivElement | null>,
+	col2Ref: React.RefObject<HTMLDivElement | null>,
+) {
+	useEffect(() => {
+		const refs = [col0Ref, col1Ref, col2Ref]
+
+		function onScroll() {
+			const y = window.scrollY
+			for (let i = 0; i < refs.length; i++) {
+				const el = refs[i].current
+				if (el) el.style.transform = `translateY(${y * PARALLAX_SPEEDS[i]}px)`
+			}
+		}
+
+		window.addEventListener("scroll", onScroll, { passive: true })
+		onScroll()
+		return () => {
+			window.removeEventListener("scroll", onScroll)
+			for (const ref of refs) {
+				if (ref.current) ref.current.style.transform = ""
+			}
+		}
+	}, [col0Ref, col1Ref, col2Ref])
+}
+
+interface GalleryItemProps {
+	image: GalleryImage
+	index: number
+	colIndex: number
+	mobile?: boolean
+	onOpen: (index: number) => void
+}
+
+function GalleryItem({
+	image,
+	index,
+	colIndex,
+	mobile,
+	onOpen,
+}: GalleryItemProps) {
+	const ref = useRef<HTMLButtonElement>(null)
+
+	useEffect(() => {
+		const el = ref.current
+		if (!el) return
+
+		const enterClass = mobile
+			? "gallery-animate-slide-up"
+			: SLIDE_CLASSES[colIndex]
+		const delay = Math.min(index * 55, 400)
+
+		el.style.opacity = "0"
+		for (const cls of SLIDE_CLASSES) el.classList.remove(cls)
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						setTimeout(() => {
+							el.style.opacity = ""
+							void el.offsetWidth
+							el.classList.add(enterClass)
+						}, delay)
+						observer.unobserve(el)
+					}
+				}
+			},
+			{ rootMargin: "0px 0px -5% 0px", threshold: 0 },
+		)
+
+		observer.observe(el)
+		return () => observer.disconnect()
+	}, [index, colIndex, mobile])
+
+	return (
+		<button
+			ref={ref}
+			type="button"
+			className="mb-4 block w-full cursor-pointer break-inside-avoid overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+			onClick={() => onOpen(index)}
+			aria-label={`${image.alt} — click to enlarge`}
+		>
+			{/* biome-ignore lint/performance/noImgElement: intentional — next/image not used per project rules */}
+			<img
+				src={image.url}
+				alt={image.alt}
+				width={image.width}
+				height={image.height}
+				className="w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-[1.02]"
+				loading={index < 6 ? "eager" : "lazy"}
+			/>
+		</button>
+	)
+}
 
 export function GalleryGrid({
 	images,
@@ -19,6 +123,12 @@ export function GalleryGrid({
 	positionLabel: string
 }) {
 	const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+
+	const col0Ref = useRef<HTMLDivElement>(null)
+	const col1Ref = useRef<HTMLDivElement>(null)
+	const col2Ref = useRef<HTMLDivElement>(null)
+
+	useParallax(col0Ref, col1Ref, col2Ref)
 
 	const closeLightbox = useCallback(() => setLightboxIndex(null), [])
 
@@ -53,29 +163,48 @@ export function GalleryGrid({
 					.replace("{total}", String(images.length))
 			: ""
 
+	const col0 = images.filter((_, i) => i % 3 === 0)
+	const col1 = images.filter((_, i) => i % 3 === 1)
+	const col2 = images.filter((_, i) => i % 3 === 2)
+
+	const globalIndexFor = (colIndex: number, rowIndex: number) =>
+		rowIndex * 3 + colIndex
+
+	const colRefs = [col0Ref, col1Ref, col2Ref]
+	const cols = [col0, col1, col2]
+
 	return (
 		<>
-			<div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-				{images.map((image, index) => (
-					<button
-						key={image.url}
-						type="button"
-						className="mb-4 block w-full cursor-pointer break-inside-avoid overflow-hidden rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-						onClick={() => setLightboxIndex(index)}
-						aria-label={`${image.alt} — click to enlarge`}
+			<div className="hidden gap-4 lg:flex">
+				{cols.map((col, colIndex) => (
+					<div
+						key={colIndex}
+						ref={colRefs[colIndex]}
+						className="gallery-col-parallax flex flex-1 flex-col"
 					>
-						{/* biome-ignore lint/performance/noImgElement: intentional — next/image not used per project rules */}
-						<img
-							src={image.url}
-							alt={image.alt}
-							width={image.width}
-							height={image.height}
-							className={cn(
-								"w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-[1.02]",
-							)}
-							loading={index < 6 ? "eager" : "lazy"}
-						/>
-					</button>
+						{col.map((image, rowIndex) => (
+							<GalleryItem
+								key={image.url}
+								image={image}
+								index={globalIndexFor(colIndex, rowIndex)}
+								colIndex={colIndex}
+								onOpen={setLightboxIndex}
+							/>
+						))}
+					</div>
+				))}
+			</div>
+
+			<div className="flex flex-col gap-4 lg:hidden">
+				{images.map((image, index) => (
+					<GalleryItem
+						key={image.url}
+						image={image}
+						index={index}
+						colIndex={1}
+						mobile
+						onOpen={setLightboxIndex}
+					/>
 				))}
 			</div>
 
