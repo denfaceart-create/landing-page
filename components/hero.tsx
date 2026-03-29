@@ -21,20 +21,20 @@ export function Hero() {
 	return (
 		<section
 			id="hero"
-			className="relative flex min-h-screen items-center overflow-hidden bg-background pt-20"
+			className="relative flex min-h-screen items-center overflow-hidden bg-muted/30 pt-20"
 		>
 			<div
-				className="pointer-events-none absolute -top-24 -right-24 h-[600px] w-[600px] animate-blob-morph rounded-full bg-primary/15 blur-3xl"
+				className="pointer-events-none absolute top-48 right-48 h-37.5 w-37.5 scale-400 animate-blob-morph-once rounded-full bg-primary/15 blur-md"
 				aria-hidden="true"
 			/>
 			<div
-				className="pointer-events-none absolute bottom-0 -left-32 h-[400px] w-[400px] animate-blob-morph rounded-full bg-secondary/10 blur-3xl"
+				className="pointer-events-none absolute bottom-60 left-48 h-25 w-25 scale-400 animate-blob-morph-once rounded-full bg-secondary/10 blur-md"
 				style={{ animationDelay: "4s" }}
 				aria-hidden="true"
 			/>
 
-			<div className="container relative z-10 mx-auto px-6 py-16 md:py-24 lg:py-32">
-				<div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+			<div className="container relative z-10 mx-auto px-4 py-16 md:py-24 lg:py-32 min-[375px]:px-6">
+				<div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-20 min-[375px]:gap-12">
 					<div className="order-2 flex flex-col items-start gap-6 lg:order-1">
 						<motion.div {...fadeUp(0)}>
 							<span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 font-medium text-primary text-sm">
@@ -48,9 +48,9 @@ export function Hero() {
 
 						<motion.h1
 							{...fadeUp(0.1)}
-							className="text-balance font-bold font-display text-5xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl"
+							className="text-balance font-bold font-display text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl min-[375px]:text-5xl"
 						>
-							<span className="bg-gradient-to-br from-primary via-primary to-secondary bg-clip-text text-transparent">
+							<span className="bg-linear-to-br from-primary via-primary to-secondary bg-clip-text text-transparent">
 								{t("heroTitle1")}
 							</span>
 							<br />
@@ -108,12 +108,12 @@ export function Hero() {
 					>
 						<div className="relative">
 							<div
-								className="pointer-events-none absolute -inset-6 animate-blob-morph bg-gradient-to-br from-primary/20 via-secondary/15 to-accent/20 blur-2xl"
-								style={{ animationDelay: "2s" }}
+								className="pointer-events-none absolute -inset-6 animate-blob-morph bg-linear-to-br from-primary/20 via-secondary/15 to-accent/20 blur-sm"
+								style={{ animationDelay: "0.5s" }}
 								aria-hidden="true"
 							/>
 
-							<div className="relative h-[340px] w-[340px] animate-blob-morph overflow-hidden bg-muted shadow-2xl sm:h-[420px] sm:w-[420px] lg:h-[480px] lg:w-[480px]">
+							<div className="relative aspect-square w-full max-w-85 animate-blob-morph overflow-hidden bg-muted shadow-2xl sm:max-w-105 lg:max-w-120">
 								{/* biome-ignore lint/performance/noImgElement: intentional */}
 								<img
 									src="/assets/face_art_ow_den_1200x1200.webp"

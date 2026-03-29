@@ -78,7 +78,11 @@ export function FAQ() {
 	) as (typeof messages)["FaqPage"]["questions"]
 
 	return (
-		<section id="faq" ref={contentRef} className="bg-muted/30 py-24 md:py-32">
+		<section
+			id="faq"
+			ref={contentRef}
+			className="bg-muted/30 py-6 sm:py-10 md:py-16 lg:py-24 xl:py-32"
+		>
 			<div className="container mx-auto px-4">
 				<div className="mx-auto mb-16 max-w-3xl text-center">
 					<div className="fade-in-element mb-4 inline-flex translate-y-4 items-center gap-2 rounded-full border border-primary/30 bg-primary/8 px-4 py-1.5 opacity-0 transition-all duration-700">

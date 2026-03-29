@@ -17,7 +17,7 @@ export function About() {
 		<section
 			id="about"
 			ref={contentRef}
-			className="bg-background py-24 md:py-32"
+			className="bg-background py-6 sm:py-10 md:py-16 lg:py-24 xl:py-32"
 		>
 			<div className="container mx-auto px-4">
 				<div className="mx-auto mb-16 max-w-3xl text-center">
@@ -36,7 +36,7 @@ export function About() {
 				</div>
 
 				<div className="mx-auto mb-16 grid max-w-5xl gap-8 lg:grid-cols-2">
-					<div className="fade-in-element translate-y-4 rounded-3xl bg-gradient-to-br from-primary/8 via-primary/4 to-transparent p-8 opacity-0 transition-all delay-300 duration-700">
+					<div className="fade-in-element translate-y-4 rounded-3xl bg-linear-to-br from-primary/8 via-primary/4 to-transparent p-8 opacity-0 transition-all delay-300 duration-700">
 						<div className="mb-4 flex items-center gap-3">
 							<div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/15">
 								<Heart className="h-5 w-5 text-primary" aria-hidden="true" />
@@ -50,7 +50,7 @@ export function About() {
 						</p>
 					</div>
 
-					<div className="fade-in-element translate-y-4 rounded-3xl bg-gradient-to-br from-secondary/8 via-secondary/4 to-transparent p-8 opacity-0 transition-all delay-400 duration-700">
+					<div className="fade-in-element translate-y-4 rounded-3xl bg-linear-to-br from-secondary/8 via-secondary/4 to-transparent p-8 opacity-0 transition-all delay-400 duration-700">
 						<div className="mb-4 flex items-center gap-3">
 							<div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/15">
 								<Star className="h-5 w-5 text-secondary" aria-hidden="true" />
@@ -81,7 +81,7 @@ export function About() {
 					</ul>
 				</div>
 
-				<div className="fade-in-element mx-auto max-w-5xl translate-y-4 rounded-3xl bg-gradient-to-br from-accent/8 via-accent/4 to-transparent p-8 opacity-0 transition-all delay-600 duration-700">
+				<div className="fade-in-element mx-auto max-w-5xl translate-y-4 rounded-3xl bg-linear-to-br from-accent/8 via-accent/4 to-transparent p-8 opacity-0 transition-all delay-600 duration-700">
 					<div className="mb-4 flex items-center gap-3">
 						<div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent/15">
 							<Shield className="h-5 w-5 text-accent" aria-hidden="true" />

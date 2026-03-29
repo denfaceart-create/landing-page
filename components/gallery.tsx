@@ -14,7 +14,10 @@ function GalleryInner({
 }) {
 	const t = useTranslations("HomePage.gallery")
 	return (
-		<section id="gallery" className="bg-muted/30 py-24 md:py-32">
+		<section
+			id="gallery"
+			className="bg-muted/30 py-6 sm:py-10 md:py-16 lg:py-24 xl:py-32"
+		>
 			<div className="container mx-auto px-4">
 				<div className="mx-auto mb-16 max-w-3xl space-y-4 text-center">
 					<h2
