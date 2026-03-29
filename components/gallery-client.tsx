@@ -211,6 +211,7 @@ export function GalleryGrid({
 			<Dialog
 				open={lightboxIndex !== null}
 				onOpenChange={(open) => !open && closeLightbox()}
+				modal={false}
 			>
 				<DialogContent
 					className="flex max-h-[95vh] max-w-[95vw] items-center justify-center overflow-hidden border-0 bg-black/95 p-0 shadow-2xl"
