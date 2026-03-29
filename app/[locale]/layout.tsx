@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { DM_Sans, Playfair_Display } from "next/font/google"
 
+import { headers } from "next/headers"
 import { notFound } from "next/navigation"
 import { hasLocale, type Locale, NextIntlClientProvider } from "next-intl"
 import { getTranslations } from "next-intl/server"
@@ -65,6 +66,10 @@ export default async function LocaleLayout({
 		locale,
 		namespace: "Navigation",
 	})
+
+	const headersList = await headers()
+	const pathname = headersList.get("x-current-path") ?? `/${locale}`
+
 	return (
 		<html lang={langMap[locale] || locale} suppressHydrationWarning>
 			<head>
@@ -75,6 +80,7 @@ export default async function LocaleLayout({
 				<StructuredData />
 				<BreadcrumbSchema
 					locale={locale}
+					pathname={pathname}
 					breadcrumbNames={{
 						home: t("home"),
 						about: t("about"),

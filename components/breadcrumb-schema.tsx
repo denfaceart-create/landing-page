@@ -1,11 +1,9 @@
-"use client"
-
-import { usePathname } from "next/navigation"
 import type { Locale } from "next-intl"
 
 export function BreadcrumbSchema({
 	breadcrumbNames,
 	locale,
+	pathname,
 }: {
 	breadcrumbNames: {
 		home: string
@@ -13,9 +11,8 @@ export function BreadcrumbSchema({
 		faq: string
 	}
 	locale: Locale
+	pathname: string
 }) {
-	const pathname = usePathname()
-
 	const baseUrl = "https://www.faceartow.ch"
 	const segments = pathname.split("/").filter(Boolean)
 
