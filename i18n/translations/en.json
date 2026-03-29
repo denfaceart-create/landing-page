@@ -97,7 +97,13 @@
 			"message": "Message",
 			"send": "Send",
 			"submitSuccess": "Thank you for your message! I'll reply as soon as I can.",
-			"submitError": "Something went wrong. Please try again later."
+			"submitError": "Something went wrong. Please try again later.",
+			"errors": {
+				"nameRequired": "Please enter your name",
+				"emailInvalid": "Please enter a valid email address",
+				"messageMin": "Please be more descriptive (at least {minLength} characters)",
+				"messageMax": "Please keep your message shorter (at most {maxLength} characters)"
+			}
 		},
 		"contactInfo": {
 			"title": "Contact Information",
@@ -276,7 +282,13 @@
 			"send": "Send Feedback",
 			"submitSuccess": "Thank you for your feedback! We will look into it.",
 			"submitError": "Something went wrong. Please try again later.",
-			"required": "This field is required"
+			"required": "This field is required",
+			"errors": {
+				"emailInvalid": "Please enter a valid email address",
+				"issueTypeRequired": "Please select an issue type",
+				"descriptionMin": "Please be more descriptive (at least {minLength} characters)",
+				"descriptionMax": "Please keep your description shorter (at most {maxLength} characters)"
+			}
 		}
 	}
 }

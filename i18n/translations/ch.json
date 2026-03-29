@@ -100,7 +100,13 @@
 			"message": "Nachricht",
 			"send": "Sende",
 			"submitSuccess": "Danke für dini Nachricht! Ich werde mich so schnäll wie möglich bi dir mälde.",
-			"submitError": "Öppis isch schiefgange. Bitte versuech es spöter nomal."
+			"submitError": "Öppis isch schiefgange. Bitte versuech es spöter nomal.",
+			"errors": {
+				"nameRequired": "Bitte gib din Name ii",
+				"emailInvalid": "Bitte gib e gültigi E-Mail-Adress ii",
+				"messageMin": "Bitte beschriib es gnauer (mindestens {minLength} Zeiche)",
+				"messageMax": "Bitte fass dich chürzer (höchstens {maxLength} Zeiche)"
+			}
 		},
 		"contactInfo": {
 			"title": "Kontaktinformatione",
@@ -279,7 +285,13 @@
 			"send": "Feedback schicke",
 			"submitSuccess": "Merci für Ihr Feedback! Mir wered das aaluege.",
 			"submitError": "Öppis isch schiefgange. Bitte versuechid es spöter nomal.",
-			"required": "Dieses Feld isch erforderlich"
+			"required": "Dieses Feld isch erforderlich",
+			"errors": {
+				"emailInvalid": "Bitte gib e gültigi E-Mail-Adress ii",
+				"issueTypeRequired": "Bitte wähl e Problemart us",
+				"descriptionMin": "Bitte beschriib es gnauer (mindestens {minLength} Zeiche)",
+				"descriptionMax": "Bitte fass dich chürzer (höchstens {maxLength} Zeiche)"
+			}
 		}
 	}
 }

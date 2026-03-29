@@ -16,7 +16,7 @@ const SLIDE_CLASSES = [
 	"gallery-animate-slide-right",
 ] as const
 
-const PARALLAX_SPEEDS = [-0.04, 0.0, 0.04] as const
+const PARALLAX_SPEEDS = [-0.1, 0.0, 0.1] as const
 
 function useParallax(
 	col0Ref: React.RefObject<HTMLDivElement | null>,

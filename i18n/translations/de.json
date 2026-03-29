@@ -102,7 +102,13 @@
 			"message": "Nachricht",
 			"send": "Senden",
 			"submitSuccess": "Vielen Dank für Ihre Nachricht! Ich werde mich so schnell wie möglich bei Ihnen melden.",
-			"submitError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut."
+			"submitError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
+			"errors": {
+				"nameRequired": "Bitte geben Sie Ihren Namen ein",
+				"emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+				"messageMin": "Bitte beschreiben Sie es genauer (mindestens {minLength} Zeichen)",
+				"messageMax": "Bitte fassen Sie sich kürzer (höchstens {maxLength} Zeichen)"
+			}
 		},
 		"contactInfo": {
 			"title": "Kontaktinformationen",
@@ -281,7 +287,13 @@
 			"send": "Feedback senden",
 			"submitSuccess": "Vielen Dank für Ihr Feedback! Wir werden es prüfen.",
 			"submitError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.",
-			"required": "Dieses Feld ist erforderlich"
+			"required": "Dieses Feld ist erforderlich",
+			"errors": {
+				"emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+				"issueTypeRequired": "Bitte wählen Sie eine Problemart aus",
+				"descriptionMin": "Bitte beschreiben Sie es genauer (mindestens {minLength} Zeichen)",
+				"descriptionMax": "Bitte fassen Sie sich kürzer (höchstens {maxLength} Zeichen)"
+			}
 		}
 	}
 }

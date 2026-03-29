@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { CheckCircle, ChevronLeft, Mail, Shield } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { useMemo } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import { z } from "zod"
@@ -21,6 +22,9 @@ import { Textarea } from "@/components/ui/textarea"
 import { useFadeInElementObserver } from "@/hooks/useFadeInElementObserver"
 import { Link as LocaleLink } from "@/i18n/navigation"
 import type messages from "@/i18n/translations/ch.json"
+
+const descriptionMinLength = 10
+const descriptionMaxLength = 5000
 
 const accessibilityStandardsItems = [
 	"keyboard",
@@ -41,15 +45,7 @@ const issueTypeKeys = [
 	keyof (typeof messages)["AccessibilityPage"]["feedback"]["issueTypes"]
 >
 
-const formSchema = z.object({
-	email: z.email(),
-	issueType: z.string().min(1),
-	pageOrElement: z.string().optional(),
-	description: z.string().min(10).max(5000),
-	honeypot: z.string().optional(),
-})
-
-const defaultValues: z.infer<typeof formSchema> = {
+const defaultValues = {
 	email: "",
 	issueType: "",
 	pageOrElement: "",
@@ -62,6 +58,30 @@ export function AccessibilityClient() {
 	const tNotFound = useTranslations("NotFoundPage")
 	const contentRef = useFadeInElementObserver()
 
+	const formSchema = useMemo(
+		() =>
+			z.object({
+				email: z.email({ error: t("feedback.errors.emailInvalid") }),
+				issueType: z.string().min(1, {
+					error: t("feedback.errors.issueTypeRequired"),
+				}),
+				pageOrElement: z.string().optional(),
+				description: z
+					.string()
+					.min(descriptionMinLength, {
+						error: t("feedback.errors.descriptionMin", {
+							minLength: `${descriptionMinLength}`,
+						}),
+					})
+					.max(descriptionMaxLength, {
+						error: t("feedback.errors.descriptionMax", {
+							maxLength: `${descriptionMaxLength}`,
+						}),
+					}),
+				honeypot: z.string().optional(),
+			}),
+		[t],
+	)
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues,

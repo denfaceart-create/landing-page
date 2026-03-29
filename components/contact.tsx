@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Mail, MapPin, Phone } from "lucide-react"
 import { type Locale, useLocale, useTranslations } from "next-intl"
+import { useMemo } from "react"
 import { useForm } from "react-hook-form"
 import deLabels from "react-phone-number-input/locale/de"
 import enLabels from "react-phone-number-input/locale/en"
@@ -23,6 +24,9 @@ import { Textarea } from "@/components/ui/textarea"
 import { location, myEmailAddress, phoneNumber } from "@/config"
 import { Spinner } from "./ui/spinner"
 
+const messageMinLength = 10
+const messageMaxLength = 500
+
 const getLocaleCountryLabels = (locale: Locale) => {
 	switch (locale) {
 		case "en":
@@ -32,15 +36,7 @@ const getLocaleCountryLabels = (locale: Locale) => {
 	}
 }
 
-const formSchema = z.object({
-	name: z.string().min(1),
-	email: z.email(),
-	phone: z.string().optional(),
-	message: z.string().min(10).max(5000),
-	honeypot: z.string().optional(),
-})
-
-const defaultValues: z.infer<typeof formSchema> = {
+const defaultValues = {
 	name: "",
 	email: "",
 	phone: "",
@@ -78,6 +74,30 @@ const contactDetails = [
 export function Contact() {
 	const t = useTranslations("HomePage")
 	const locale = useLocale()
+	const formSchema = useMemo(
+		() =>
+			z.object({
+				name: z
+					.string()
+					.min(1, { error: t("contactForm.errors.nameRequired") }),
+				email: z.email({ error: t("contactForm.errors.emailInvalid") }),
+				phone: z.string().optional(),
+				message: z
+					.string()
+					.min(messageMinLength, {
+						error: t("contactForm.errors.messageMin", {
+							minLength: `${messageMinLength}`,
+						}),
+					})
+					.max(messageMaxLength, {
+						error: t("contactForm.errors.messageMax", {
+							maxLength: `${messageMaxLength}`,
+						}),
+					}),
+				honeypot: z.string().optional(),
+			}),
+		[t],
+	)
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues,
