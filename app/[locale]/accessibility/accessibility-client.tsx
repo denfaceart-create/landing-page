@@ -84,7 +84,6 @@ export function AccessibilityClient() {
 			console.error("Accessibility feedback submission error", error)
 			toast.error(t("feedback.submitError"), {
 				closeButton: true,
-				richColors: true,
 			})
 		}
 	}
@@ -120,7 +119,7 @@ export function AccessibilityClient() {
 				</div>
 
 				<div className="mx-auto max-w-5xl space-y-8">
-					<div className="fade-in-element translate-y-4 rounded-3xl bg-gradient-to-br from-primary/8 via-primary/4 to-transparent p-8 opacity-0 transition-all delay-300 duration-700">
+					<div className="fade-in-element translate-y-4 rounded-3xl bg-linear-to-br from-primary/8 via-primary/4 to-transparent p-8 opacity-0 transition-all delay-300 duration-700">
 						<div className="mb-4 flex items-center gap-3">
 							<div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/15">
 								<Shield className="h-5 w-5 text-primary" aria-hidden="true" />
@@ -134,7 +133,7 @@ export function AccessibilityClient() {
 						</p>
 					</div>
 
-					<div className="fade-in-element translate-y-4 rounded-3xl bg-gradient-to-br from-secondary/8 via-secondary/4 to-transparent p-8 opacity-0 transition-all delay-400 duration-700">
+					<div className="fade-in-element translate-y-4 rounded-3xl bg-linear-to-br from-secondary/8 via-secondary/4 to-transparent p-8 opacity-0 transition-all delay-400 duration-700">
 						<div className="mb-4 flex items-center gap-3">
 							<div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/15">
 								<CheckCircle
@@ -164,7 +163,7 @@ export function AccessibilityClient() {
 						</ul>
 					</div>
 
-					<div className="fade-in-element translate-y-4 rounded-3xl bg-gradient-to-br from-accent/8 via-accent/4 to-transparent p-8 opacity-0 transition-all delay-500 duration-700">
+					<div className="fade-in-element translate-y-4 rounded-3xl bg-linear-to-br from-accent/8 via-accent/4 to-transparent p-8 opacity-0 transition-all delay-500 duration-700">
 						<div className="mb-6 flex items-center gap-3">
 							<div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent/15">
 								<Mail className="h-5 w-5 text-accent" aria-hidden="true" />

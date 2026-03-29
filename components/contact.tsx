@@ -91,17 +91,15 @@ export function Contact() {
 				body: JSON.stringify(formData),
 			})
 			if (response.ok) {
-				toast.success(
-					<p className="text-secondary">{t("contactForm.submitSuccess")}</p>,
-					{ classNames: { icon: "text-primary" } },
-				)
+				toast.success(t("contactForm.submitSuccess"), {
+					classNames: { icon: "text-primary" },
+				})
 				form.reset()
 			} else throw new Error(response.statusText, { cause: response })
 		} catch (error) {
 			console.error("Form submission error", error)
 			toast.error(t("contactForm.submitError"), {
 				closeButton: true,
-				richColors: true,
 			})
 		}
 	}
@@ -111,10 +109,10 @@ export function Contact() {
 	return (
 		<section
 			id="contact"
-			className="relative overflow-hidden bg-background py-24 md:py-32"
+			className="relative overflow-hidden bg-background py-6 sm:py-10 md:py-16 lg:py-24 xl:py-32"
 		>
 			<div
-				className="pointer-events-none absolute right-0 bottom-0 h-[500px] w-[500px] animate-blob-morph rounded-full bg-primary/8 blur-3xl"
+				className="pointer-events-none absolute right-0 bottom-0 h-125 w-125 animate-blob-morph rounded-full bg-primary/8 blur-3xl"
 				aria-hidden="true"
 			/>
 
