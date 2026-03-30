@@ -50,11 +50,27 @@ export function Hero() {
 							{...fadeUp(0.1)}
 							className="text-balance font-bold font-display text-4xl leading-[1.1] tracking-tight md:text-6xl lg:text-7xl min-[375px]:text-5xl"
 						>
-							<span className="bg-linear-to-br from-primary via-primary to-secondary bg-clip-text text-transparent">
+							<span className="relative bg-linear-to-br from-primary via-primary to-secondary bg-clip-text text-transparent">
 								{t("heroTitle1")}
+								<svg
+									className="absolute -bottom-1 left-0 h-3 w-full text-primary/30"
+									viewBox="0 0 200 12"
+									fill="none"
+									preserveAspectRatio="none"
+								>
+									<title>Underline</title>
+									<path
+										d="M2 10C50 4 150 4 198 10"
+										stroke="currentColor"
+										strokeWidth="3"
+										strokeLinecap="round"
+									/>
+								</svg>
 							</span>
 							<br />
-							<span className="text-foreground">{t("heroTitle2")}</span>
+							<span className="relative top-4 text-foreground">
+								{t("heroTitle2")}
+							</span>
 						</motion.h1>
 
 						<motion.p
