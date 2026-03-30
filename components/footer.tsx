@@ -1,6 +1,5 @@
 "use client"
 
-import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 import type { ComponentProps, FC } from "react"
 import { Link } from "@/i18n/navigation"
@@ -25,16 +24,6 @@ const NAV_OFFSET = 80
 export function Footer() {
 	const t = useTranslations()
 	const currentYear = new Date().getFullYear()
-	const pathname = usePathname()
-
-	// Check if we're on the home page (any locale variant: "/", "/en", "/de", "/ch")
-	const isHomePage = /^\/(en|de|ch)?\/?$/.test(pathname)
-
-	const footerLinks = [
-		{ label: t("Navigation.about"), sectionId: "about" },
-		{ label: t("Navigation.faq"), sectionId: "faq" },
-		{ label: t("HomePage.contactForm.contactTitle"), sectionId: "contact" },
-	]
 
 	return (
 		<footer className="border-border/50 border-t bg-card/30">
@@ -46,35 +35,8 @@ export function Footer() {
 						className="font-bold font-display text-2xl text-primary transition-opacity hover:opacity-80"
 						aria-label="Go to top of page"
 					>
-						Face Art Obwalden
+						{t("Footer.appName")}
 					</button>
-
-					<nav aria-label="Footer navigation">
-						<ul className="flex flex-wrap gap-6">
-							{footerLinks.map((link) => (
-								<li key={link.sectionId}>
-									{isHomePage ? (
-										<button
-											type="button"
-											onClick={() =>
-												scrollToSection(link.sectionId, NAV_OFFSET)
-											}
-											className="text-muted-foreground text-sm transition-colors hover:text-primary"
-										>
-											{link.label}
-										</button>
-									) : (
-										<a
-											href={`/#${link.sectionId}`}
-											className="text-muted-foreground text-sm transition-colors hover:text-primary"
-										>
-											{link.label}
-										</a>
-									)}
-								</li>
-							))}
-						</ul>
-					</nav>
 
 					<div>
 						<p className="mb-3 font-medium text-sm">{t("Footer.followMe")}</p>
@@ -95,14 +57,13 @@ export function Footer() {
 
 				<div className="flex items-center justify-center border-border/50 border-t pt-8 text-center text-muted-foreground text-sm">
 					<p>
-						© {currentYear} · {t("Footer.appName")} ·{" "}
+						© {currentYear} · {t("Footer.rights")} ·{" "}
 						<Link
 							href="/accessibility"
 							className="transition-colors hover:text-primary"
 						>
 							{t("Navigation.accessibility")}
-						</Link>{" "}
-						· {t("Footer.rights")}
+						</Link>
 					</p>
 				</div>
 			</div>
