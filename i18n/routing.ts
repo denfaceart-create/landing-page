@@ -9,11 +9,6 @@ export const routing = defineRouting({
 	defaultLocale: "ch",
 	pathnames: {
 		"/": "/",
-		"/about": {
-			de: "/über",
-			ch: "/über",
-		},
-		"/faq": "/faq",
 		"/accessibility": {
 			de: "/barrierefreiheit",
 			ch: "/barrierefreiheit",

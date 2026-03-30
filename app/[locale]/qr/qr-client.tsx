@@ -38,7 +38,7 @@ export function QRCodeClient() {
 			{/* Print-friendly content */}
 			<div className="flex flex-col items-center justify-center px-4 py-8 sm:px-6 md:px-8 print:min-h-screen print:p-12">
 				<div className="mb-6 text-center sm:mb-8">
-					<h1 className="mb-4 font-bold text-2xl sm:text-3xl md:text-4xl print:text-5xl">
+					<h1 className="mb-4 font-bold text-2xl text-black sm:text-3xl md:text-4xl print:text-5xl">
 						{t("Manifest.name")}
 					</h1>
 				</div>
@@ -66,7 +66,7 @@ export function QRCodeClient() {
 					)}
 				</div>
 
-				<div className="text-center text-gray-700 text-sm sm:text-base md:text-lg print:text-xl">
+				<div className="text-center text-black text-sm sm:text-base md:text-lg print:text-xl">
 					<p className="break-all px-4 font-mono">{siteUrl}</p>
 				</div>
 			</div>

@@ -55,7 +55,7 @@ export async function generateMetadata(
 
 export default function AccessibilityPage() {
 	return (
-		<PageLayout className="pt-20">
+		<PageLayout hideNavbar>
 			<AccessibilityClient />
 		</PageLayout>
 	)

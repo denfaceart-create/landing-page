@@ -4,6 +4,8 @@ import { notFound } from "next/navigation"
 import { hasLocale } from "next-intl"
 import { getTranslations } from "next-intl/server"
 import { Activity, Suspense } from "react"
+import { About } from "@/components/about"
+import { FAQ } from "@/components/faq"
 import { Hero } from "@/components/hero"
 import PageLayout from "@/components/page-layout"
 import { ScrollHandler } from "@/components/scroll-handler"
@@ -17,6 +19,8 @@ const Gallery = dynamic(() =>
 const Contact = dynamic(() =>
 	import("@/components/contact").then((mod) => mod.Contact),
 )
+
+export const revalidate = 3600
 
 export async function generateMetadata(
 	props: Omit<PageProps<"/[locale]">, "children">,
@@ -73,6 +77,8 @@ export default function Home() {
 					<Gallery />
 				</Activity>
 			</Suspense>
+			<About />
+			<FAQ />
 			<Contact />
 		</PageLayout>
 	)
