@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { useState } from "react"
 import { useFadeInElementObserver } from "@/hooks/useFadeInElementObserver"
-import type messages from "@/i18n/translations/ch.d.json"
+import type messages from "@/i18n/translations/de.d.json"
 import { cn } from "@/lib/utils"
 
 interface FAQItemProps {
@@ -90,9 +90,7 @@ export function FAQ() {
 					{questions.map((item, index) => (
 						<div
 							key={index}
-							className={cn(
-								"fade-in-element translate-y-4 opacity-0",
-							)}
+							className={cn("fade-in-element translate-y-4 opacity-0")}
 						>
 							<FAQItem
 								key={index}

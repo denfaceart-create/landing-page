@@ -10,7 +10,7 @@ import { Hero } from "@/components/hero"
 import PageLayout from "@/components/page-layout"
 import { ScrollHandler } from "@/components/scroll-handler"
 import { routing } from "@/i18n/routing"
-import type messages from "@/i18n/translations/ch.d.json"
+import type messages from "@/i18n/translations/de.d.json"
 
 const Gallery = dynamic(() =>
 	import("@/components/gallery").then((mod) => mod.Gallery),
