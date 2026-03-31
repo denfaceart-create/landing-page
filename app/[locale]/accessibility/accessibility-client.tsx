@@ -21,7 +21,7 @@ import { Spinner } from "@/components/ui/spinner"
 import { Textarea } from "@/components/ui/textarea"
 import { useFadeInElementObserver } from "@/hooks/useFadeInElementObserver"
 import { Link as LocaleLink } from "@/i18n/navigation"
-import type messages from "@/i18n/translations/ch.json"
+import type messages from "@/i18n/translations/de.d.json"
 
 const descriptionMinLength = 10
 const descriptionMaxLength = 5000

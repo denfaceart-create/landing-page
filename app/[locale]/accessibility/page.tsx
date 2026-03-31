@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server"
 import PageLayout from "@/components/page-layout"
 
 import { routing } from "@/i18n/routing"
-import type messages from "@/i18n/translations/ch.json"
+import type messages from "@/i18n/translations/de.d.json"
 import { AccessibilityClient } from "./accessibility-client"
 
 export async function generateMetadata(

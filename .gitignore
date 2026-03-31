@@ -9,4 +9,4 @@ node_modules
 .env.*
 
 .yarn/install-state.gz
-**/ch.d.json.ts
+**/de.d.json.ts

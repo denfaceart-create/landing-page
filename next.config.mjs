@@ -13,11 +13,9 @@ const nextConfig = {
 			{ source: "/about", destination: "/#about", permanent: true },
 			{ source: "/über", destination: "/#about", permanent: true },
 			{ source: "/en/about", destination: "/en#about", permanent: true },
-			{ source: "/de/über", destination: "/de#about", permanent: true },
 			// /faq redirects (all locale variants)
 			{ source: "/faq", destination: "/#faq", permanent: true },
 			{ source: "/en/faq", destination: "/en#faq", permanent: true },
-			{ source: "/de/faq", destination: "/de#faq", permanent: true },
 		]
 	},
 }
@@ -25,7 +23,7 @@ const nextConfig = {
 const withNextIntl = createNextIntlPlugin({
 	requestConfig: "./i18n/request.ts",
 	experimental: {
-		createMessagesDeclaration: "./i18n/translations/ch.json",
+		createMessagesDeclaration: "./i18n/translations/de.json",
 	},
 })
 export default withNextIntl(nextConfig)

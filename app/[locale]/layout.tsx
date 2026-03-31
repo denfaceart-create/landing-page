@@ -49,7 +49,6 @@ export async function generateMetadata(
 
 // Map locale to proper lang attribute
 const langMap: Record<Locale, string> = {
-	ch: "de-CH",
 	de: "de-DE",
 	en: "en-US",
 }

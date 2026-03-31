@@ -2295,7 +2295,7 @@ __metadata:
     lucide-react: "npm:^1.7.0"
     motion: "npm:^12.38.0"
     next: "npm:16.2.1"
-    next-intl: "npm:^4.8.3"
+    next-intl: "npm:^4.8.4"
     next-themes: "npm:^0.4.6"
     postcss: "npm:^8.5.8"
     qrcode.react: "npm:^4.2.0"
@@ -2304,7 +2304,7 @@ __metadata:
     react-hook-form: "npm:^7.72.0"
     react-is: "npm:^19.2.4"
     react-phone-number-input: "npm:^3.4.16"
-    resend: "npm:^6.9.4"
+    resend: "npm:^6.10.0"
     sonner: "npm:^2.0.7"
     tailwind-merge: "npm:^3.5.0"
     tailwindcss: "npm:^4.2.2"
@@ -2467,12 +2467,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"icu-minify@npm:^4.8.3":
-  version: 4.8.3
-  resolution: "icu-minify@npm:4.8.3"
+"icu-minify@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "icu-minify@npm:4.8.4"
   dependencies:
     "@formatjs/icu-messageformat-parser": "npm:^3.4.0"
-  checksum: 10c0/941a71a3dfec0ecdbb13a7a61fe0042420c579890028aec8a580516760da92f81998c0937aebcab604acdf385e5533610d0004e58f7259bd567fce07ed2a9b76
+  checksum: 10c0/eba7c04df014e43534b272e54123368c7e408f969b585ed74892ca5429e4c73ebacd1403e1bff57302a48764047b8eb8488b06ecb647932e1904d0eb25f39342
   languageName: node
   linkType: hard
 
@@ -2926,33 +2926,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-intl-swc-plugin-extractor@npm:^4.8.3":
-  version: 4.8.3
-  resolution: "next-intl-swc-plugin-extractor@npm:4.8.3"
-  checksum: 10c0/cb66a6a0534d9640282872f8c946ca8eea42ae2e541341b1591f0feb4ce08f6aea1b7ac0d32c63d54f812006c21f51c41e5ec6e4282608a048e01173c6cee805
+"next-intl-swc-plugin-extractor@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "next-intl-swc-plugin-extractor@npm:4.8.4"
+  checksum: 10c0/550cf7fc125afbe8b11cc91e4f7a535b1cf5d67809ab4a80ba608feba2f7b6bb0fe13834fbb132b312f73c47f6831257af42f38b9e370a266d9f8ed1943c573c
   languageName: node
   linkType: hard
 
-"next-intl@npm:^4.8.3":
-  version: 4.8.3
-  resolution: "next-intl@npm:4.8.3"
+"next-intl@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "next-intl@npm:4.8.4"
   dependencies:
     "@formatjs/intl-localematcher": "npm:^0.8.1"
     "@parcel/watcher": "npm:^2.4.1"
     "@swc/core": "npm:^1.15.2"
-    icu-minify: "npm:^4.8.3"
+    icu-minify: "npm:^4.8.4"
     negotiator: "npm:^1.0.0"
-    next-intl-swc-plugin-extractor: "npm:^4.8.3"
+    next-intl-swc-plugin-extractor: "npm:^4.8.4"
     po-parser: "npm:^2.1.1"
-    use-intl: "npm:^4.8.3"
+    use-intl: "npm:^4.8.4"
   peerDependencies:
     next: ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
-    typescript: ^5.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/05dd7c589b644f1948eaf474c26d35e4e0637aee127a955ca0353c3ce0d57fc642ed166cfb0c3a2eeec89a8524846bc354a00a0d24a67d5621649a6d11e63c6e
+  checksum: 10c0/76261b8d43a0a0b15609d95d83d6e7e1031ba83a23ff2c5760c0ca22f4d4368f98cdd9066ab92d43dbfd620c406f4c181689dc9d947e3203a798b9093c8190e8
   languageName: node
   linkType: hard
 
@@ -3142,10 +3141,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postal-mime@npm:2.7.3":
-  version: 2.7.3
-  resolution: "postal-mime@npm:2.7.3"
-  checksum: 10c0/f8f036b3947e506d3a4a9501501f7a05acd27c7c274fc207c093a0b28eb2c97a4fa295d0fbe55551f33d87c21684401562811767adaa60918adb99a9149d324b
+"postal-mime@npm:2.7.4":
+  version: 2.7.4
+  resolution: "postal-mime@npm:2.7.4"
+  checksum: 10c0/836220ef876b8e3ae7236341a4fbff5b8bf6618952a1208966a4e3040c9f51c14572fa695b1863bd445e8d7894536d2eb4e5001f50795c3f7fbfe39c8946ba09
   languageName: node
   linkType: hard
 
@@ -3343,18 +3342,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resend@npm:^6.9.4":
-  version: 6.9.4
-  resolution: "resend@npm:6.9.4"
+"resend@npm:^6.10.0":
+  version: 6.10.0
+  resolution: "resend@npm:6.10.0"
   dependencies:
-    postal-mime: "npm:2.7.3"
-    svix: "npm:1.86.0"
+    postal-mime: "npm:2.7.4"
+    svix: "npm:1.88.0"
   peerDependencies:
     "@react-email/render": "*"
   peerDependenciesMeta:
     "@react-email/render":
       optional: true
-  checksum: 10c0/c07e28ca5483ced7693786e696eb7edf321928f68581d9fce39f73120250af4252504afe56977f2d43fb8024cfa9cb4ee1293adf7ae3a3792dcf791c08cf3c94
+  checksum: 10c0/f472729baa8a1f46d64abe82910cb1a564e7b99aa2baf8b08333245ce379746f0f5afdbd4ccacc66d3643e9a37d59be2b5e199f616fc1641d006b948963782c2
   languageName: node
   linkType: hard
 
@@ -3561,13 +3560,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svix@npm:1.86.0":
-  version: 1.86.0
-  resolution: "svix@npm:1.86.0"
+"svix@npm:1.88.0":
+  version: 1.88.0
+  resolution: "svix@npm:1.88.0"
   dependencies:
     standardwebhooks: "npm:1.0.0"
     uuid: "npm:^10.0.0"
-  checksum: 10c0/b2b850409796da7a1efdda90a921f3e64221b96884e90c5dbfb14214595b6948d3f281e43669f390606891e8d3a850b30041355be3b21359270f21153ef3a6a6
+  checksum: 10c0/e30c7488111790f6f358e8c0256bc7e08ec972e1124e4e6afb137fcadc0c0f21033455f5d82ac6a63d18ed4f5dc6c102d544588d2adcd0d3e03e7d7c1166309a
   languageName: node
   linkType: hard
 
@@ -3719,17 +3718,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-intl@npm:^4.8.3":
-  version: 4.8.3
-  resolution: "use-intl@npm:4.8.3"
+"use-intl@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "use-intl@npm:4.8.4"
   dependencies:
     "@formatjs/fast-memoize": "npm:^3.1.0"
     "@schummar/icu-type-parser": "npm:1.21.5"
-    icu-minify: "npm:^4.8.3"
+    icu-minify: "npm:^4.8.4"
     intl-messageformat: "npm:^11.1.0"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0 || >=19.0.0-rc <19.0.0 || ^19.0.0
-  checksum: 10c0/f28ed6994cf9440a9d8826ee1c3cfb21f1c9327f55aff9c2a5a2feaf38375a5f1bea677e3f3b777be3391aa606cc5d6017d879a23b0580dd859cc6cf2d449548
+  checksum: 10c0/d487414b5ff2136339753bf092adb444ce0410585f86eaa42ef71f49e364c9f3494603b2b8387b7eb97a9e274c3d866c95145d446eb7c13140718f855ee469b5
   languageName: node
   linkType: hard
 

@@ -2,7 +2,7 @@
 	"name": "Face Art Obwalden",
 	"short_name": "face-art",
 	"description": "Face painting services in Obwalden",
-	"lang": "de-CH",
+	"lang": "de-DE",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",

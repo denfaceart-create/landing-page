@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslations } from "next-intl"
-import type messages from "@/i18n/translations/ch.d.json"
+import type messages from "@/i18n/translations/de.d.json"
 
 export function FAQSchema() {
 	const t = useTranslations("FaqPage")

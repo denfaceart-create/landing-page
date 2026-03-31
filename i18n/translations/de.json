@@ -11,10 +11,12 @@
 		"Anzeige": "eigenständig"
 	},
 	"LocaleLayout": {
-		"Titel": "Face Art Obwalden – Gesichtsbemalung"
+		"title": "Face Art Obwalden – Gesichtsbemalung"
 	},
 	"LocaleSwitcher": {
-		"label": "Sprache wechseln"
+		"label": "Sprache wechseln",
+		"flag": "{locale, select, ch {🇨🇭} de {🇩🇪} en {🇺🇸}  fr {🇫🇷} other {}}",
+		"locale": "{locale, select, ch {Schweiz} de {Deutsch} en {English}  fr {Français} other {Unknown}}"
 	},
 	"Navigation": {
 		"skipToContent": "Zum Hauptinhalt springen",
@@ -36,6 +38,11 @@
 			"title": "Kinderschminken Zentralschweiz | Face Art Obwalden",
 			"description": "Kinderschminken für Geburtstage, Veranstaltungen und Feiern in der Zentralschweiz. Freundliche, kreative Designs für Kinder und Familien.",
 			"keywords": [
+				"kinderschminken",
+				"kinderschminkerin",
+				"zentralschwiiz",
+				"face painting",
+				"chindergeburtstag",
 				"Gesichtsbemalung",
 				"Gesichtsmaler",
 				"Zentralschweiz",
@@ -64,13 +71,12 @@
 				],
 				"locale": "de-DE",
 				"type": "website",
-				"url": "https://www.faceartow.ch/de"
+				"url": "https://www.faceartow.ch"
 			},
 			"alternates": {
-				"canonical": "https://www.faceartow.ch/de",
+				"canonical": "https://www.faceartow.ch",
 				"languages": {
-					"en": "https://www.faceartow.ch/en",
-					"de-CH": "https://www.faceartow.ch"
+					"en": "https://www.faceartow.ch/en"
 				}
 			}
 		},
@@ -240,13 +246,12 @@
 				],
 				"locale": "de-DE",
 				"type": "website",
-				"url": "https://www.faceartow.ch/de/accessibility"
+				"url": "https://www.faceartow.ch/accessibility"
 			},
 			"alternates": {
-				"canonical": "https://www.faceartow.ch/de/accessibility",
+				"canonical": "https://www.faceartow.ch/accessibility",
 				"languages": {
-					"en": "https://www.faceartow.ch/en/accessibility",
-					"de-CH": "https://www.faceartow.ch/accessibility"
+					"en": "https://www.faceartow.ch/en/accessibility"
 				}
 			}
 		},
