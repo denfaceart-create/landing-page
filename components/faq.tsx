@@ -10,29 +10,27 @@ import { cn } from "@/lib/utils"
 interface FAQItemProps {
 	question: string
 	answer: string
-	isOpen: boolean
-	onToggle: () => void
 	index: number
 }
 
-function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
+function FAQItem({ question, answer, index }: FAQItemProps) {
 	const buttonId = `faq-button-${index}`
 	const panelId = `faq-panel-${index}`
-
+	const [isOpen, setIsOpen] = useState(false)
+	const toggleOpen = () => setIsOpen((o) => !o)
 	return (
 		<div
 			className={cn(
-				"fade-in-element translate-y-4 rounded-2xl border border-border/50 bg-card/50 opacity-0 transition-all duration-700",
+				"rounded-2xl border border-border/50 bg-card/50 transition-all duration-700",
 				isOpen && "border-primary/30 bg-primary/3",
 			)}
-			style={{ transitionDelay: `${300 + index * 80}ms` }}
 		>
 			<button
 				type="button"
 				id={buttonId}
 				aria-expanded={isOpen}
 				aria-controls={panelId}
-				onClick={onToggle}
+				onClick={toggleOpen}
 				className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
 			>
 				<span className="font-medium text-foreground">{question}</span>
@@ -62,16 +60,6 @@ function FAQItem({ question, answer, isOpen, onToggle, index }: FAQItemProps) {
 export function FAQ() {
 	const t = useTranslations("FaqPage")
 	const contentRef = useFadeInElementObserver()
-	const [openItems, setOpenItems] = useState<Set<number>>(new Set())
-
-	const toggleItem = (index: number) => {
-		setOpenItems((prev) => {
-			const next = new Set(prev)
-			if (next.has(index)) next.delete(index)
-			else next.add(index)
-			return next
-		})
-	}
 
 	const questions = t.raw(
 		"questions",
@@ -100,14 +88,19 @@ export function FAQ() {
 
 				<div className="mx-auto max-w-3xl space-y-3">
 					{questions.map((item, index) => (
-						<FAQItem
+						<div
 							key={index}
-							index={index}
-							question={item.question}
-							answer={item.answer}
-							isOpen={openItems.has(index)}
-							onToggle={() => toggleItem(index)}
-						/>
+							className={cn(
+								"fade-in-element translate-y-4 opacity-0",
+							)}
+						>
+							<FAQItem
+								key={index}
+								index={index}
+								question={item.question}
+								answer={item.answer}
+							/>
+						</div>
 					))}
 				</div>
 			</div>
