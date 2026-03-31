@@ -138,7 +138,7 @@ export const Navbar = ({ className }: { className?: string }) => {
 									<DropdownMenuItem
 										key={locale}
 										onClick={() => onSelectChange(locale)}
-										className={`h-8 cursor-pointer rounded-full px-3 font-medium text-xs ${
+										className={`my-1.5 h-8 cursor-pointer rounded-full px-3 font-medium text-xs ${
 											selected
 												? "bg-primary text-primary-foreground"
 												: "hover:bg-muted"
