@@ -70,7 +70,11 @@ export default async function LocaleLayout({
 	const pathname = headersList.get("x-current-path") ?? `/${locale}`
 
 	return (
-		<html lang={langMap[locale] || locale} suppressHydrationWarning>
+		<html
+			lang={langMap[locale] || locale}
+			suppressHydrationWarning
+			data-scroll-behavior="smooth"
+		>
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="apple-touch-icon" href="/apple-icon.png" />
