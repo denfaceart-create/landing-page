@@ -5,7 +5,7 @@ export async function generateMetadata(
 	_props: Omit<LayoutProps<"/">, "children">,
 ) {
 	return {
-		title: "Face Art Obwaldä - Face Painting",
+		title: "Face Art Obwalden - Face Painting",
 		description:
 			"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
 		metadataBase: new URL(host),
@@ -13,7 +13,7 @@ export async function generateMetadata(
 		appleWebApp: {
 			capable: true,
 			statusBarStyle: "default",
-			title: "Face Art Obwaldä",
+			title: "Face Art Obwalden",
 		},
 
 		icons: {
@@ -21,17 +21,17 @@ export async function generateMetadata(
 			apple: "/apple-icon.png",
 		},
 		openGraph: {
-			title: "Face Art Obwaldä - Face Painting",
+			title: "Face Art Obwalden - Face Painting",
 			description:
 				"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
 			url: host,
-			siteName: "Face Art Obwaldä",
+			siteName: "Face Art Obwalden",
 			images: [
 				{
 					url: `${host}/logo.png`,
 					width: 1024,
 					height: 1024,
-					alt: "Face Art Obwaldä Logo",
+					alt: "Face Art Obwalden Logo",
 				},
 			],
 			locale: "de_CH",
@@ -39,7 +39,7 @@ export async function generateMetadata(
 		},
 		twitter: {
 			card: "summary",
-			title: "Face Art Obwaldä - Face Painting",
+			title: "Face Art Obwalden - Face Painting",
 			description:
 				"Transform your celebrations with stunning face painting. Professional, creative, and unforgettable.",
 			images: [`${host}/logo.png`],

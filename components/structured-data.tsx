@@ -19,7 +19,7 @@ export function StructuredData() {
 		"@context": "https://schema.org",
 		"@type": ["Organization", "LocalBusiness"],
 		name: "Face Art Obwalden",
-		alternateName: "Face Art Obwaldä",
+		alternateName: "Face Art Obwalden",
 		image: "https://www.faceartow.ch/logo.png",
 		logo: {
 			"@type": "ImageObject",

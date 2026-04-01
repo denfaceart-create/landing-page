@@ -28,9 +28,9 @@
 		"accessibility": "Barrierefreiheit"
 	},
 	"Footer": {
-		"appName": "Face Art Obwaldä",
+		"appName": "Face Art Obwalden",
 		"followMe": "Folge mir",
-		"instagramAriaLabel": "Folge Face Art Obwaldä uf Instagram (öffnet in ere neue Siite)",
+		"instagramAriaLabel": "Folge Face Art Obwalden auf Instagram (öffnet in einer neuen Seite)",
 		"rights": "Alle Rechte vorbehalten"
 	},
 	"HomePage": {
@@ -125,15 +125,15 @@
 	},
 	"AboutPage": {
 		"title": "Über Mich",
-		"subtitle": "Wir zaubern ein Lächeln und Farbe auf die Gesichter der Kinder",
-		"introduction": "Hallo und herzlich willkommen bei Face Art Obwalden! Ich liebe es, die Lieblingsfiguren der Kinder zu malen und kleine magische Momente zu schaffen.",
+		"subtitle": "Bunte Gesichter, glückliche Kinder.Ich zaubere ein Lächeln und Farbe auf die Gesichter der Kinder.",
+		"introduction": "Hallo und herzlich Willkommen bei Face Art Obwalden! Ich liebe es, die Lieblingsfiguren der Kinder zu malen und kleine magische Momente zu schaffen.",
 		"story": {
 			"title": "Meine Geschichte",
-			"content": "Was als einfaches Hobby begann, entwickelte sich zu etwas, das mir wirklich Spaß macht. Zu sehen, wie Kinder strahlen, wenn sie sich im Spiegel erkennen, ist mein Lieblingsaspekt dieser Arbeit."
+			"content": "Was als einfaches Hobby begann, entwickelte sich zu etwas, das mir wirklich Spass macht. Zu sehen, wie Kinder strahlen, wenn sie sich im Spiegel erkennen, ist mein Lieblingsaspekt dieser Arbeit."
 		},
 		"experience": {
 			"title": "Erfahrung & Ansatz",
-			"content": "Ich bin in Obwalden ansässig und male auf Geburtstagen, Familienfeiern und allen Arten von Veranstaltungen. Ich verwende hochwertige, wasserbasierte, hautverträgliche Farben, die sich leicht abwaschen lassen. Ob schnelle Motive für viele Kinder oder detaillierte Kunstwerke für einen besonderen Moment – ich nehme mir immer Zeit und male mit Sorgfalt."
+			"content": "Ich wohne in Obwalden und schminke auf Geburtstagen, Familienfeiern und allen Arten von Veranstaltungen. Ich verwende hochwertige, wasserbasierte, hautverträgliche Farben, die sich leicht abwaschen lassen. Ob schnelle Motive für viele Kinder oder detaillierte Kunstwerke für einen besonderen Moment, ich nehme mir immer Zeit und male mit Sorgfalt."
 		},
 		"services": {
 			"title": "Was Ich Anbiete",
@@ -190,7 +190,7 @@
 			},
 			{
 				"question": "Wie pflege ich das Kinderschminken nach der Veranstaltung?",
-				"answer": "Die Farbe hält je nach Aktivität etwa 4 bis 6 Stunden. Zum Entfernen verwenden Sie warmes Wasser und milde Seife. Starkes Reiben ist nicht erforderlich."
+				"answer": "Die Farbe hält je nach Aktivität etwa 4 bis 6 Stunden. Zum Entfernen verwenden Sie warmes Wasser und wenn erwünscht eine milde Seife. Starkes Reiben ist nicht erforderlich."
 			},
 			{
 				"question": "Wie sind Ihre Preise?",
