@@ -5,10 +5,10 @@
 		"description": "Kreatives Schminken für Kindergeburtstage, Feiern und Veranstaltungen in Obwalden und der Zentralschweiz. Buchen Sie Denise Winberger (Denise Aeschbacher) noch heute.",
 		"keywords": "Gesichtsbemalung, Kindergeburtstag, Veranstaltungen, Obwalden, Face Art, Gesichtsmaler, denise winberger, denise aeschbacher",
 		"theme_color": "#d946ef",
-		"lang": "en",
+		"lang": "de",
 		"dir": "ltr",
-		"Ausrichtung": "Hochformat",
-		"Anzeige": "eigenständig"
+		"orientation": "portrait",
+		"display": "standalone"
 	},
 	"LocaleLayout": {
 		"title": "Face Art Obwalden – Gesichtsbemalung"
@@ -49,9 +49,6 @@
 				"Kindergeburtstag",
 				"Veranstaltungen",
 				"Kinderunterhaltun",
-				"kinderschminken",
-				"kinderschminkerin",
-				"face painting",
 				"events",
 				"kinderanimation",
 				"denise winberger",

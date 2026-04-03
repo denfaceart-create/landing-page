@@ -4,7 +4,7 @@ import { DM_Sans, Playfair_Display } from "next/font/google"
 
 import { headers } from "next/headers"
 import { notFound } from "next/navigation"
-import { hasLocale, type Locale, NextIntlClientProvider } from "next-intl"
+import { hasLocale, NextIntlClientProvider } from "next-intl"
 import { getTranslations } from "next-intl/server"
 import { BreadcrumbSchema } from "@/components/breadcrumb-schema"
 import { StructuredData } from "@/components/structured-data"
@@ -47,12 +47,6 @@ export async function generateMetadata(
 	} satisfies Metadata
 }
 
-// Map locale to proper lang attribute
-const langMap: Record<Locale, string> = {
-	de: "de-DE",
-	en: "en-US",
-}
-
 export default async function LocaleLayout({
 	children,
 	params,
@@ -70,11 +64,7 @@ export default async function LocaleLayout({
 	const pathname = headersList.get("x-current-path") ?? `/${locale}`
 
 	return (
-		<html
-			lang={langMap[locale] || locale}
-			suppressHydrationWarning
-			data-scroll-behavior="smooth"
-		>
+		<html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="apple-touch-icon" href="/apple-icon.png" />
