@@ -29,7 +29,8 @@ export const useFadeInElementObserver = () => {
 			// Trigger immediately for elements already in view on mount
 			const checkTimeout = setTimeout(() => {
 				if (contentRef.current) {
-					const elements = contentRef.current.querySelectorAll(".fade-in-element")
+					const elements =
+						contentRef.current.querySelectorAll(".fade-in-element")
 					if (elements.length > 0) {
 						elements.forEach((el, index) => {
 							const timeoutId = setTimeout(() => {
