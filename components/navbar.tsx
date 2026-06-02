@@ -114,6 +114,14 @@ export const Navbar = ({ className }: { className?: string }) => {
 							</li>
 						)
 					})}
+					<li>
+						<Link
+							href="/terms-conditions"
+							className="rounded-full px-3 py-1.5 font-medium text-foreground/70 text-sm transition-colors hover:bg-primary/10 hover:text-primary"
+						>
+							{t("Navigation.termsConditions")}
+						</Link>
+					</li>
 				</ul>
 
 				<div className="flex items-center gap-2">
