@@ -220,20 +220,20 @@ export const Navbar = ({ className }: { className?: string }) => {
 									<ul className="space-y-2">
 										<li>
 											<Link
-												href="/accessibility"
-												className="block rounded-xl px-4 py-3 transition-colors hover:bg-primary/10 hover:text-primary"
-												onClick={() => setMobileMenuOpen(false)}
-											>
-												{t("Navigation.accessibility")}
-											</Link>
-										</li>
-										<li>
-											<Link
 												href="/terms-conditions"
 												className="block rounded-xl px-4 py-3 transition-colors hover:bg-primary/10 hover:text-primary"
 												onClick={() => setMobileMenuOpen(false)}
 											>
 												{t("Navigation.termsConditions")}
+											</Link>
+										</li>
+										<li>
+											<Link
+												href="/accessibility"
+												className="block rounded-xl px-4 py-3 transition-colors hover:bg-primary/10 hover:text-primary"
+												onClick={() => setMobileMenuOpen(false)}
+											>
+												{t("Navigation.accessibility")}
 											</Link>
 										</li>
 									</ul>

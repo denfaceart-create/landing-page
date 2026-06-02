@@ -59,17 +59,17 @@ export function Footer() {
 					<p>
 						© {currentYear} · {t("Footer.rights")} ·{" "}
 						<Link
-							href="/accessibility"
-							className="transition-colors hover:text-primary"
-						>
-							{t("Navigation.accessibility")}
-						</Link>
-						{" "}·{" "}
-						<Link
 							href="/terms-conditions"
 							className="transition-colors hover:text-primary"
 						>
 							{t("Navigation.termsConditions")}
+						</Link>{" "}
+						·{" "}
+						<Link
+							href="/accessibility"
+							className="transition-colors hover:text-primary"
+						>
+							{t("Navigation.accessibility")}
 						</Link>
 					</p>
 				</div>
