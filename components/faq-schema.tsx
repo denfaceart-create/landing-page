@@ -1,10 +1,8 @@
-"use client"
-
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server"
 import type messages from "@/i18n/translations/de.d.json"
 
-export function FAQSchema() {
-	const t = useTranslations("FaqPage")
+export async function FAQSchema() {
+	const t = await getTranslations("FaqPage")
 
 	const questions = t.raw(
 		"questions",
