@@ -169,8 +169,9 @@ export function TermsConditionsClient() {
 					<p className="text-center text-muted-foreground text-sm leading-relaxed">
 						<span className="font-semibold text-foreground">
 							{t("lastUpdated.label")}
-						</span>{" "}
-						{new Date().getFullYear()}. {t("lastUpdated.disclaimer")}
+						</span>
+						<br />
+						{t("lastUpdated.disclaimer")}
 					</p>
 				</div>
 			</div>

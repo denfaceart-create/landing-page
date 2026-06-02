@@ -292,8 +292,8 @@
 	},
 	"TermsConditionsPage": {
 		"metadata": {
-			"title": "Terms & Conditions | Face Art Obwalden",
-			"description": "Terms and conditions for Face Art Obwalden face painting services.",
+			"title": "Terms & Conditions | FaceArtOW",
+			"description": "Terms and conditions for FaceArtOW face painting services.",
 			"keywords": [
 				"terms and conditions",
 				"terms of service",
@@ -301,14 +301,14 @@
 				"service terms"
 			],
 			"openGraph": {
-				"title": "Terms & Conditions | Face Art Obwalden",
-				"description": "Terms and conditions for Face Art Obwalden face painting services",
+				"title": "Terms & Conditions | FaceArtOW",
+				"description": "Terms and conditions for FaceArtOW face painting services",
 				"images": [
 					{
 						"url": "/assets/face_art_ow_den_1200x1200.jpg",
 						"width": 1200,
 						"height": 1200,
-						"alt": "Face Art Obwalden - Face painting for children"
+						"alt": "FaceArtOW - Face painting for children"
 					}
 				],
 				"locale": "en",
@@ -324,15 +324,15 @@
 		},
 		"badge": "Terms & Conditions",
 		"title": "Terms & Conditions",
-		"subtitle": "General Terms and Conditions (T&C) - Face Art Obwalden",
+		"subtitle": "General Terms and Conditions (T&C) - FaceArtOW",
 		"sections": {
 			"contract": {
 				"title": "1. Contract",
-				"content": "These T&C form part of all contracts between Face Art Obwalden and the client. Changes or additional agreements must be documented in writing."
+				"content": "These T&C form part of all contracts between FaceArtOW and the client. Changes or additional agreements must be documented in writing."
 			},
 			"offer": {
 				"title": "2. Offer",
-				"content": "All offers from Face Art Obwalden are non-binding. A contract is only concluded once written confirmation of the order has been received. By accepting an offer or booking a service, the client accepts these T&C. If changes become necessary after the contract is concluded that are important for the completion of the event, the client will be informed as quickly as possible."
+				"content": "All offers from FaceArtOW are non-binding. A contract is only concluded once written confirmation of the order has been received. By accepting an offer or booking a service, the client accepts these T&C. If changes become necessary after the contract is concluded that are important for the completion of the event, the client will be informed as quickly as possible."
 			},
 			"breaks": {
 				"title": "3. Break Regulations",
@@ -353,12 +353,12 @@
 				"content": "If an event cannot take place due to bad weather or official orders, both parties may withdraw from the contract. If the order is cancelled for other reasons, the cancellation fee according to section 4 applies."
 			},
 			"cancellationByArtist": {
-				"title": "6. Cancellation by Face Art Obwalden",
-				"content": "If Face Art Obwalden cannot attend a scheduled event due to illness, accident, or family reasons, a suitable substitute will be sought where possible. However, a substitute cannot be guaranteed. There is no claim for compensation or damages."
+				"title": "6. Cancellation by FaceArtOW",
+				"content": "If FaceArtOW cannot attend a scheduled event due to illness, accident, or family reasons, a suitable substitute will be sought where possible. However, a substitute cannot be guaranteed. There is no claim for compensation or damages."
 			},
 			"supervision": {
 				"title": "7. Face Painting is Not Childcare",
-				"content": "Face Art Obwalden provides face painting and/or glitter tattoos. Supervision of children remains at all times with parents, guardians, or responsible caregivers. Face Art Obwalden does not provide childcare services. No liability is assumed for soiled clothing or personal belongings."
+				"content": "FaceArtOW provides face painting and/or glitter tattoos. Supervision of children remains at all times with parents, guardians, or responsible caregivers. FaceArtOW does not provide childcare services. No liability is assumed for soiled clothing or personal belongings."
 			},
 			"prices": {
 				"title": "8. Prices and Costs",
@@ -372,15 +372,15 @@
 			},
 			"paints": {
 				"title": "10. Face Paints and Glitter",
-				"content": "Face Art Obwalden uses professional, high-quality face paints and cosmetic glitter. The products used comply with applicable safety regulations and are skin-friendly. All paints can be removed with water and mild soap. Despite careful product selection, Face Art Obwalden assumes no liability for allergic reactions or skin irritations."
+				"content": "FaceArtOW uses professional, high-quality face paints and cosmetic glitter. The products used comply with applicable safety regulations and are skin-friendly. All paints can be removed with water and mild soap. Despite careful product selection, FaceArtOW assumes no liability for allergic reactions or skin irritations."
 			},
 			"photos": {
 				"title": "11. Photos and Image Material",
-				"content": "Photos of painted children may only be taken and published with the consent of parents or guardians. Consent must be provided in writing. If photos or videos are used for advertising, social media, or the website, Face Art Obwalden must be mentioned as the service provider."
+				"content": "Photos of painted children may only be taken and published with the consent of parents or guardians. Consent must be provided in writing. If photos or videos are used for advertising, social media, or the website, FaceArtOW must be mentioned as the service provider."
 			},
 			"advertising": {
 				"title": "12. Advertising",
-				"content": "Face Art Obwalden may draw attention to its own services during the event, for example with company clothing, business cards, flyers, or a banner."
+				"content": "FaceArtOW may draw attention to its own services during the event, for example with company clothing, business cards, flyers, or a banner."
 			},
 			"workspace": {
 				"title": "13. Workspace",
@@ -389,11 +389,11 @@
 					"For one person at least 2 x 3 meters",
 					"For two people at least 4.5 x 3 meters"
 				],
-				"tentNote": "If no suitable weather protection is available, Face Art Obwalden can provide its own tent measuring 4.5 x 3 meters for CHF 50.00 per day."
+				"tentNote": "If no suitable weather protection is available, FaceArtOW can provide its own tent measuring 4.5 x 3 meters for CHF 50.00 per day."
 			},
 			"liability": {
 				"title": "14. Liability",
-				"content": "Face Art Obwalden is only liable for damages caused intentionally or through gross negligence. Liability for indirect damages or consequential damages is excluded to the extent permitted by law."
+				"content": "FaceArtOW is only liable for damages caused intentionally or through gross negligence. Liability for indirect damages or consequential damages is excluded to the extent permitted by law."
 			},
 			"privacy": {
 				"title": "15. Data Protection",
@@ -401,7 +401,7 @@
 			}
 		},
 		"lastUpdated": {
-			"label": "Last updated:",
+			"label": "Last updated: 2026",
 			"disclaimer": "These terms and conditions may be updated at any time."
 		}
 	}

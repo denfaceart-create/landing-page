@@ -333,15 +333,15 @@
 		},
 		"badge": "AGB",
 		"title": "Allgemeine Geschäftsbedingungen (AGB)",
-		"subtitle": "Allgemeine Geschäftsbedingungen - Face Art Obwalden von Denise Winberger",
+		"subtitle": "Allgemeine Geschäftsbedingungen FaceArtOW von Denise Winberger",
 		"sections": {
 			"contract": {
 				"title": "1. Vertrag",
-				"content": "Diese AGB sind Bestandteil aller Verträge zwischen Face Art Obwalden und dem Auftraggeber. Änderungen oder zusätzliche Vereinbarungen müssen schriftlich festgehalten werden."
+				"content": "Diese AGB sind Bestandteil aller Verträge zwischen FaceArtOW und dem Auftraggeber. Änderungen oder zusätzliche Vereinbarungen müssen schriftlich festgehalten werden."
 			},
 			"offer": {
 				"title": "2. Angebot",
-				"content": "Die Angebote von Face Art Obwalden sind unverbindlich. Ein Vertrag kommt erst zustande, wenn die Auftragsbestätigung schriftlich erfolgt ist. Mit der Annahme eines Angebots oder der Buchung einer Dienstleistung akzeptiert der Auftraggeber diese AGB. Falls nach Vertragsabschluss Änderungen notwendig werden, die für die Durchführung der Veranstaltung wichtig sind, wird der Auftraggeber so schnell wie möglich informiert."
+				"content": "Die Angebote von FaceArtOW sind unverbindlich. Ein Vertrag kommt erst zustande, wenn die Auftragsbestätigung schriftlich erfolgt ist. Mit der Annahme eines Angebots oder der Buchung einer Dienstleistung akzeptiert der Auftraggeber diese AGB. Falls nach Vertragsabschluss Änderungen notwendig werden, die für die Durchführung der Veranstaltung wichtig sind, wird der Auftraggeber so schnell wie möglich informiert."
 			},
 			"breaks": {
 				"title": "3. Pausenregelung",
@@ -362,12 +362,12 @@
 				"content": "Kann eine Veranstaltung wegen schlechtem Wetter oder behördlicher Anordnungen nicht stattfinden, können beide Parteien vom Vertrag zurücktreten. Wird der Auftrag aus anderen Gründen gekündigt, wird die Stornierungsgebühr gemäss Punkt 4 verrechnet."
 			},
 			"cancellationByArtist": {
-				"title": "6. Absage durch Face Art Obwalden",
-				"content": "Sollte Face Art Obwalden einen Termin wegen Krankheit, Unfall oder familiären Gründen nicht wahrnehmen können, wird nach Möglichkeit eine geeignete Ersatzperson gesucht. Eine Ersatzperson kann jedoch nicht garantiert werden. Es besteht kein Anspruch auf Entschädigung oder Schadenersatz."
+				"title": "6. Absage durch FaceArtOW",
+				"content": "Sollte FaceArtOW einen Termin wegen Krankheit, Unfall oder familiären Gründen nicht wahrnehmen können, wird nach Möglichkeit eine geeignete Ersatzperson gesucht. Eine Ersatzperson kann jedoch nicht garantiert werden. Es besteht kein Anspruch auf Entschädigung oder Schadenersatz."
 			},
 			"supervision": {
 				"title": "7. Kinderschminken ist keine Betreuung",
-				"content": "Face Art Obwalden bietet Kinderschminken und/oder Glitzer Tattoos an. Die Aufsicht über die Kinder bleibt jederzeit bei den Eltern, Erziehungsberechtigten oder den verantwortlichen Betreuungspersonen. Face Art Obwalden übernimmt keine Betreuungsaufgaben. Für verschmutzte Kleidung oder persönliche Gegenstände wird keine Haftung übernommen."
+				"content": "FaceArtOW bietet Kinderschminken und/oder Glitzer Tattoos an. Die Aufsicht über die Kinder bleibt jederzeit bei den Eltern, Erziehungsberechtigten oder den verantwortlichen Betreuungspersonen. FaceArtOW übernimmt keine Betreuungsaufgaben. Für verschmutzte Kleidung oder persönliche Gegenstände wird keine Haftung übernommen."
 			},
 			"prices": {
 				"title": "8. Preise und Kosten",
@@ -381,15 +381,15 @@
 			},
 			"paints": {
 				"title": "10. Schminkfarben und Glitter",
-				"content": "Face Art Obwalden verwendet professionelle und hochwertige Schminkfarben sowie kosmetischen Glitter. Die verwendeten Produkte entsprechen den geltenden Sicherheitsvorschriften und sind hautfreundlich. Alle Farben lassen sich mit Wasser und milder Seife entfernen. Trotz sorgfältiger Produktauswahl übernimmt Face Art Obwalden keine Haftung für allergische Reaktionen oder Hautirritationen."
+				"content": "FaceArtOW verwendet professionelle und hochwertige Schminkfarben sowie kosmetischen Glitter. Die verwendeten Produkte entsprechen den geltenden Sicherheitsvorschriften und sind hautfreundlich. Alle Farben lassen sich mit Wasser und milder Seife entfernen. Trotz sorgfältiger Produktauswahl übernimmt FaceArtOW keine Haftung für allergische Reaktionen oder Hautirritationen."
 			},
 			"photos": {
 				"title": "11. Fotos und Bildmaterial",
-				"content": "Fotos von geschminkten Kindern dürfen nur mit dem Einverständnis der Eltern oder Erziehungsberechtigten gemacht und veröffentlicht werden. Die Zustimmung muss schriftlich vorliegen. Werden Fotos oder Videos für Werbung, soziale Medien oder die Webseite verwendet, muss Face Art Obwalden als Dienstleister erwähnt werden."
+				"content": "Fotos von geschminkten Kindern dürfen nur mit dem Einverständnis der Eltern oder Erziehungsberechtigten gemacht und veröffentlicht werden. Die Zustimmung muss schriftlich vorliegen. Werden Fotos oder Videos für Werbung, soziale Medien oder die Webseite verwendet, muss FaceArtOW als Dienstleister erwähnt werden."
 			},
 			"advertising": {
 				"title": "12. Werbung",
-				"content": "Face Art Obwalden darf während der Veranstaltung auf die eigenen Dienstleistungen aufmerksam machen, zum Beispiel mit Firmenkleidung, Visitenkarten, Flyern oder einem Banner."
+				"content": "FaceArtOW darf während der Veranstaltung auf die eigenen Dienstleistungen aufmerksam machen, zum Beispiel mit Firmenkleidung, Visitenkarten, Flyern oder einem Banner."
 			},
 			"workspace": {
 				"title": "13. Arbeitsplatz",
@@ -398,11 +398,11 @@
 					"Für eine Person mindestens 2 x 3 Meter",
 					"Für zwei Personen mindestens 4,5 x 3 Meter"
 				],
-				"tentNote": "Falls kein geeigneter Wetterschutz vorhanden ist, kann Face Art Obwalden ein eigenes Zelt mit den Massen 4,5 x 3 Meter für CHF 50.00 pro Tag zur Verfügung stellen."
+				"tentNote": "Falls kein geeigneter Wetterschutz vorhanden ist, kann FaceArtOW ein eigenes Zelt mit den Massen 4,5 x 3 Meter für CHF 50.00 pro Tag zur Verfügung stellen."
 			},
 			"liability": {
 				"title": "14. Haftung",
-				"content": "Face Art Obwalden haftet nur für Schäden, die vorsätzlich oder grob fahrlässig verursacht wurden. Eine Haftung für indirekte Schäden oder Folgeschäden wird ausgeschlossen, soweit dies gesetzlich zulässig ist."
+				"content": "FaceArtOW haftet nur für Schäden, die vorsätzlich oder grob fahrlässig verursacht wurden. Eine Haftung für indirekte Schäden oder Folgeschäden wird ausgeschlossen, soweit dies gesetzlich zulässig ist."
 			},
 			"privacy": {
 				"title": "15. Datenschutz",
@@ -410,7 +410,7 @@
 			}
 		},
 		"lastUpdated": {
-			"label": "Zuletzt aktualisiert:",
+			"label": "Zuletzt aktualisiert: 2026",
 			"disclaimer": "Diese Geschäftsbedingungen können jederzeit aktualisiert werden."
 		}
 	}
