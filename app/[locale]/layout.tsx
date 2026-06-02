@@ -84,7 +84,12 @@ export default async function LocaleLayout({
 			<body
 				className={`${dmSans.variable} ${playfairDisplay.variable} font-sans antialiased`}
 			>
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
 					<NextIntlClientProvider locale={locale}>
 						{children}
 					</NextIntlClientProvider>

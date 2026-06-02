@@ -6,5 +6,17 @@ import {
 } from "next-themes"
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-	return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+	// React 19 / Next 16 fix: suppress the <script> tag warning by
+	// telling next-themes to use type="application/json" instead of
+	// type="text/javascript", which React won't try to execute
+	const scriptProps =
+		typeof window === "undefined"
+			? undefined
+			: ({ type: "application/json" } as const)
+
+	return (
+		<NextThemesProvider scriptProps={scriptProps} {...props}>
+			{children}
+		</NextThemesProvider>
+	)
 }
