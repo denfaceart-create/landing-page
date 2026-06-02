@@ -25,7 +25,8 @@
 		"home": "Startseite",
 		"about": "Über mich",
 		"faq": "FAQ",
-		"accessibility": "Barrierefreiheit"
+		"accessibility": "Barrierefreiheit",
+		"termsConditions": "AGB"
 	},
 	"Footer": {
 		"appName": "Face Art Obwalden",
@@ -296,6 +297,121 @@
 				"descriptionMin": "Bitte beschreiben Sie es genauer (mindestens {minLength} Zeichen)",
 				"descriptionMax": "Bitte fassen Sie sich kürzer (höchstens {maxLength} Zeichen)"
 			}
+		}
+	},
+	"TermsConditionsPage": {
+		"metadata": {
+			"title": "Allgemeine Geschäftsbedingungen | Face Art Obwalden",
+			"description": "Allgemeine Geschäftsbedingungen (AGB) für die Dienstleistungen von Face Art Obwalden.",
+			"keywords": [
+				"allgemeine geschäftsbedingungen",
+				"agb",
+				"stornierungsbedingungen",
+				"geschäftsbedingungen"
+			],
+			"openGraph": {
+				"title": "Allgemeine Geschäftsbedingungen | Face Art Obwalden",
+				"description": "Allgemeine Geschäftsbedingungen für die Dienstleistungen von Face Art Obwalden",
+				"images": [
+					{
+						"url": "/assets/face_art_ow_den_1200x1200.jpg",
+						"width": 1200,
+						"height": 1200,
+						"alt": "Face Art Obwalden - Kinderschminken"
+					}
+				],
+				"locale": "de-DE",
+				"type": "website",
+				"url": "https://www.faceartow.ch/agb"
+			},
+			"alternates": {
+				"canonical": "https://www.faceartow.ch/agb",
+				"languages": {
+					"en": "https://www.faceartow.ch/en/terms-conditions"
+				}
+			}
+		},
+		"badge": "AGB",
+		"title": "Allgemeine Geschäftsbedingungen (AGB)",
+		"subtitle": "Allgemeine Geschäftsbedingungen - Face Art Obwalden von Denise Winberger",
+		"sections": {
+			"contract": {
+				"title": "1. Vertrag",
+				"content": "Diese AGB sind Bestandteil aller Verträge zwischen Face Art Obwalden und dem Auftraggeber. Änderungen oder zusätzliche Vereinbarungen müssen schriftlich festgehalten werden."
+			},
+			"offer": {
+				"title": "2. Angebot",
+				"content": "Die Angebote von Face Art Obwalden sind unverbindlich. Ein Vertrag kommt erst zustande, wenn die Auftragsbestätigung schriftlich erfolgt ist. Mit der Annahme eines Angebots oder der Buchung einer Dienstleistung akzeptiert der Auftraggeber diese AGB. Falls nach Vertragsabschluss Änderungen notwendig werden, die für die Durchführung der Veranstaltung wichtig sind, wird der Auftraggeber so schnell wie möglich informiert."
+			},
+			"breaks": {
+				"title": "3. Pausenregelung",
+				"content": "Bei einem Einsatz von bis zu 4 Stunden steht der Künstlerin eine Pause von 30 Minuten zu. Ab einer Einsatzdauer von 6 Stunden oder mehr stehen der Künstlerin zwei Pausen von je 30 Minuten zu. Die Pausen werden gemeinsam mit dem Auftraggeber abgestimmt. Während der Einsatzzeit darf die Künstlerin trinken, essen und die Toilette aufsuchen."
+			},
+			"cancellation": {
+				"title": "4. Rücktritt und Stornierung",
+				"content": "Bei einer Absage durch den Auftraggeber werden folgende Kosten verrechnet:",
+				"items": [
+					"Bis 30 Tage vor dem Termin: 25% des Auftragswertes",
+					"29 bis 10 Tage vor dem Termin: 50% des Auftragswertes",
+					"Ab 9 Tagen vor dem Termin: 75% des Auftragswertes"
+				],
+				"additionalNote": "Bereits entstandene Kosten werden zusätzlich verrechnet."
+			},
+			"extraordinaryCancellation": {
+				"title": "5. Ausserordentliche Kündigung",
+				"content": "Kann eine Veranstaltung wegen schlechtem Wetter oder behördlicher Anordnungen nicht stattfinden, können beide Parteien vom Vertrag zurücktreten. Wird der Auftrag aus anderen Gründen gekündigt, wird die Stornierungsgebühr gemäss Punkt 4 verrechnet."
+			},
+			"cancellationByArtist": {
+				"title": "6. Absage durch Face Art Obwalden",
+				"content": "Sollte Face Art Obwalden einen Termin wegen Krankheit, Unfall oder familiären Gründen nicht wahrnehmen können, wird nach Möglichkeit eine geeignete Ersatzperson gesucht. Eine Ersatzperson kann jedoch nicht garantiert werden. Es besteht kein Anspruch auf Entschädigung oder Schadenersatz."
+			},
+			"supervision": {
+				"title": "7. Kinderschminken ist keine Betreuung",
+				"content": "Face Art Obwalden bietet Kinderschminken und/oder Glitzer Tattoos an. Die Aufsicht über die Kinder bleibt jederzeit bei den Eltern, Erziehungsberechtigten oder den verantwortlichen Betreuungspersonen. Face Art Obwalden übernimmt keine Betreuungsaufgaben. Für verschmutzte Kleidung oder persönliche Gegenstände wird keine Haftung übernommen."
+			},
+			"prices": {
+				"title": "8. Preise und Kosten",
+				"content": "Die Preise richten sich nach Ort, Datum, Dauer und Art des Auftrags. Alle Preise verstehen sich in Schweizer Franken inklusive Materialkosten. Falls kein kostenloser Parkplatz vorhanden ist, werden die Parkgebühren dem Auftraggeber in Rechnung gestellt. Druckfehler und Irrtümer bleiben vorbehalten."
+			},
+			"payment": {
+				"title": "9. Zahlungsbedingungen",
+				"content": "Die Rechnung ist innerhalb von 10 Tagen nach dem Einsatz zu bezahlen. Die Bezahlung kann erfolgen per:",
+				"paymentMethods": ["Rechnung", "TWINT", "Barzahlung"],
+				"additionalNote": "Zahlungen werden nur in Schweizer Franken akzeptiert. Zusätzliche Einsatzzeit oder spontane Verlängerungen, die nicht vorher vereinbart wurden, werden pro angefangene halbe Stunde zusätzlich verrechnet."
+			},
+			"paints": {
+				"title": "10. Schminkfarben und Glitter",
+				"content": "Face Art Obwalden verwendet professionelle und hochwertige Schminkfarben sowie kosmetischen Glitter. Die verwendeten Produkte entsprechen den geltenden Sicherheitsvorschriften und sind hautfreundlich. Alle Farben lassen sich mit Wasser und milder Seife entfernen. Trotz sorgfältiger Produktauswahl übernimmt Face Art Obwalden keine Haftung für allergische Reaktionen oder Hautirritationen."
+			},
+			"photos": {
+				"title": "11. Fotos und Bildmaterial",
+				"content": "Fotos von geschminkten Kindern dürfen nur mit dem Einverständnis der Eltern oder Erziehungsberechtigten gemacht und veröffentlicht werden. Die Zustimmung muss schriftlich vorliegen. Werden Fotos oder Videos für Werbung, soziale Medien oder die Webseite verwendet, muss Face Art Obwalden als Dienstleister erwähnt werden."
+			},
+			"advertising": {
+				"title": "12. Werbung",
+				"content": "Face Art Obwalden darf während der Veranstaltung auf die eigenen Dienstleistungen aufmerksam machen, zum Beispiel mit Firmenkleidung, Visitenkarten, Flyern oder einem Banner."
+			},
+			"workspace": {
+				"title": "13. Arbeitsplatz",
+				"content": "Der Auftraggeber stellt einen geeigneten Arbeitsplatz zur Verfügung. Bei Veranstaltungen im Freien muss dieser vor Sonne, Wind und Regen geschützt sein. Benötigte Fläche:",
+				"spacings": [
+					"Für eine Person mindestens 2 x 3 Meter",
+					"Für zwei Personen mindestens 4,5 x 3 Meter"
+				],
+				"tentNote": "Falls kein geeigneter Wetterschutz vorhanden ist, kann Face Art Obwalden ein eigenes Zelt mit den Massen 4,5 x 3 Meter für CHF 50.00 pro Tag zur Verfügung stellen."
+			},
+			"liability": {
+				"title": "14. Haftung",
+				"content": "Face Art Obwalden haftet nur für Schäden, die vorsätzlich oder grob fahrlässig verursacht wurden. Eine Haftung für indirekte Schäden oder Folgeschäden wird ausgeschlossen, soweit dies gesetzlich zulässig ist."
+			},
+			"privacy": {
+				"title": "15. Datenschutz",
+				"content": "Persönliche Daten werden nur zur Bearbeitung von Anfragen, Angeboten und Aufträgen verwendet. Die Daten werden vertraulich behandelt und nicht ohne Zustimmung an Dritte weitergegeben, ausser wenn dies gesetzlich vorgeschrieben ist."
+			}
+		},
+		"lastUpdated": {
+			"label": "Zuletzt aktualisiert:",
+			"disclaimer": "Diese Geschäftsbedingungen können jederzeit aktualisiert werden."
 		}
 	}
 }

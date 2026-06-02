@@ -64,6 +64,13 @@ export function Footer() {
 						>
 							{t("Navigation.accessibility")}
 						</Link>
+						{" "}·{" "}
+						<Link
+							href="/terms-conditions"
+							className="transition-colors hover:text-primary"
+						>
+							{t("Navigation.termsConditions")}
+						</Link>
 					</p>
 				</div>
 			</div>

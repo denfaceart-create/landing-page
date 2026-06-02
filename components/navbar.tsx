@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { useActiveSection } from "@/hooks/useActiveSection"
 import { useLocaleSwitch } from "@/hooks/useLocaleSwitch"
+import { Link } from "@/i18n/navigation"
 import { routing } from "@/i18n/routing"
 import { cn, scrollToSection } from "@/lib/utils"
 
@@ -205,6 +206,31 @@ export const Navbar = ({ className }: { className?: string }) => {
 									})}
 								</ul>
 							</nav>
+
+							<div className="mt-6 border-border/50 border-t pt-6">
+								<nav>
+									<ul className="space-y-2">
+										<li>
+											<Link
+												href="/accessibility"
+												className="block rounded-xl px-4 py-3 transition-colors hover:bg-primary/10 hover:text-primary"
+												onClick={() => setMobileMenuOpen(false)}
+											>
+												{t("Navigation.accessibility")}
+											</Link>
+										</li>
+										<li>
+											<Link
+												href="/terms-conditions"
+												className="block rounded-xl px-4 py-3 transition-colors hover:bg-primary/10 hover:text-primary"
+												onClick={() => setMobileMenuOpen(false)}
+											>
+												{t("Navigation.termsConditions")}
+											</Link>
+										</li>
+									</ul>
+								</nav>
+							</div>
 						</div>
 					</motion.div>
 				)}

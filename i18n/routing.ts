@@ -12,6 +12,9 @@ export const routing = defineRouting({
 		"/accessibility": {
 			de: "/barrierefreiheit",
 		},
+		"/terms-conditions": {
+			de: "/agb",
+		},
 	},
 	localePrefix: "as-needed",
 })
