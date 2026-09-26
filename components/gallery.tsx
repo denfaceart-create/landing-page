@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl"
 import { useMemo } from "react"
 import { getGalleryImages } from "@/lib/cloudinary"
 import DomeGallery from "./dome-gallery"
-import { GalleryGrid } from "./gallery-client"
 
 export async function Gallery() {
 	const images = await getGalleryImages()
@@ -33,7 +32,7 @@ function GalleryInner({
 						{t("title")}
 					</h2>
 				</div>
-				<div style={{ width: "auto", height: "500px" }}>
+				<div className="h-125 overflow-hidden rounded-lg">
 					<DomeGallery
 						images={domeImages}
 						fit={0.2}
@@ -43,14 +42,6 @@ function GalleryInner({
 						overlayBlurColor="transparent"
 					/>
 				</div>
-
-				{/* <GalleryGrid
-					images={images}
-					positionLabel={t("positionAnnouncement", {
-						current: "{current}",
-						total: "{total}",
-					})}
-				/> */}
 			</div>
 		</section>
 	)

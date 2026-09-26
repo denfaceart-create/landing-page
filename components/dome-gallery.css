@@ -3,7 +3,6 @@
 	width: 100%;
 	height: 100%;
 	--radius: 520px;
-	--viewer-pad: 72px;
 	--circ: calc(var(--radius) * 3.14);
 	--rot-y: calc((360deg / var(--segments-x)) / 2);
 	--rot-x: calc((360deg / var(--segments-y)) / 2);
@@ -21,13 +20,14 @@
 	transform-style: preserve-3d;
 }
 
-main.sphere-main {
+div.sphere-main {
 	position: absolute;
 	inset: 0;
 	display: grid;
 	place-items: center;
 	overflow: hidden;
-	touch-action: none;
+	/* pan-y: the browser keeps vertical page scroll, we keep horizontal drag (B4) */
+	touch-action: pan-y;
 	user-select: none;
 	-webkit-user-select: none;
 	background: var(--overlay-blur-color, #120f17);
@@ -46,6 +46,17 @@ main.sphere-main {
 .sphere {
 	transform: translateZ(calc(var(--radius) * -1));
 	will-change: transform;
+}
+
+/* Applied only while gliding to a keyboard-chosen slot, so dragging stays 1:1. */
+.sphere--gliding {
+	transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sphere--gliding {
+		transition: none;
+	}
 }
 
 .overlay,
@@ -109,6 +120,12 @@ main.sphere-main {
 	position: absolute;
 	display: block;
 	inset: 10px;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	color: inherit;
+	appearance: none;
+	-webkit-appearance: none;
 	border-radius: var(--tile-radius, 12px);
 	background: var(--overlay-blur-color, #120f17);
 	overflow: hidden;
@@ -126,76 +143,17 @@ main.sphere-main {
 	outline: none;
 }
 
+.item__image:focus-visible {
+	outline: 2px solid var(--color-ring, #fff);
+	outline-offset: 3px;
+}
+
 .item__image img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	pointer-events: none;
 	backface-visibility: hidden;
-	filter: var(--image-filter, none);
-}
-
-.viewer {
-	position: absolute;
-	inset: 0;
-	z-index: 20;
-	pointer-events: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: var(--viewer-pad);
-}
-
-.viewer .frame {
-	height: 100%;
-	aspect-ratio: 1;
-	border-radius: var(--enlarge-radius, 32px);
-	display: flex;
-}
-
-@media (max-aspect-ratio: 1 / 1) {
-	.viewer .frame {
-		height: auto;
-		width: 100%;
-	}
-}
-
-.viewer .scrim {
-	position: absolute;
-	inset: 0;
-	z-index: 10;
-	background: rgba(0, 0, 0, 0.4);
-	pointer-events: none;
-	opacity: 0;
-	transition: opacity 500ms ease;
-	backdrop-filter: blur(3px);
-}
-
-.sphere-root[data-enlarging="true"] .viewer .scrim {
-	opacity: 1;
-	pointer-events: all;
-}
-
-.viewer .enlarge {
-	position: absolute;
-	z-index: 30;
-	border-radius: var(--enlarge-radius, 32px);
-	overflow: hidden;
-	transition:
-		transform 500ms ease,
-		opacity 500ms ease;
-	transform-origin: top left;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.viewer .enlarge img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	filter: var(--image-filter, none);
-}
-
-.sphere-root .enlarge-closing img {
 	filter: var(--image-filter, none);
 }
 

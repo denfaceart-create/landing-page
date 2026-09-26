@@ -1,8 +1,27 @@
 "use client"
 
 import { useGesture } from "@use-gesture/react"
-import { useCallback, useEffect, useMemo, useRef } from "react"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import {
+	useCallback,
+	useEffect,
+	useLayoutEffect,
+	useMemo,
+	useRef,
+	useState,
+} from "react"
+import {
+	Dialog,
+	DialogClose,
+	DialogContent,
+	DialogTitle,
+} from "@/components/ui/dialog"
 import "./dome-gallery.css"
+
+/** Delivery URLs are `/upload/<version>/<publicId>`, so transforms go right after `/upload/`. */
+const cloudinaryTransform = (url: string, transformation: string) =>
+	url.replace("/upload/", `/upload/${transformation}/`)
 
 type ImageItem = string | { src: string; alt?: string }
 
@@ -12,23 +31,20 @@ type DomeGalleryProps = {
 	fitBasis?: "auto" | "min" | "max" | "width" | "height"
 	minRadius?: number
 	maxRadius?: number
-	padFactor?: number
 	overlayBlurColor?: string
 	maxVerticalRotationDeg?: number
 	dragSensitivity?: number
-	enlargeTransitionMs?: number
 	segments?: number
 	dragDampening?: number
-	openedImageWidth?: string
-	openedImageHeight?: string
 	imageBorderRadius?: string
-	openedImageBorderRadius?: string
 	grayscale?: boolean
 }
 
 type ItemDef = {
 	src: string
 	alt: string
+	/** 0-based index among the *unique* images, so repeat tiles stay distinguishable. */
+	imageIndex: number
 	x: number
 	y: number
 	sizeX: number
@@ -38,87 +54,104 @@ type ItemDef = {
 const DEFAULTS = {
 	maxVerticalRotationDeg: 5,
 	dragSensitivity: 20,
-	enlargeTransitionMs: 300,
 	segments: 35,
 } as const
 
 const clamp = (v: number, min: number, max: number) =>
 	Math.min(Math.max(v, min), max)
-const normalizeAngle = (d: number) => ((d % 360) + 360) % 360
 const wrapAngleSigned = (deg: number) => {
 	const a = (((deg + 180) % 360) + 360) % 360
 	return a - 180
 }
-const getDataNumber = (el: HTMLElement, name: string, fallback: number) => {
-	const attr = el.dataset[name] ?? el.getAttribute(`data-${name}`)
-	const n = attr == null ? NaN : parseFloat(attr)
-	return Number.isFinite(n) ? n : fallback
+
+const toImage = (image: ImageItem) =>
+	typeof image === "string"
+		? { src: image, alt: "" }
+		: { src: image.src || "", alt: image.alt || "" }
+
+// Grid geometry. The CSS places a tile at
+// rotateY(rotY * (offsetX + (sizeX - 1) / 2)), where rotY is (360deg / segments) / 2,
+// so a tile's angle from the viewer is degPerUnit * (offsetX + 0.5) + rotation.y.
+// Every column has the same height, which is what makes slot arithmetic possible.
+const X_BASE = -37
+const X_STEP = 2
+const Y_EVEN = [-4, -2, 0, 2, 4]
+const Y_ODD = [-3, -1, 1, 3, 5]
+const MID_ROW = 2
+
+const degPerUnit = (seg: number) => 360 / seg / 2
+const colOf = (slot: number) => Math.floor(slot / Y_EVEN.length)
+const rowOf = (slot: number) => slot % Y_EVEN.length
+const slotAt = (col: number, row: number, seg: number) =>
+	(((col % seg) + seg) % seg) * Y_EVEN.length + row
+/** rotation.y that brings a tile with this offset-x to the front */
+const rotYForX = (x: number, seg: number) =>
+	wrapAngleSigned(-degPerUnit(seg) * (x + 0.5))
+/** the slot sitting at the front for a given rotation.y */
+const frontSlotFor = (rotY: number, seg: number) =>
+	slotAt(
+		Math.round((-rotY / degPerUnit(seg) - 0.5 - X_BASE) / X_STEP),
+		MID_ROW,
+		seg,
+	)
+
+/** Degrees of rotationY per column; the columns span a full 360° turn. */
+const degPerColumn = (seg: number) => 360 / seg
+
+/** Spatial neighbour. Columns wrap because the dome is a full ring; rows clamp. */
+const neighbourSlot = (slot: number, key: string, seg: number) => {
+	const col = colOf(slot)
+	const row = rowOf(slot)
+	switch (key) {
+		case "ArrowLeft":
+			return slotAt(col - 1, row, seg)
+		case "ArrowRight":
+			return slotAt(col + 1, row, seg)
+		case "ArrowDown":
+			return slotAt(col, Math.max(0, row - 1), seg)
+		case "ArrowUp":
+			return slotAt(col, Math.min(Y_EVEN.length - 1, row + 1), seg)
+		default:
+			return null
+	}
 }
 
 function buildItems(pool: ImageItem[], seg: number): ItemDef[] {
-	const xCols = Array.from({ length: seg }, (_, i) => -37 + i * 2)
-	const evenYs = [-4, -2, 0, 2, 4]
-	const oddYs = [-3, -1, 1, 3, 5]
+	const xCols = Array.from({ length: seg }, (_, i) => X_BASE + i * X_STEP)
 
 	const coords = xCols.flatMap((x, c) => {
-		const ys = c % 2 === 0 ? evenYs : oddYs
+		const ys = c % 2 === 0 ? Y_EVEN : Y_ODD
 		return ys.map((y) => ({ x, y, sizeX: 2, sizeY: 2 }))
 	})
 
 	const totalSlots = coords.length
 	if (pool.length === 0) {
-		return coords.map((c) => ({ ...c, src: "", alt: "" }))
-	}
-	if (pool.length > totalSlots) {
-		console.warn(
-			`[DomeGallery] Provided image count (${pool.length}) exceeds available tiles (${totalSlots}). Some images will not be shown.`,
-		)
+		return coords.map((c) => ({
+			...c,
+			src: "",
+			alt: "",
+			imageIndex: 0,
+		}))
 	}
 
-	const normalizedImages = pool.map((image) => {
-		if (typeof image === "string") {
-			return { src: image, alt: "" }
-		}
-		return { src: image.src || "", alt: image.alt || "" }
-	})
+	const normalizedImages = pool.map(toImage)
 
 	const usedImages = Array.from(
 		{ length: totalSlots },
 		(_, i) => normalizedImages[i % normalizedImages.length],
 	)
 
-	for (let i = 1; i < usedImages.length; i++) {
-		if (usedImages[i].src === usedImages[i - 1].src) {
-			for (let j = i + 1; j < usedImages.length; j++) {
-				if (usedImages[j].src !== usedImages[i].src) {
-					const tmp = usedImages[i]
-					usedImages[i] = usedImages[j]
-					usedImages[j] = tmp
-					break
-				}
-			}
-		}
-	}
-
 	return coords.map((c, i) => ({
 		...c,
 		src: usedImages[i].src,
 		alt: usedImages[i].alt,
+		imageIndex: i % normalizedImages.length,
 	}))
 }
 
-function computeItemBaseRotation(
-	offsetX: number,
-	offsetY: number,
-	sizeX: number,
-	sizeY: number,
-	segments: number,
-) {
-	const unit = 360 / segments / 2
-	const rotateY = unit * (offsetX + (sizeX - 1) / 2)
-	const rotateX = unit * (offsetY - (sizeY - 1) / 2)
-	return { rotateX, rotateY }
-}
+const prefersReducedMotion = () =>
+	typeof window !== "undefined" &&
+	window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
 export default function DomeGallery({
 	images,
@@ -126,32 +159,24 @@ export default function DomeGallery({
 	fitBasis = "auto",
 	minRadius = 600,
 	maxRadius = Infinity,
-	padFactor = 0.25,
 	overlayBlurColor = "#120F17",
 	maxVerticalRotationDeg = DEFAULTS.maxVerticalRotationDeg,
 	dragSensitivity = DEFAULTS.dragSensitivity,
-	enlargeTransitionMs = DEFAULTS.enlargeTransitionMs,
 	segments = DEFAULTS.segments,
 	dragDampening = 2,
-	openedImageWidth = "400px",
-	openedImageHeight = "400px",
 	imageBorderRadius = "30px",
-	openedImageBorderRadius = "30px",
 	grayscale = false,
 }: DomeGalleryProps) {
+	const t = useTranslations("HomePage.gallery")
+
 	const rootRef = useRef<HTMLDivElement>(null)
 	const mainRef = useRef<HTMLDivElement>(null)
 	const sphereRef = useRef<HTMLDivElement>(null)
-	const frameRef = useRef<HTMLDivElement>(null)
-	const viewerRef = useRef<HTMLDivElement>(null)
-	const scrimRef = useRef<HTMLDivElement>(null)
-	const focusedElRef = useRef<HTMLElement | null>(null)
-	const originalTilePositionRef = useRef<{
-		left: number
-		top: number
-		width: number
-		height: number
-	} | null>(null)
+	const contentRef = useRef<HTMLDivElement>(null)
+	const originRectRef = useRef<{ x: number; y: number } | null>(null)
+	const triggerRef = useRef<HTMLElement | null>(null)
+	const prevButtonRef = useRef<HTMLButtonElement>(null)
+	const nextButtonRef = useRef<HTMLButtonElement>(null)
 
 	const rotationRef = useRef({ x: 0, y: 0 })
 	const startRotRef = useRef({ x: 0, y: 0 })
@@ -160,35 +185,29 @@ export default function DomeGallery({
 	const movedRef = useRef(false)
 	const inertiaRAF = useRef<number | null>(null)
 
-	const openingRef = useRef(false)
-	const openStartedAtRef = useRef(0)
 	const lastDragEndAt = useRef(0)
-
-	const scrollLockedRef = useRef(false)
-	const lockScroll = useCallback(() => {
-		if (scrollLockedRef.current) return
-		scrollLockedRef.current = true
-		document.body.classList.add("dg-scroll-lock")
-	}, [])
-	const unlockScroll = useCallback(() => {
-		if (!scrollLockedRef.current) return
-		if (rootRef.current?.getAttribute("data-enlarging") === "true") return
-		scrollLockedRef.current = false
-		document.body.classList.remove("dg-scroll-lock")
-	}, [])
 
 	const items = useMemo(() => buildItems(images, segments), [images, segments])
 
-	const applyTransform = (xDeg: number, yDeg: number) => {
+	// The sphere repeats images across its slots; the lightbox navigates the unique list.
+	const uniqueImages = useMemo(() => images.map(toImage), [images])
+	const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+
+	// Roving tabindex: exactly one tile is in the tab order, and it tracks whichever
+	// tile the sphere is currently presenting, so tabbing in never lands on the
+	// hidden side of the dome.
+	const [activeSlot, setActiveSlot] = useState(() => frontSlotFor(0, segments))
+	const sphereTimer = useRef<number | null>(null)
+
+	const applyTransform = useCallback((xDeg: number, yDeg: number) => {
 		const el = sphereRef.current
 		if (el) {
 			el.style.transform = `translateZ(calc(var(--radius) * -1)) rotateX(${xDeg}deg) rotateY(${yDeg}deg)`
 		}
-	}
+	}, [])
 
 	const lockedRadiusRef = useRef<number | null>(null)
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: 'applyTransform' is not needed in the deps array
 	useEffect(() => {
 		const root = rootRef.current
 		if (!root) return
@@ -222,47 +241,14 @@ export default function DomeGallery({
 			radius = clamp(radius, minRadius, maxRadius)
 			lockedRadiusRef.current = Math.round(radius)
 
-			const viewerPad = Math.max(8, Math.round(minDim * padFactor))
 			root.style.setProperty("--radius", `${lockedRadiusRef.current}px`)
-			root.style.setProperty("--viewer-pad", `${viewerPad}px`)
 			root.style.setProperty("--overlay-blur-color", overlayBlurColor)
 			root.style.setProperty("--tile-radius", imageBorderRadius)
-			root.style.setProperty("--enlarge-radius", openedImageBorderRadius)
 			root.style.setProperty(
 				"--image-filter",
 				grayscale ? "grayscale(1)" : "none",
 			)
 			applyTransform(rotationRef.current.x, rotationRef.current.y)
-
-			const enlargedOverlay = viewerRef.current?.querySelector(
-				".enlarge",
-			) as HTMLElement
-			if (enlargedOverlay && frameRef.current && mainRef.current) {
-				const frameR = frameRef.current.getBoundingClientRect()
-				const mainR = mainRef.current.getBoundingClientRect()
-
-				const hasCustomSize = openedImageWidth && openedImageHeight
-				if (hasCustomSize) {
-					const tempDiv = document.createElement("div")
-					tempDiv.style.cssText = `position: absolute; width: ${openedImageWidth}; height: ${openedImageHeight}; visibility: hidden;`
-					document.body.appendChild(tempDiv)
-					const tempRect = tempDiv.getBoundingClientRect()
-					document.body.removeChild(tempDiv)
-
-					const centeredLeft =
-						frameR.left - mainR.left + (frameR.width - tempRect.width) / 2
-					const centeredTop =
-						frameR.top - mainR.top + (frameR.height - tempRect.height) / 2
-
-					enlargedOverlay.style.left = `${centeredLeft}px`
-					enlargedOverlay.style.top = `${centeredTop}px`
-				} else {
-					enlargedOverlay.style.left = `${frameR.left - mainR.left}px`
-					enlargedOverlay.style.top = `${frameR.top - mainR.top}px`
-					enlargedOverlay.style.width = `${frameR.width}px`
-					enlargedOverlay.style.height = `${frameR.height}px`
-				}
-			}
 		})
 		ro.observe(root)
 		return () => ro.disconnect()
@@ -271,19 +257,15 @@ export default function DomeGallery({
 		fitBasis,
 		minRadius,
 		maxRadius,
-		padFactor,
 		overlayBlurColor,
 		grayscale,
 		imageBorderRadius,
-		openedImageBorderRadius,
-		openedImageWidth,
-		openedImageHeight,
+		applyTransform,
 	])
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: run only on mount
 	useEffect(() => {
 		applyTransform(rotationRef.current.x, rotationRef.current.y)
-	}, [])
+	}, [applyTransform])
 
 	const stopInertia = useCallback(() => {
 		if (inertiaRAF.current) {
@@ -292,9 +274,17 @@ export default function DomeGallery({
 		}
 	}, [])
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: 'applyTransform' is not needed in the deps array
+	/** Re-anchor the tab stop on whatever tile is now facing the viewer. */
+	const syncActiveToFront = useCallback(() => {
+		setActiveSlot(frontSlotFor(rotationRef.current.y, segments))
+	}, [segments])
+
 	const startInertia = useCallback(
 		(vx: number, vy: number) => {
+			if (prefersReducedMotion()) {
+				syncActiveToFront()
+				return
+			}
 			const MAX_V = 1.4
 			let vX = clamp(vx, -MAX_V, MAX_V) * 80
 			let vY = clamp(vy, -MAX_V, MAX_V) * 80
@@ -310,10 +300,12 @@ export default function DomeGallery({
 				vY *= frictionMul
 				if (Math.abs(vX) < stopThreshold && Math.abs(vY) < stopThreshold) {
 					inertiaRAF.current = null
+					syncActiveToFront()
 					return
 				}
 				if (++frames > maxFrames) {
 					inertiaRAF.current = null
+					syncActiveToFront()
 					return
 				}
 				const nextX = clamp(
@@ -329,13 +321,18 @@ export default function DomeGallery({
 			stopInertia()
 			inertiaRAF.current = requestAnimationFrame(step)
 		},
-		[dragDampening, maxVerticalRotationDeg, stopInertia],
+		[
+			dragDampening,
+			maxVerticalRotationDeg,
+			stopInertia,
+			syncActiveToFront,
+			applyTransform,
+		],
 	)
 
 	useGesture(
 		{
 			onDragStart: ({ event }) => {
-				if (focusedElRef.current) return
 				stopInertia()
 				const evt = event as PointerEvent
 				draggingRef.current = true
@@ -350,12 +347,7 @@ export default function DomeGallery({
 				direction = [0, 0],
 				movement,
 			}) => {
-				if (
-					focusedElRef.current ||
-					!draggingRef.current ||
-					!startPosRef.current
-				)
-					return
+				if (!draggingRef.current || !startPosRef.current) return
 
 				const evt = event as PointerEvent
 				const dxTotal = evt.clientX - startPosRef.current.x
@@ -403,6 +395,8 @@ export default function DomeGallery({
 
 					if (Math.abs(vx) > 0.005 || Math.abs(vy) > 0.005) {
 						startInertia(vx, vy)
+					} else {
+						syncActiveToFront()
 					}
 
 					if (movedRef.current) lastDragEndAt.current = performance.now()
@@ -411,397 +405,323 @@ export default function DomeGallery({
 				}
 			},
 		},
-		{ target: mainRef, eventOptions: { passive: true } },
+		// keys:false — @use-gesture defaults keys:true and maps arrows to drag
+		// deltas, which NaNs rotation and blocks Enter. Keyboard is onTileKeyDown's.
+		{
+			target: mainRef,
+			eventOptions: { passive: true },
+			drag: { pointer: { keys: false } },
+		},
 	)
 
-	const openItemFromElement = (el: HTMLElement) => {
-		if (openingRef.current) return
-		openingRef.current = true
-		openStartedAtRef.current = performance.now()
-		lockScroll()
+	const openLightbox = useCallback(
+		(slot: number, el: HTMLElement) => {
+			if (uniqueImages.length === 0) return
+			stopInertia()
+			const r = el.getBoundingClientRect()
+			originRectRef.current = {
+				x: r.left + r.width / 2,
+				y: r.top + r.height / 2,
+			}
+			// Radix restores to whatever was focused when it mounted, but the tile only
+			// takes focus in the click's default action -- after this setState commits.
+			triggerRef.current = el
+			// buildItems can reorder slots for duplicate srcs, so trust the tile's src.
+			const index = uniqueImages.findIndex((im) => im.src === items[slot].src)
+			setLightboxIndex(index === -1 ? 0 : index)
+		},
+		[items, stopInertia, uniqueImages],
+	)
 
-		const parent = el.parentElement as HTMLElement
-		focusedElRef.current = el
-		el.setAttribute("data-focused", "true")
+	const closeLightbox = useCallback(() => setLightboxIndex(null), [])
 
-		const offsetX = getDataNumber(parent, "offsetX", 0)
-		const offsetY = getDataNumber(parent, "offsetY", 0)
-		const sizeX = getDataNumber(parent, "sizeX", 2)
-		const sizeY = getDataNumber(parent, "sizeY", 2)
-
-		const parentRot = computeItemBaseRotation(
-			offsetX,
-			offsetY,
-			sizeX,
-			sizeY,
-			segments,
-		)
-		const parentY = normalizeAngle(parentRot.rotateY)
-		const globalY = normalizeAngle(rotationRef.current.y)
-		let rotY = -(parentY + globalY) % 360
-		if (rotY < -180) rotY += 360
-		const rotX = -parentRot.rotateX - rotationRef.current.x
-		parent.style.setProperty("--rot-y-delta", `${rotY}deg`)
-		parent.style.setProperty("--rot-x-delta", `${rotX}deg`)
-
-		const refDiv = document.createElement("div")
-		refDiv.className = "item__image item__image--reference"
-		refDiv.style.opacity = "0"
-		refDiv.style.transform = `rotateX(${-parentRot.rotateX}deg) rotateY(${-parentRot.rotateY}deg)`
-		parent.appendChild(refDiv)
-
-		void refDiv.offsetHeight
-
-		const tileR = refDiv.getBoundingClientRect()
-		const mainR = mainRef.current?.getBoundingClientRect()
-		const frameR = frameRef.current?.getBoundingClientRect()
-
-		if (!mainR || !frameR || tileR.width <= 0 || tileR.height <= 0) {
-			openingRef.current = false
-			focusedElRef.current = null
-			parent.removeChild(refDiv)
-			unlockScroll()
-			return
-		}
-
-		originalTilePositionRef.current = {
-			left: tileR.left,
-			top: tileR.top,
-			width: tileR.width,
-			height: tileR.height,
-		}
-
-		el.style.visibility = "hidden"
-		el.style.zIndex = "0"
-
-		const overlay = document.createElement("div")
-		overlay.className = "enlarge"
-		overlay.style.position = "absolute"
-		overlay.style.left = `${frameR.left - mainR.left}px`
-		overlay.style.top = `${frameR.top - mainR.top}px`
-		overlay.style.width = `${frameR.width}px`
-		overlay.style.height = `${frameR.height}px`
-		overlay.style.opacity = "0"
-		overlay.style.zIndex = "30"
-		overlay.style.willChange = "transform, opacity"
-		overlay.style.transformOrigin = "top left"
-		overlay.style.transition = `transform ${enlargeTransitionMs}ms ease, opacity ${enlargeTransitionMs}ms ease`
-
-		const rawSrc =
-			parent.dataset.src ||
-			(el.querySelector("img") as HTMLImageElement)?.src ||
-			""
-		const img = document.createElement("img")
-		img.src = rawSrc
-		overlay.appendChild(img)
-		if (!viewerRef.current) {
-			console.error(
-				"Error: This should not happen, viewerRef.current is not available",
+	const stepLightbox = useCallback(
+		(delta: number) => {
+			setLightboxIndex((i) =>
+				i === null
+					? null
+					: (i + delta + uniqueImages.length) % uniqueImages.length,
 			)
-			return
-		}
-		viewerRef.current.appendChild(overlay)
-
-		const tx0 = tileR.left - frameR.left
-		const ty0 = tileR.top - frameR.top
-		const sx0 = tileR.width / frameR.width
-		const sy0 = tileR.height / frameR.height
-
-		const validSx0 = Number.isFinite(sx0) && sx0 > 0 ? sx0 : 1
-		const validSy0 = Number.isFinite(sy0) && sy0 > 0 ? sy0 : 1
-
-		overlay.style.transform = `translate(${tx0}px, ${ty0}px) scale(${validSx0}, ${validSy0})`
-
-		setTimeout(() => {
-			if (!overlay.parentElement) return
-			overlay.style.opacity = "1"
-			overlay.style.transform = "translate(0px, 0px) scale(1, 1)"
-			rootRef.current?.setAttribute("data-enlarging", "true")
-		}, 16)
-
-		const wantsResize = openedImageWidth || openedImageHeight
-		if (wantsResize) {
-			const onFirstEnd = (ev: TransitionEvent) => {
-				if (ev.propertyName !== "transform") return
-				overlay.removeEventListener("transitionend", onFirstEnd)
-				const prevTransition = overlay.style.transition
-				overlay.style.transition = "none"
-				const tempWidth = openedImageWidth || `${frameR.width}px`
-				const tempHeight = openedImageHeight || `${frameR.height}px`
-				overlay.style.width = tempWidth
-				overlay.style.height = tempHeight
-				const newRect = overlay.getBoundingClientRect()
-				overlay.style.width = `${frameR.width}px`
-				overlay.style.height = `${frameR.height}px`
-				void overlay.offsetWidth
-				overlay.style.transition = `left ${enlargeTransitionMs}ms ease, top ${enlargeTransitionMs}ms ease, width ${enlargeTransitionMs}ms ease, height ${enlargeTransitionMs}ms ease`
-				const centeredLeft =
-					frameR.left - mainR.left + (frameR.width - newRect.width) / 2
-				const centeredTop =
-					frameR.top - mainR.top + (frameR.height - newRect.height) / 2
-				requestAnimationFrame(() => {
-					overlay.style.left = `${centeredLeft}px`
-					overlay.style.top = `${centeredTop}px`
-					overlay.style.width = tempWidth
-					overlay.style.height = tempHeight
-				})
-				const cleanupSecond = () => {
-					overlay.removeEventListener("transitionend", cleanupSecond)
-					overlay.style.transition = prevTransition
-				}
-				overlay.addEventListener("transitionend", cleanupSecond, {
-					once: true,
-				})
-			}
-			overlay.addEventListener("transitionend", onFirstEnd)
-		}
-	}
-
-	const onTileClick = useCallback(
-		(e: React.MouseEvent<HTMLDivElement>) => {
-			if (draggingRef.current) return
-			if (movedRef.current) return
-			if (performance.now() - lastDragEndAt.current < 80) return
-			if (openingRef.current) return
-			openItemFromElement(e.currentTarget)
 		},
-		// biome-ignore lint/correctness/useExhaustiveDependencies: 'openItemFromElement' is indeed a stable function.
-		[openItemFromElement],
+		[uniqueImages.length],
 	)
 
-	const onTilePointerUp = useCallback(
-		(e: React.PointerEvent<HTMLDivElement>) => {
-			if (e.pointerType !== "touch") return
-			if (draggingRef.current) return
-			if (movedRef.current) return
-			if (performance.now() - lastDragEndAt.current < 80) return
-			if (openingRef.current) return
-			openItemFromElement(e.currentTarget)
-		},
-		// biome-ignore lint/correctness/useExhaustiveDependencies: 'openItemFromElement' is indeed a stable function.
-		[openItemFromElement],
-	)
-
-	useEffect(() => {
-		const scrim = scrimRef.current
-		if (!scrim) return
-
-		const close = () => {
-			if (performance.now() - openStartedAtRef.current < 250) return
-
-			const el = focusedElRef.current
-			if (!el) return
-			const parent = el.parentElement as HTMLElement
-			const overlay = viewerRef.current?.querySelector(
-				".enlarge",
-			) as HTMLElement | null
-			if (!overlay) return
-
-			const refDiv = parent.querySelector(
-				".item__image--reference",
-			) as HTMLElement | null
-
-			const originalPos = originalTilePositionRef.current
-			if (!originalPos) {
-				overlay.remove()
-				if (refDiv) refDiv.remove()
-				parent.style.setProperty("--rot-y-delta", `0deg`)
-				parent.style.setProperty("--rot-x-delta", `0deg`)
-				el.style.visibility = ""
-				el.style.zIndex = "0"
-				focusedElRef.current = null
-				rootRef.current?.removeAttribute("data-enlarging")
-				openingRef.current = false
-				unlockScroll()
-				return
-			}
-
-			if (!rootRef.current) {
-				console.error(
-					"Error: this should not happen, but some how rootRef.current is null.",
-				)
-				return
-			}
-			const currentRect = overlay.getBoundingClientRect()
-			const rootRect = rootRef.current.getBoundingClientRect()
-
-			const originalPosRelativeToRoot = {
-				left: originalPos.left - rootRect.left,
-				top: originalPos.top - rootRect.top,
-				width: originalPos.width,
-				height: originalPos.height,
-			}
-
-			const overlayRelativeToRoot = {
-				left: currentRect.left - rootRect.left,
-				top: currentRect.top - rootRect.top,
-				width: currentRect.width,
-				height: currentRect.height,
-			}
-
-			const animatingOverlay = document.createElement("div")
-			animatingOverlay.className = "enlarge-closing"
-			animatingOverlay.style.cssText = `
-        position: absolute;
-        left: ${overlayRelativeToRoot.left}px;
-        top: ${overlayRelativeToRoot.top}px;
-        width: ${overlayRelativeToRoot.width}px;
-        height: ${overlayRelativeToRoot.height}px;
-        z-index: 9999;
-        border-radius: var(--enlarge-radius, 32px);
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,.35);
-        transition: all ${enlargeTransitionMs}ms ease-out;
-        pointer-events: none;
-        margin: 0;
-        transform: none;
-      `
-
-			const originalImg = overlay.querySelector("img")
-			if (originalImg) {
-				const img = originalImg.cloneNode() as HTMLImageElement
-				img.style.cssText = "width: 100%; height: 100%; object-fit: cover;"
-				animatingOverlay.appendChild(img)
-			}
-
-			overlay.remove()
-			rootRef.current.appendChild(animatingOverlay)
-
-			void animatingOverlay.getBoundingClientRect()
-
-			requestAnimationFrame(() => {
-				animatingOverlay.style.left = `${originalPosRelativeToRoot.left}px`
-				animatingOverlay.style.top = `${originalPosRelativeToRoot.top}px`
-				animatingOverlay.style.width = `${originalPosRelativeToRoot.width}px`
-				animatingOverlay.style.height = `${originalPosRelativeToRoot.height}px`
-				animatingOverlay.style.opacity = "0"
-			})
-
-			const cleanup = () => {
-				animatingOverlay.remove()
-				originalTilePositionRef.current = null
-
-				if (refDiv) refDiv.remove()
-				parent.style.transition = "none"
-				el.style.transition = "none"
-
-				parent.style.setProperty("--rot-y-delta", `0deg`)
-				parent.style.setProperty("--rot-x-delta", `0deg`)
-
-				requestAnimationFrame(() => {
-					el.style.visibility = ""
-					el.style.opacity = "0"
-					el.style.zIndex = "0"
-					focusedElRef.current = null
-					rootRef.current?.removeAttribute("data-enlarging")
-
-					requestAnimationFrame(() => {
-						parent.style.transition = ""
-						el.style.transition = "opacity 300ms ease-out"
-
-						requestAnimationFrame(() => {
-							el.style.opacity = "1"
-							setTimeout(() => {
-								el.style.transition = ""
-								el.style.opacity = ""
-								openingRef.current = false
-								if (
-									!draggingRef.current &&
-									rootRef.current?.getAttribute("data-enlarging") !== "true"
-								) {
-									document.body.classList.remove("dg-scroll-lock")
-								}
-							}, 300)
-						})
-					})
-				})
-			}
-
-			animatingOverlay.addEventListener("transitionend", cleanup, {
-				once: true,
-			})
-		}
-
-		scrim.addEventListener("click", close)
-		const onKey = (e: KeyboardEvent) => {
-			if (e.key === "Escape") close()
-		}
-		window.addEventListener("keydown", onKey)
-
-		return () => {
-			scrim.removeEventListener("click", close)
-			window.removeEventListener("keydown", onKey)
-		}
-	}, [enlargeTransitionMs, unlockScroll])
-
-	useEffect(() => {
-		return () => {
-			document.body.classList.remove("dg-scroll-lock")
-		}
+	const applyOrigin = useCallback(() => {
+		const content = contentRef.current
+		const origin = originRectRef.current
+		if (!content || !origin) return
+		const rect = content.getBoundingClientRect()
+		// offsetWidth/Height are untransformed, and a zoom animation leaves the
+		// centre fixed, so this stays correct while zoom-in-95 is still running.
+		const left = rect.left + rect.width / 2 - content.offsetWidth / 2
+		const top = rect.top + rect.height / 2 - content.offsetHeight / 2
+		content.style.transformOrigin = `${origin.x - left}px ${origin.y - top}px`
 	}, [])
 
-	return (
-		<div
-			ref={rootRef}
-			className="sphere-root"
-			style={
-				{
-					"--segments-x": segments,
-					"--segments-y": segments,
-					"--overlay-blur-color": overlayBlurColor,
-					"--tile-radius": imageBorderRadius,
-					"--enlarge-radius": openedImageBorderRadius,
-					"--image-filter": grayscale ? "grayscale(1)" : "none",
-				} as React.CSSProperties
+	useLayoutEffect(() => {
+		if (lightboxIndex === null) return
+		applyOrigin()
+	}, [applyOrigin, lightboxIndex])
+
+	useEffect(() => {
+		if (lightboxIndex === null) return
+		const onKey = (e: KeyboardEvent) => {
+			// Move focus to the arrow that was used, so the visible focus ring
+			// confirms the direction the keyboard user just travelled in.
+			if (e.key === "ArrowLeft") {
+				e.preventDefault()
+				stepLightbox(-1)
+				prevButtonRef.current?.focus()
+			} else if (e.key === "ArrowRight") {
+				e.preventDefault()
+				stepLightbox(1)
+				nextButtonRef.current?.focus()
 			}
-		>
-			<main ref={mainRef} className="sphere-main">
-				<div className="stage">
-					<div ref={sphereRef} className="sphere">
-						{items.map((it, i) => (
-							<div
-								key={`${it.x},${it.y},${i}`}
-								className="item"
-								data-src={it.src}
-								data-offset-x={it.x}
-								data-offset-y={it.y}
-								data-size-x={it.sizeX}
-								data-size-y={it.sizeY}
-								style={
-									{
-										"--offset-x": it.x,
-										"--offset-y": it.y,
-										"--item-size-x": it.sizeX,
-										"--item-size-y": it.sizeY,
-									} as React.CSSProperties
-								}
-							>
+		}
+		window.addEventListener("keydown", onKey)
+		return () => window.removeEventListener("keydown", onKey)
+	}, [lightboxIndex, stepLightbox])
+
+	const onTileClick = useCallback(
+		(e: React.MouseEvent<HTMLButtonElement>, slot: number) => {
+			if (draggingRef.current) return
+			if (movedRef.current) return
+			if (performance.now() - lastDragEndAt.current < 80) return
+			openLightbox(slot, e.currentTarget)
+		},
+		[openLightbox],
+	)
+
+	/** Ease the sphere to a rotation, then drop the transition so drags stay 1:1. */
+	const glideTo = useCallback(
+		(nextRotY: number) => {
+			stopInertia()
+			rotationRef.current = { x: rotationRef.current.x, y: nextRotY }
+			applyTransform(rotationRef.current.x, nextRotY)
+			const el = sphereRef.current
+			if (!el || prefersReducedMotion()) return
+			el.classList.add("sphere--gliding")
+			if (sphereTimer.current) clearTimeout(sphereTimer.current)
+			sphereTimer.current = window.setTimeout(() => {
+				el.classList.remove("sphere--gliding")
+				sphereTimer.current = null
+			}, 420)
+		},
+		[applyTransform, stopInertia],
+	)
+
+	const focusSlot = useCallback(
+		(slot: number, step?: number) => {
+			const target = items[slot]
+			if (!target) return
+			setActiveSlot(slot)
+			// Rotating to an absolute front angle wraps at the seam and sends the
+			// sphere backwards through itself, which dragging never does.
+			const rotY =
+				step === undefined
+					? rotYForX(target.x, segments)
+					: rotationRef.current.y + step
+			glideTo(rotY)
+			sphereRef.current
+				?.querySelector<HTMLElement>(`[data-slot="${slot}"]`)
+				?.focus()
+		},
+		[glideTo, items, segments],
+	)
+
+	const onTileKeyDown = useCallback(
+		(e: React.KeyboardEvent<HTMLButtonElement>, slot: number) => {
+			if (e.key === "Home") {
+				e.preventDefault()
+				focusSlot(0)
+				return
+			}
+			if (e.key === "End") {
+				e.preventDefault()
+				focusSlot(items.length - 1)
+				return
+			}
+			const next = neighbourSlot(slot, e.key, segments)
+			if (next === null) return
+			e.preventDefault()
+			const per = degPerColumn(segments)
+			if (e.key === "ArrowRight") focusSlot(next, -per)
+			else if (e.key === "ArrowLeft") focusSlot(next, per)
+			else focusSlot(next, 0)
+		},
+		[focusSlot, items.length, segments],
+	)
+
+	useEffect(
+		() => () => {
+			if (sphereTimer.current) clearTimeout(sphereTimer.current)
+		},
+		[],
+	)
+
+	const currentImage =
+		lightboxIndex !== null ? uniqueImages[lightboxIndex] : undefined
+
+	const announcedPosition =
+		lightboxIndex !== null
+			? t("positionAnnouncement", {
+					current: String(lightboxIndex + 1),
+					total: String(uniqueImages.length),
+				})
+			: ""
+
+	return (
+		<>
+			<div
+				ref={rootRef}
+				className="sphere-root"
+				style={
+					{
+						"--segments-x": segments,
+						"--segments-y": segments,
+						"--overlay-blur-color": overlayBlurColor,
+						"--tile-radius": imageBorderRadius,
+						"--image-filter": grayscale ? "grayscale(1)" : "none",
+					} as React.CSSProperties
+				}
+			>
+				<div ref={mainRef} className="sphere-main">
+					<div className="stage">
+						{/** biome-ignore lint/a11y/useSemanticElements: role="group" is used for a non-form 3D image gallery; <fieldset> is for form controls and would be semantically incorrect + break the preserve-3d transform chain */}
+						<div
+							ref={sphereRef}
+							className="sphere"
+							role="group"
+							aria-label={t("title")}
+						>
+							{items.map((it, i) => (
 								<div
-									className="item__image"
-									role="button"
-									tabIndex={0}
-									aria-label={it.alt || "Open image"}
-									onClick={onTileClick}
-									onPointerUp={onTilePointerUp}
+									key={`${it.x},${it.y},${i}`}
+									className="item"
+									style={
+										{
+											"--offset-x": it.x,
+											"--offset-y": it.y,
+											"--item-size-x": it.sizeX,
+											"--item-size-y": it.sizeY,
+										} as React.CSSProperties
+									}
 								>
-									{/** biome-ignore lint/performance/noImgElement: <explanation> */}
-									<img src={it.src} draggable={false} alt={it.alt} />
+									<button
+										type="button"
+										data-slot={i}
+										className="item__image"
+										tabIndex={i === activeSlot ? 0 : -1}
+										aria-label={[
+											it.alt,
+											t("positionAnnouncement", {
+												current: String(it.imageIndex + 1),
+												total: String(uniqueImages.length),
+											}),
+										]
+											.filter(Boolean)
+											.join(" ")}
+										onClick={(e) => onTileClick(e, i)}
+										onKeyDown={(e) => onTileKeyDown(e, i)}
+									>
+										{/** biome-ignore lint/performance/noImgElement: next/image cannot be used inside a 3D-transformed preserve-3d subtree -- it injects its own wrapper that breaks the transform chain */}
+										<img
+											src={cloudinaryTransform(it.src, "w_400,q_auto,f_auto")}
+											draggable={false}
+											alt=""
+											decoding="async"
+										/>
+									</button>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
-				</div>
 
-				<div className="overlay" />
-				<div className="overlay overlay--blur" />
-				<div className="edge-fade edge-fade--top" />
-				<div className="edge-fade edge-fade--bottom" />
-
-				<div className="viewer" ref={viewerRef}>
-					<div ref={scrimRef} className="scrim" />
-					<div ref={frameRef} className="frame" />
+					<div className="overlay" />
+					<div className="overlay overlay--blur" />
+					<div className="edge-fade edge-fade--top" />
+					<div className="edge-fade edge-fade--bottom" />
 				</div>
-			</main>
-		</div>
+			</div>
+
+			<Dialog
+				open={lightboxIndex !== null}
+				onOpenChange={(open) => !open && closeLightbox()}
+			>
+				<DialogContent
+					ref={(node) => {
+						contentRef.current = node
+						if (node) applyOrigin()
+					}}
+					showCloseButton={false}
+					aria-describedby={undefined}
+					onCloseAutoFocus={(e) => {
+						e.preventDefault()
+						triggerRef.current?.focus()
+					}}
+					className="flex max-h-[95vh] max-w-[95vw] items-center justify-center overflow-hidden border-0 bg-transparent p-0 shadow-none sm:max-w-[95vw]"
+				>
+					<DialogTitle className="sr-only">
+						{currentImage?.alt || t("lightboxLabel")}
+					</DialogTitle>
+
+					<button
+						type="button"
+						ref={prevButtonRef}
+						onClick={() => stepLightbox(-1)}
+						className="absolute left-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+						aria-label={t("previousImage")}
+					>
+						<ChevronLeft className="h-6 w-6" />
+					</button>
+
+					{currentImage && (
+						/* biome-ignore lint/performance/noImgElement: intentional — next/image not used per project rules */
+						<img
+							src={cloudinaryTransform(
+								currentImage.src,
+								"w_1600,q_auto,f_auto",
+							)}
+							alt={currentImage.alt}
+							onLoad={applyOrigin}
+							className="max-h-[90vh] max-w-[90vw] rounded-lg object-contain"
+							decoding="async"
+						/>
+					)}
+
+					<button
+						type="button"
+						ref={nextButtonRef}
+						onClick={() => stepLightbox(1)}
+						className="absolute right-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+						aria-label={t("nextImage")}
+					>
+						<ChevronRight className="h-6 w-6" />
+					</button>
+
+					<DialogClose asChild>
+						<button
+							type="button"
+							className="absolute top-3 right-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+							aria-label={t("closeLightbox")}
+						>
+							<X className="h-5 w-5" />
+						</button>
+					</DialogClose>
+
+					{lightboxIndex !== null && (
+						<span
+							aria-live="polite"
+							className="absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-3 py-1 text-sm text-white"
+						>
+							<span aria-hidden="true">
+								{lightboxIndex + 1} / {uniqueImages.length}
+							</span>
+							<span className="sr-only">{announcedPosition}</span>
+						</span>
+					)}
+				</DialogContent>
+			</Dialog>
+		</>
 	)
 }
