@@ -84,7 +84,11 @@
 		"gallery": {
 			"title": "My Work",
 			"positionAnnouncement": "Image {current} of {total}",
-			"lightboxLabel": "Image lightbox viewer"
+			"lightboxLabel": "Image lightbox viewer",
+			"previousImage": "Previous image",
+			"nextImage": "Next image",
+			"closeLightbox": "Close image viewer",
+			"openImage": "Open image"
 		},
 		"contactForm": {
 			"required": "This field is required",
