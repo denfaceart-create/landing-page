@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl"
+import { useMemo } from "react"
 import { getGalleryImages } from "@/lib/cloudinary"
+import DomeGallery from "./dome-gallery"
 import { GalleryGrid } from "./gallery-client"
 
 export async function Gallery() {
@@ -13,6 +15,10 @@ function GalleryInner({
 	images: Awaited<ReturnType<typeof getGalleryImages>>
 }) {
 	const t = useTranslations("HomePage.gallery")
+	const domeImages = useMemo(
+		() => images.map((image) => ({ src: image.url, alt: image.alt })),
+		[images],
+	)
 	return (
 		<section
 			id="gallery"
@@ -27,13 +33,24 @@ function GalleryInner({
 						{t("title")}
 					</h2>
 				</div>
-				<GalleryGrid
+				<div style={{ width: "auto", height: "500px" }}>
+					<DomeGallery
+						images={domeImages}
+						fit={0.2}
+						maxVerticalRotationDeg={2}
+						segments={24}
+						dragDampening={5}
+						overlayBlurColor="transparent"
+					/>
+				</div>
+
+				{/* <GalleryGrid
 					images={images}
 					positionLabel={t("positionAnnouncement", {
 						current: "{current}",
 						total: "{total}",
 					})}
-				/>
+				/> */}
 			</div>
 		</section>
 	)
