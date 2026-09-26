@@ -93,7 +93,11 @@
 		"gallery": {
 			"title": "Meine Arbeit",
 			"positionAnnouncement": "Bild {current} von {total}",
-			"lightboxLabel": "Bildanzeige"
+			"lightboxLabel": "Bildanzeige",
+			"previousImage": "Vorheriges Bild",
+			"nextImage": "Nächstes Bild",
+			"closeLightbox": "Bildanzeige schließen",
+			"openImage": "Bild öffnen"
 		},
 		"contactForm": {
 			"required": "Dieses Feld ist erforderlich",
